@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Faith Walk Live
 
-## Getting Started
+A believer's companion to Minister Zay's 3,000-mile Philly→Cali Faith Walk.
 
-First, run the development server:
+Standalone platform — **not** affiliated with HMBL. Built by a supporter riding with the mission.
+
+## Stack
+
+- Next.js 16 (App Router, Turbopack)
+- TypeScript + Tailwind v4
+- Leaflet + react-leaflet (live tracker map)
+- Deploy target: Vercel
+- Domain: faithwalklive.com
+
+## Dev
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Routes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Route        | Purpose                                                       |
+|--------------|---------------------------------------------------------------|
+| `/`          | Hero, live stats, scripture of the day, section cards         |
+| `/map`       | Leaflet map with all checkpoints + polyline route             |
+| `/clips`     | Grid of all daily Twitch clips with day/location/miles context|
+| `/why`       | "Why this walk matters" — testimony page                      |
+| `/prayer`    | Prayer wall form (frontend only — backend ships Phase 1.5)    |
+| `/subscribe` | Email signup form (frontend only — backend ships Phase 1.5)   |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Data
 
-## Learn More
+Checkpoints live at `src/data/checkpoints.json`, seeded from the consulting repo. The source of truth remains the `tracker:from-title` pipeline in the parent consulting project — this repo gets periodic snapshots until we move ownership here.
 
-To learn more about Next.js, take a look at the following resources:
+Sync a fresh snapshot:
+```bash
+cp ../AIconsultantforHmblzayy/src/faith-walk-tracker/checkpoints.json src/data/checkpoints.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Phase 1 roadmap (30 days)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [x] Scaffold Next.js + Tailwind + Leaflet
+- [x] Homepage with live stats
+- [x] Map page (port Leaflet tracker)
+- [x] Clip archive grid
+- [x] Why page
+- [x] Scripture of the day card
+- [ ] Prayer wall backend (route handler + DB)
+- [ ] Email signup backend (Buttondown or ConvertKit)
+- [ ] Viewer map (opt-in pins)
+- [ ] Custom domain on Vercel (faithwalklive.com)
+- [ ] OG image + metadata polish
+- [ ] First social post
 
-## Deploy on Vercel
+## Positioning rules (non-negotiable)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Never go negative on HMBL publicly.
+2. Work speaks. No begging, no explaining.
+3. Credit Zay's walk — the tracker exists because he's the one walking.
+4. Testimony voice, not tech voice.
+5. This is supporter-built, not official.

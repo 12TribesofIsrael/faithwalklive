@@ -1,0 +1,188 @@
+[
+  {
+    "day": 1,
+    "location": "Philadelphia, PA",
+    "lat": 39.9526,
+    "lng": -75.1652,
+    "miles": 0,
+    "date": "Mar 25, 2026"
+  },
+  {
+    "day": 2,
+    "location": "Norristown, PA",
+    "lat": 40.1218,
+    "lng": -75.3399,
+    "miles": 18,
+    "date": "Mar 26, 2026",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/FunWittyRaccoonSquadGoals-yLDiyy_3CGg6zN-v"
+  },
+  {
+    "day": 3,
+    "location": "Pottstown, PA",
+    "lat": 40.2454,
+    "lng": -75.6496,
+    "miles": 36,
+    "date": "Mar 27, 2026",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/WiseLovelyToothNotLikeThis-JPic1C4DIIxAtd7C"
+  },
+  {
+    "day": 4,
+    "location": "Reading, PA",
+    "lat": 40.3357,
+    "lng": -75.9269,
+    "miles": 55,
+    "date": "Mar 28, 2026"
+  },
+  {
+    "restOnly": true,
+    "date": "Mar 29, 2026",
+    "location": "Reading, PA",
+    "lat": 40.3357,
+    "lng": -75.9269,
+    "miles": 55
+  },
+  {
+    "day": 5,
+    "location": "Lebanon, PA",
+    "lat": 40.3409,
+    "lng": -76.4114,
+    "miles": 80,
+    "date": "Mar 30, 2026",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/IncredulousCogentDadHoneyBadger-jIEtvC3dYnDFXGAB"
+  },
+  {
+    "day": 6,
+    "location": "Sunbury, PA",
+    "lat": 40.8626,
+    "lng": -76.7944,
+    "miles": 108,
+    "date": "Mar 31, 2026",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/SlickSilkyTarsierChefFrank-otYvuYJSTu3OUQR4"
+  },
+  {
+    "day": 7,
+    "location": "Lewisburg, PA",
+    "lat": 40.9645,
+    "lng": -76.8844,
+    "miles": 125,
+    "date": "Apr 1, 2026",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/StylishLaconicSheepKlappa-ofSQJvl8xuCh20vu"
+  },
+  {
+    "day": 8,
+    "location": "Mifflinburg, PA",
+    "lat": 40.9173,
+    "lng": -77.048,
+    "miles": 144,
+    "date": "Apr 2, 2026",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/EnthusiasticTriumphantWalrusPMSTwin-Oit6uEV3so1qSya6"
+  },
+  {
+    "day": 9,
+    "location": "State College, PA",
+    "lat": 40.7934,
+    "lng": -77.86,
+    "miles": 162,
+    "date": "Apr 3, 2026",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/EnchantingTangibleOrangeOSsloth-fTkNNNp_JzH0Sze7"
+  },
+  {
+    "day": 10,
+    "location": "Boalsburg, PA",
+    "lat": 40.7751,
+    "lng": -77.7928,
+    "miles": 175,
+    "date": "Apr 4, 2026",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/AwkwardThoughtfulTermiteDancingBanana-sJUs9-hQ-Z-NMQTl"
+  },
+  {
+    "day": 11,
+    "location": "Altoona, PA",
+    "lat": 40.5187,
+    "lng": -78.3947,
+    "miles": 195,
+    "date": "Apr 5, 2026",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/LazyPoisedHyenaMrDestructoid-JVn-Fq0KMwmSB8i3"
+  },
+  {
+    "day": 12,
+    "location": "Tyrone, PA",
+    "lat": 40.6706,
+    "lng": -78.2386,
+    "miles": 214,
+    "date": "Apr 6, 2026",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/MotionlessTriumphantSoymilkStoneLightning-uxrOFJs7OmBGZ5R8"
+  },
+  {
+    "day": 13,
+    "location": "Ebensburg, PA",
+    "lat": 40.4852783,
+    "lng": -78.7248434,
+    "miles": 230,
+    "date": "Apr 7, 2026",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/EnchantingMushyWolfJKanStyle-9SwRkl4Qrv3WsRZz"
+  },
+  {
+    "day": 14,
+    "location": "Blairsville, PA",
+    "lat": 40.4309926,
+    "lng": -79.2626157,
+    "miles": 248,
+    "date": "Apr 8, 2026",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/FantasticAlertDragonSeemsGood-heaFgSRaCClWpk50"
+  },
+  {
+    "day": 15,
+    "location": "Greensburg, PA",
+    "lat": 40.3024514,
+    "lng": -79.5443274,
+    "miles": 260,
+    "date": "Apr 9, 2026"
+  },
+  {
+    "day": 16,
+    "location": "Vandergrift, PA",
+    "lat": 40.6028462,
+    "lng": -79.5647741,
+    "miles": 290,
+    "date": "Apr 10, 2026",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/HealthyColorfulWrenchDancingBaby-AMiBdQNTDlDO59Zq"
+  },
+  {
+    "day": 17,
+    "location": "BEAVER FALLS, PA",
+    "lat": 40.7520097,
+    "lng": -80.3192295,
+    "miles": 343,
+    "date": "Apr 11, 2026",
+    "estimatedMiles": true,
+    "clip": "https://www.twitch.tv/hmblzayy/clip/AssiduousSteamyStapleLitty-lH-6s-vMT1AnbgSz"
+  },
+  {
+    "day": 18,
+    "location": "Columbiana, OH",
+    "lat": 40.8881,
+    "lng": -80.6939,
+    "miles": 373,
+    "date": "Apr 12, 2026",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/WimpySuspiciousOctopusMcaT-2pzWpg89EsAdjJeL"
+  },
+  {
+    "restOnly": true,
+    "date": "Apr 13, 2026",
+    "location": "Columbiana, OH",
+    "lat": 40.8881,
+    "lng": -80.6939,
+    "miles": 373,
+    "clip": "https://www.twitch.tv/hmblzayy/clip/HilariousCourteousAirGuitarDxAbomb-2331vBqhlqC_S6OV",
+    "day": 19
+  },
+  {
+    "day": 20,
+    "location": "Alliance, OH",
+    "lat": 40.9153362,
+    "lng": -81.1059309,
+    "miles": 393,
+    "date": "Apr 15, 2026"
+  }
+]
