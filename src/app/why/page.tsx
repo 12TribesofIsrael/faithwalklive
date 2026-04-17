@@ -8,7 +8,58 @@ export default function WhyPage() {
       <h1 className="text-3xl font-semibold mb-2">Why this walk matters</h1>
       <p className="text-brand-amber text-sm">A testimony, not a pitch.</p>
 
-      <h2 className="mt-10">Why I&apos;m building this</h2>
+      <h2 className="mt-10">The walk</h2>
+      <p>
+        Minister Zay is walking from Philadelphia, Pennsylvania to California.
+        Three thousand miles, one step at a time, streaming daily on Twitch.
+        Not a publicity stunt. Not a charity race. A walk of faith.
+      </p>
+
+      <h2>What this platform is</h2>
+      <p>
+        I&apos;m a believer who also happens to build software. When I saw what
+        Zay was doing, I wanted to honor it — not monetize it, not own it, just
+        serve it. The tracker started as a little map. This site is what it grew
+        into: a companion for anyone riding along.
+      </p>
+      <p>
+        Faith Walk Live is built and sponsored by{" "}
+        <a
+          href="https://www.youtube.com/@AIBIBLEGOSPELS"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-red-400 hover:underline font-medium"
+        >
+          AI Bible Gospels
+        </a>
+        , a channel dedicated to using technology to serve the gospel. If this
+        platform speaks to you, subscribe to the channel for more faith-driven
+        content.
+      </p>
+      <p>
+        This platform is not affiliated with HMBL. There&apos;s no logo, no
+        claim of official status. Just the record of where Zay has been and
+        where he&apos;s going, told with the reverence it deserves.
+      </p>
+
+      <h3>What you&apos;ll find here</h3>
+      <ul>
+        <li>The live map — every checkpoint, updated daily</li>
+        <li>A clip archive — faith, milestones, struggle, support</li>
+        <li>A daily scripture for the road</li>
+        <li>A prayer wall where you can lift the walk up with us</li>
+      </ul>
+
+      <h3>What you won&apos;t find here</h3>
+      <ul>
+        <li>Merch sales (go to HMBL for that)</li>
+        <li>Drama, politics, or gossip about anyone on the route team</li>
+        <li>Anything that gets in the way of the mission</li>
+      </ul>
+
+      <hr className="border-brand-border my-8" />
+
+      <h2>Why I&apos;m building this</h2>
       <p>
         Why I am doing this is to spread the gospel and show the true power of
         the Ruach HaKadosh — the Holy Spirit — and Jesus Christ. What it can
@@ -102,48 +153,6 @@ export default function WhyPage() {
       </p>
 
       <p className="mt-6 text-brand-softgold">All praises to the Most High.</p>
-
-      <h2>About this platform</h2>
-      <p>
-        I&apos;m a believer who also happens to build software. When I saw what
-        Zay was doing, I wanted to honor it — not monetize it, not own it, just
-        serve it. The tracker started as a little map. This site is what it grew
-        into: a companion for anyone riding along.
-      </p>
-      <p>
-        Faith Walk Live is built and sponsored by{" "}
-        <a
-          href="https://www.youtube.com/@AIBIBLEGOSPELS"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-red-400 hover:underline font-medium"
-        >
-          AI Bible Gospels
-        </a>
-        , a channel dedicated to using technology to serve the gospel. If this
-        platform speaks to you, subscribe to the channel for more faith-driven
-        content.
-      </p>
-      <p>
-        This platform is not affiliated with HMBL. There&apos;s no logo, no
-        claim of official status. Just the record of where Zay has been and
-        where he&apos;s going, told with the reverence it deserves.
-      </p>
-
-      <h3>What you&apos;ll find here</h3>
-      <ul>
-        <li>The live map — every checkpoint, updated daily</li>
-        <li>A clip archive — faith, milestones, struggle, support</li>
-        <li>A daily scripture for the road</li>
-        <li>A prayer wall where you can lift the walk up with us</li>
-      </ul>
-
-      <h3>What you won&apos;t find here</h3>
-      <ul>
-        <li>Merch sales (go to HMBL for that)</li>
-        <li>Drama, politics, or gossip about anyone on the route team</li>
-        <li>Anything that gets in the way of the mission</li>
-      </ul>
 
       <blockquote>
         &ldquo;For we walk by faith, not by sight.&rdquo;
