@@ -8,19 +8,107 @@ export default function WhyPage() {
       <h1 className="text-3xl font-semibold mb-2">Why this walk matters</h1>
       <p className="text-neutral-400 text-sm">A testimony, not a pitch.</p>
 
-      <h2 className="mt-10">The walk</h2>
+      <h2 className="mt-10">Why I&apos;m building this</h2>
       <p>
-        Minister Zay is walking from Philadelphia, Pennsylvania to California —
-        three thousand miles, one step at a time, streaming daily on Twitch.
-        Not a publicity stunt. Not a charity race. A walk of faith.
+        Why I am doing this is to spread the gospel and show the true power of
+        the Ruach HaKadosh — the Holy Spirit — and Jesus Christ. What it can
+        do, how it can change anyone, and how real transformation comes through
+        the Most High.
+      </p>
+      <p>
+        This is about making it clear that through Christ and the Spirit, lives
+        can be changed, faith can be strengthened, and purpose can be revealed.
       </p>
 
-      <h2>Why we built this</h2>
+      <h2>Christ&apos;s mission — the foundation</h2>
+
+      <blockquote>
+        &ldquo;For the Son of man is come to seek and to save that which was
+        lost.&rdquo;
+        <cite className="block text-sm text-neutral-400 mt-1 not-italic">
+          Gospel of Luke 19:10
+        </cite>
+      </blockquote>
+      <p>
+        Christ came to find the lost, save the lost, and bring people back to
+        the Most High.
+      </p>
+
+      <blockquote>
+        &ldquo;He shall save his people from their sins.&rdquo;
+        <cite className="block text-sm text-neutral-400 mt-1 not-italic">
+          Gospel of Matthew 1:21
+        </cite>
+      </blockquote>
+      <p>
+        The mission is deeper than motivation. It&apos;s about being saved from
+        sin.
+      </p>
+
+      <blockquote>
+        &ldquo;Repent ye, and believe the gospel.&rdquo;
+        <cite className="block text-sm text-neutral-400 mt-1 not-italic">
+          Gospel of Mark 1:15
+        </cite>
+      </blockquote>
+      <p>The call is to repent — to change — and to believe the truth.</p>
+
+      <blockquote>
+        &ldquo;God sent not his Son to condemn the world; but that the world
+        through him might be saved.&rdquo;
+        <cite className="block text-sm text-neutral-400 mt-1 not-italic">
+          Gospel of John 3:17
+        </cite>
+      </blockquote>
+      <p>
+        This is about salvation, not condemnation. Restoration, not just
+        correction.
+      </p>
+
+      <h2>The commandments that change everything</h2>
+
+      <blockquote>
+        &ldquo;Thou shalt love the Lord thy God with all thy heart. And thou
+        shalt love thy neighbour as thyself.&rdquo;
+        <cite className="block text-sm text-neutral-400 mt-1 not-italic">
+          Gospel of Matthew 22:37-39
+        </cite>
+      </blockquote>
+      <p>
+        If we live by this — love the Most High fully, treat others how we want
+        to be treated — we can live in peace, unity, and real power as a people.
+      </p>
+
+      <h2>The purpose behind this movement</h2>
+      <p>
+        This is why I&apos;m doing this — to show what the power of the Father,
+        Christ, and the Holy Spirit can do in real time. We are witnessing faith
+        in action through this journey, seeing what belief, obedience, and
+        endurance can produce.
+      </p>
+      <p>
+        Watching Minister Zay walk 3,000 miles is not just a journey. It&apos;s
+        a testimony.
+      </p>
+
+      <hr className="border-neutral-800 my-8" />
+
+      <p className="font-semibold text-neutral-200">
+        &ldquo;Christ came to seek and save the lost and called us to
+        repent — that&apos;s the mission.&rdquo;
+      </p>
+      <p className="text-sm text-neutral-500">
+        Luke 19:10, Mark 1:15
+      </p>
+
+      <p className="mt-6 text-neutral-300">All praises to the Most High.</p>
+
+      <h2>About this platform</h2>
       <p>
         I&apos;m a believer who also happens to build software. When I saw what
         Zay was doing, I wanted to honor it — not monetize it, not own it, just
-        serve it. The tracker started as a little map. This site is what it
-        grew into: a companion for anyone riding along.
+        serve it. The tracker started as a little map. This site is what it grew
+        into: a companion for anyone riding along.
       </p>
       <p>
         This platform is not affiliated with HMBL. There&apos;s no logo, no
@@ -28,7 +116,7 @@ export default function WhyPage() {
         where he&apos;s going, told with the reverence it deserves.
       </p>
 
-      <h2>What you&apos;ll find here</h2>
+      <h3>What you&apos;ll find here</h3>
       <ul>
         <li>The live map — every checkpoint, updated daily</li>
         <li>A clip archive — faith, milestones, struggle, support</li>
@@ -36,7 +124,7 @@ export default function WhyPage() {
         <li>A prayer wall where you can lift the walk up with us</li>
       </ul>
 
-      <h2>What you won&apos;t find here</h2>
+      <h3>What you won&apos;t find here</h3>
       <ul>
         <li>Merch sales (go to HMBL for that)</li>
         <li>Drama, politics, or gossip about anyone on the route team</li>
@@ -44,7 +132,10 @@ export default function WhyPage() {
       </ul>
 
       <blockquote>
-        &ldquo;For we walk by faith, not by sight.&rdquo; — 2 Corinthians 5:7
+        &ldquo;For we walk by faith, not by sight.&rdquo;
+        <cite className="block text-sm text-neutral-400 mt-1 not-italic">
+          2 Corinthians 5:7
+        </cite>
       </blockquote>
     </article>
   );
