@@ -7,13 +7,13 @@ export default function Home() {
   return (
     <div className="max-w-5xl mx-auto px-4 py-12 space-y-12">
       <section className="text-center space-y-4">
-        <p className="text-xs uppercase tracking-[0.3em] text-amber-400">
+        <p className="text-xs uppercase tracking-[0.3em] text-brand-gold">
           A believer&apos;s companion to the Philly → Cali Faith Walk
         </p>
-        <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight">
-          Faith Walk <span className="text-amber-400">Live</span>
+        <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight text-brand-cloud">
+          Faith Walk <span className="text-brand-gold">Live</span>
         </h1>
-        <p className="max-w-2xl mx-auto text-neutral-300 text-lg">
+        <p className="max-w-2xl mx-auto text-brand-softgold text-lg">
           Minister Zay is walking 3,000 miles from Philadelphia to California.
           Every day. On faith. This is where we follow along — the map, the
           clips, the scripture, the prayers.
@@ -53,15 +53,15 @@ export default function Home() {
         />
       </section>
 
-      <section className="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 text-center space-y-4">
-        <p className="text-xs uppercase tracking-[0.2em] text-neutral-500">
+      <section className="rounded-2xl border border-brand-border bg-brand-black/50 p-6 text-center space-y-4">
+        <p className="text-xs uppercase tracking-[0.2em] text-brand-bronze">
           Sponsored by
         </p>
         <a
           href="https://www.youtube.com/@AIBIBLEGOSPELS"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 text-xl font-semibold text-neutral-100 hover:text-red-400 transition"
+          className="inline-flex items-center gap-3 text-xl font-semibold text-brand-cloud hover:text-red-400 transition"
         >
           <svg
             viewBox="0 0 24 24"
@@ -73,7 +73,7 @@ export default function Home() {
           </svg>
           AI Bible Gospels
         </a>
-        <p className="text-neutral-400 text-sm max-w-md mx-auto">
+        <p className="text-brand-amber text-sm max-w-md mx-auto">
           This platform is built and funded by AI Bible Gospels. Subscribe on
           YouTube for more faith-driven content.
         </p>
@@ -87,14 +87,14 @@ export default function Home() {
         </a>
       </section>
 
-      <section className="rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 text-center space-y-3">
-        <h2 className="text-2xl font-semibold">Get daily walk updates</h2>
-        <p className="text-neutral-400">
+      <section className="rounded-2xl border border-brand-border bg-brand-black/50 p-6 text-center space-y-3">
+        <h2 className="text-2xl font-semibold text-brand-cloud">Get daily walk updates</h2>
+        <p className="text-brand-amber">
           One short email a day with the checkpoint, a clip, and the verse.
         </p>
         <Link
           href="/subscribe"
-          className="inline-block px-5 py-2 rounded-full bg-amber-400 text-neutral-950 font-medium hover:bg-amber-300 transition"
+          className="inline-block px-5 py-2 rounded-full bg-brand-gold text-brand-black font-medium hover:bg-brand-amber transition"
         >
           Subscribe
         </Link>
@@ -105,11 +105,11 @@ export default function Home() {
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-4">
-      <p className="text-xs uppercase tracking-widest text-neutral-500">
+    <div className="rounded-xl border border-brand-border bg-brand-black/50 p-4">
+      <p className="text-xs uppercase tracking-widest text-brand-bronze">
         {label}
       </p>
-      <p className="mt-1 font-semibold text-lg">{value}</p>
+      <p className="mt-1 font-semibold text-lg text-brand-cloud">{value}</p>
     </div>
   );
 }
@@ -126,10 +126,10 @@ function Card({
   return (
     <Link
       href={href}
-      className="block rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 hover:border-amber-400/40 hover:bg-neutral-900 transition"
+      className="block rounded-2xl border border-brand-border bg-brand-black/50 p-6 hover:border-brand-gold/40 hover:bg-brand-black transition"
     >
-      <h3 className="text-lg font-semibold">{title}</h3>
-      <p className="mt-2 text-sm text-neutral-400">{body}</p>
+      <h3 className="text-lg font-semibold text-brand-cloud">{title}</h3>
+      <p className="mt-2 text-sm text-brand-amber">{body}</p>
     </Link>
   );
 }

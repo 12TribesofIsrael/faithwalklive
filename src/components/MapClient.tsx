@@ -7,7 +7,7 @@ import type { Checkpoint } from "@/lib/checkpoints";
 const TrackerMap = dynamic(() => import("./TrackerMap"), {
   ssr: false,
   loading: () => (
-    <div className="h-full grid place-items-center text-neutral-500 text-sm bg-neutral-900">
+    <div className="h-full grid place-items-center text-brand-bronze text-sm bg-brand-black">
       Loading map…
     </div>
   ),
@@ -35,28 +35,28 @@ export default function MapClient({
   return (
     <div className="space-y-6">
       {/* Progress overlay bar */}
-      <div className="rounded-xl border border-neutral-800 bg-neutral-900/80 p-4 space-y-2">
+      <div className="rounded-xl border border-brand-border bg-brand-black/80 p-4 space-y-2">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-sm">
           <div className="flex items-center justify-between sm:justify-start sm:gap-6">
-            <span className="text-neutral-400">Miles walked</span>
-            <span className="font-semibold text-amber-400">
+            <span className="text-brand-amber">Miles walked</span>
+            <span className="font-semibold text-brand-gold">
               {miles.toLocaleString()} / {totalMiles.toLocaleString()} mi
             </span>
           </div>
           <div className="flex items-center justify-between sm:justify-start sm:gap-6">
-            <span className="text-neutral-400">Steps walked</span>
-            <span className="font-semibold text-amber-400">
+            <span className="text-brand-amber">Steps walked</span>
+            <span className="font-semibold text-brand-gold">
               {steps.toLocaleString()}
             </span>
           </div>
         </div>
-        <div className="h-2 rounded-full bg-neutral-800 overflow-hidden">
+        <div className="h-2 rounded-full bg-brand-border overflow-hidden">
           <div
-            className="h-full rounded-full bg-gradient-to-r from-amber-600 to-amber-400 transition-all duration-700"
+            className="h-full rounded-full bg-gradient-to-r from-brand-amber to-brand-gold transition-all duration-700"
             style={{ width: `${percent}%` }}
           />
         </div>
-        <div className="flex items-center justify-between text-xs text-neutral-500">
+        <div className="flex items-center justify-between text-xs text-brand-bronze">
           <span>Philadelphia, PA</span>
           <span>{percent}%</span>
           <span>California</span>
@@ -64,13 +64,13 @@ export default function MapClient({
       </div>
 
       {/* Map */}
-      <div className="h-[65vh] rounded-2xl overflow-hidden border border-neutral-800">
+      <div className="h-[65vh] rounded-2xl overflow-hidden border border-brand-border">
         <TrackerMap checkpoints={checkpoints} activeDay={activeDay} />
       </div>
 
       {/* Checkpoint list */}
       <div className="space-y-3">
-        <h2 className="text-lg font-semibold text-neutral-200">
+        <h2 className="text-lg font-semibold text-brand-cloud">
           Checkpoints ({walking.length})
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -86,26 +86,26 @@ export default function MapClient({
                   onClick={() => handleSelect(c.day)}
                   className={`text-left rounded-xl border p-4 transition-all ${
                     isCurrent
-                      ? "border-amber-400/60 bg-amber-400/10"
+                      ? "border-brand-gold/60 bg-brand-gold/10"
                       : isActive
-                        ? "border-amber-400/40 bg-neutral-800"
-                        : "border-neutral-800 bg-neutral-900/50 hover:border-neutral-700 hover:bg-neutral-900"
+                        ? "border-brand-gold/40 bg-brand-black"
+                        : "border-brand-border bg-brand-black/50 hover:border-brand-amber/30 hover:bg-brand-black"
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-medium uppercase tracking-wider text-neutral-500">
+                    <span className="text-xs font-medium uppercase tracking-wider text-brand-bronze">
                       Day {c.day}
                       {isCurrent && (
-                        <span className="ml-2 text-amber-400">NOW</span>
+                        <span className="ml-2 text-brand-gold">NOW</span>
                       )}
                     </span>
-                    <span className="text-xs text-neutral-600">{c.date}</span>
+                    <span className="text-xs text-brand-brown">{c.date}</span>
                   </div>
-                  <p className="mt-1 font-semibold text-neutral-200">
+                  <p className="mt-1 font-semibold text-brand-cloud">
                     {c.location}
                   </p>
                   <div className="mt-1 flex items-center justify-between">
-                    <span className="text-sm text-neutral-400">
+                    <span className="text-sm text-brand-amber">
                       {c.miles} mi{c.estimatedMiles ? " (est)" : ""}
                     </span>
                     {c.clip && (
@@ -114,7 +114,7 @@ export default function MapClient({
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="text-xs text-amber-400 hover:underline"
+                        className="text-xs text-brand-gold hover:underline"
                       >
                         Watch clip →
                       </a>

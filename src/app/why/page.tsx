@@ -6,7 +6,7 @@ export default function WhyPage() {
   return (
     <article className="max-w-2xl mx-auto px-4 py-12 prose prose-invert prose-amber">
       <h1 className="text-3xl font-semibold mb-2">Why this walk matters</h1>
-      <p className="text-neutral-400 text-sm">A testimony, not a pitch.</p>
+      <p className="text-brand-amber text-sm">A testimony, not a pitch.</p>
 
       <h2 className="mt-10">Why I&apos;m building this</h2>
       <p>
@@ -25,7 +25,7 @@ export default function WhyPage() {
       <blockquote>
         &ldquo;For the Son of man is come to seek and to save that which was
         lost.&rdquo;
-        <cite className="block text-sm text-neutral-400 mt-1 not-italic">
+        <cite className="block text-sm text-brand-amber mt-1 not-italic">
           Gospel of Luke 19:10
         </cite>
       </blockquote>
@@ -36,7 +36,7 @@ export default function WhyPage() {
 
       <blockquote>
         &ldquo;He shall save his people from their sins.&rdquo;
-        <cite className="block text-sm text-neutral-400 mt-1 not-italic">
+        <cite className="block text-sm text-brand-amber mt-1 not-italic">
           Gospel of Matthew 1:21
         </cite>
       </blockquote>
@@ -47,7 +47,7 @@ export default function WhyPage() {
 
       <blockquote>
         &ldquo;Repent ye, and believe the gospel.&rdquo;
-        <cite className="block text-sm text-neutral-400 mt-1 not-italic">
+        <cite className="block text-sm text-brand-amber mt-1 not-italic">
           Gospel of Mark 1:15
         </cite>
       </blockquote>
@@ -56,7 +56,7 @@ export default function WhyPage() {
       <blockquote>
         &ldquo;God sent not his Son to condemn the world; but that the world
         through him might be saved.&rdquo;
-        <cite className="block text-sm text-neutral-400 mt-1 not-italic">
+        <cite className="block text-sm text-brand-amber mt-1 not-italic">
           Gospel of John 3:17
         </cite>
       </blockquote>
@@ -70,7 +70,7 @@ export default function WhyPage() {
       <blockquote>
         &ldquo;Thou shalt love the Lord thy God with all thy heart. And thou
         shalt love thy neighbour as thyself.&rdquo;
-        <cite className="block text-sm text-neutral-400 mt-1 not-italic">
+        <cite className="block text-sm text-brand-amber mt-1 not-italic">
           Gospel of Matthew 22:37-39
         </cite>
       </blockquote>
@@ -91,17 +91,17 @@ export default function WhyPage() {
         a testimony.
       </p>
 
-      <hr className="border-neutral-800 my-8" />
+      <hr className="border-brand-border my-8" />
 
-      <p className="font-semibold text-neutral-200">
+      <p className="font-semibold text-brand-cloud">
         &ldquo;Christ came to seek and save the lost and called us to
         repent — that&apos;s the mission.&rdquo;
       </p>
-      <p className="text-sm text-neutral-500">
+      <p className="text-sm text-brand-bronze">
         Luke 19:10, Mark 1:15
       </p>
 
-      <p className="mt-6 text-neutral-300">All praises to the Most High.</p>
+      <p className="mt-6 text-brand-softgold">All praises to the Most High.</p>
 
       <h2>About this platform</h2>
       <p>
@@ -147,7 +147,7 @@ export default function WhyPage() {
 
       <blockquote>
         &ldquo;For we walk by faith, not by sight.&rdquo;
-        <cite className="block text-sm text-neutral-400 mt-1 not-italic">
+        <cite className="block text-sm text-brand-amber mt-1 not-italic">
           2 Corinthians 5:7
         </cite>
       </blockquote>

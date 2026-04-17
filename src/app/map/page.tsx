@@ -11,8 +11,8 @@ export default function MapPage() {
     <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
         <div>
-          <h1 className="text-3xl font-semibold">Live Map</h1>
-          <p className="text-neutral-400 mt-1">
+          <h1 className="text-3xl font-semibold text-brand-cloud">Live Map</h1>
+          <p className="text-brand-amber mt-1">
             Day {s.currentDay} · {s.currentLocation} · {s.miles} of{" "}
             {s.totalMiles} mi
           </p>

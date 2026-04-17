@@ -16,13 +16,13 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="border-b border-neutral-800 bg-neutral-950/80 backdrop-blur sticky top-0 z-50">
+    <header className="border-b border-brand-border bg-brand-navy/80 backdrop-blur sticky top-0 z-50">
       <nav className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link
           href="/"
-          className="font-semibold tracking-tight text-white whitespace-nowrap"
+          className="font-semibold tracking-tight text-brand-cloud whitespace-nowrap"
         >
-          Faith Walk <span className="text-amber-400">Live</span>
+          Faith Walk <span className="text-brand-gold">Live</span>
         </Link>
 
         {/* Desktop nav */}
@@ -31,7 +31,7 @@ export default function Nav() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="text-neutral-300 hover:text-amber-400 transition"
+                className="text-brand-softgold hover:text-brand-gold transition"
               >
                 {l.label}
               </Link>
@@ -42,7 +42,7 @@ export default function Nav() {
               href="https://www.youtube.com/@AIBIBLEGOSPELS"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-400 hover:text-red-500 transition"
+              className="text-brand-amber hover:text-red-500 transition"
               title="AI Bible Gospels on YouTube"
             >
               <svg
@@ -63,7 +63,7 @@ export default function Nav() {
             href="https://www.youtube.com/@AIBIBLEGOSPELS"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-neutral-400 hover:text-red-500 transition"
+            className="text-brand-amber hover:text-red-500 transition"
             title="AI Bible Gospels on YouTube"
           >
             <svg
@@ -77,7 +77,7 @@ export default function Nav() {
           </a>
           <button
             onClick={() => setOpen(!open)}
-            className="text-neutral-300 hover:text-amber-400 transition"
+            className="text-brand-softgold hover:text-brand-gold transition"
             aria-label="Toggle menu"
           >
             {open ? (
@@ -95,14 +95,14 @@ export default function Nav() {
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="md:hidden border-t border-neutral-800 bg-neutral-950/95 backdrop-blur">
+        <div className="md:hidden border-t border-brand-border bg-brand-navy/95 backdrop-blur">
           <ul className="max-w-5xl mx-auto px-4 py-3 space-y-1">
             {links.slice(1).map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block py-2 text-neutral-300 hover:text-amber-400 transition text-sm"
+                  className="block py-2 text-brand-softgold hover:text-brand-gold transition text-sm"
                 >
                   {l.label}
                 </Link>

@@ -1,15 +1,15 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-neutral-800 mt-16 py-8 text-sm text-neutral-400">
+    <footer className="border-t border-brand-border mt-16 py-8 text-sm text-brand-amber">
       <div className="max-w-5xl mx-auto px-4 space-y-4">
-        <blockquote className="border-l-2 border-amber-400/60 pl-4 italic text-neutral-300">
+        <blockquote className="border-l-2 border-brand-gold/60 pl-4 italic text-brand-softgold">
           &ldquo;Whatever you do, work at it with all your heart, as working
           for the Lord, not for human masters.&rdquo;
-          <span className="block not-italic text-xs text-neutral-500 mt-1">
+          <span className="block not-italic text-xs text-brand-bronze mt-1">
             Colossians 3:23
           </span>
         </blockquote>
-        <p className="font-medium text-neutral-300">
+        <p className="font-medium text-brand-cloud">
           Faith Walk Live has no affiliation with the HMBL brand.
         </p>
         <p>
@@ -17,12 +17,12 @@ export default function Footer() {
           power, and a testament of what God can do through anybody through
           Christ.
         </p>
-        <p className="text-neutral-600 text-xs">
+        <p className="text-brand-bronze text-xs">
           Disclaimer: All location data shown is publicly available information
           sourced from the{" "}
           <a
             href="https://twitch.tv/hmblzayy"
-            className="text-amber-400/50 hover:underline"
+            className="text-brand-gold/50 hover:underline"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -31,11 +31,11 @@ export default function Footer() {
           Twitch stream title. No private location data is collected or
           displayed.
         </p>
-        <p className="text-neutral-500">
+        <p className="text-brand-bronze">
           Credit where it&apos;s due: the walk is Minister Zay&apos;s. Follow him on{" "}
           <a
             href="https://twitch.tv/hmblzayy"
-            className="text-amber-400 hover:underline"
+            className="text-brand-gold hover:underline"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -43,8 +43,8 @@ export default function Footer() {
           </a>
           .
         </p>
-        <div className="border-t border-neutral-800 pt-4 mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-          <p className="text-neutral-500">
+        <div className="border-t border-brand-border pt-4 mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <p className="text-brand-bronze">
             Sponsored by{" "}
             <a
               href="https://www.youtube.com/@AIBIBLEGOSPELS"
@@ -59,7 +59,7 @@ export default function Footer() {
             href="https://www.youtube.com/@AIBIBLEGOSPELS"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs text-neutral-400 hover:text-red-400 transition"
+            className="inline-flex items-center gap-2 text-xs text-brand-amber hover:text-red-400 transition"
           >
             <svg
               viewBox="0 0 24 24"
