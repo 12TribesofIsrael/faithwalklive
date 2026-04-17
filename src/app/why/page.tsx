@@ -8,6 +8,7 @@ export default function WhyPage() {
       <h1 className="text-3xl font-semibold mb-2">Why this walk matters</h1>
       <p className="text-brand-amber text-sm">A testimony, not a pitch.</p>
 
+      {/* ── SECTION 1: THE WALK ── */}
       <h2 className="mt-10">The walk</h2>
       <p>
         Minister Zay is walking from Philadelphia, Pennsylvania to California.
@@ -15,6 +16,7 @@ export default function WhyPage() {
         Not a publicity stunt. Not a charity race. A walk of faith.
       </p>
 
+      {/* ── SECTION 2: THE PLATFORM ── */}
       <h2>What this platform is</h2>
       <p>
         I&apos;m a believer who also happens to build software. When I saw what
@@ -57,8 +59,9 @@ export default function WhyPage() {
         <li>Anything that gets in the way of the mission</li>
       </ul>
 
-      <hr className="border-brand-border my-8" />
+      <hr className="border-brand-border my-10" />
 
+      {/* ── SECTION 3: THE WHY ── */}
       <h2>Why I&apos;m building this</h2>
       <p>
         Why I am doing this is to spread the gospel and show the true power of
@@ -67,12 +70,20 @@ export default function WhyPage() {
         the Most High.
       </p>
       <p>
-        This is about making it clear that through Christ and the Spirit, lives
-        can be changed, faith can be strengthened, and purpose can be revealed.
+        This is about making it clear that through Christ and the Spirit:
       </p>
+      <ul>
+        <li>Lives can be changed</li>
+        <li>Faith can be strengthened</li>
+        <li>Purpose can be revealed</li>
+      </ul>
 
+      <hr className="border-brand-border my-10" />
+
+      {/* ── SECTION 4: SCRIPTURE FOUNDATION ── */}
       <h2>Christ&apos;s mission — the foundation</h2>
 
+      <h3>Seek and save the lost</h3>
       <blockquote>
         &ldquo;For the Son of man is come to seek and to save that which was
         lost.&rdquo;
@@ -85,6 +96,7 @@ export default function WhyPage() {
         the Most High.
       </p>
 
+      <h3>Saved from sin</h3>
       <blockquote>
         &ldquo;He shall save his people from their sins.&rdquo;
         <cite className="block text-sm text-brand-amber mt-1 not-italic">
@@ -96,6 +108,7 @@ export default function WhyPage() {
         sin.
       </p>
 
+      <h3>The call to repent</h3>
       <blockquote>
         &ldquo;Repent ye, and believe the gospel.&rdquo;
         <cite className="block text-sm text-brand-amber mt-1 not-italic">
@@ -104,6 +117,7 @@ export default function WhyPage() {
       </blockquote>
       <p>The call is to repent — to change — and to believe the truth.</p>
 
+      <h3>Salvation, not condemnation</h3>
       <blockquote>
         &ldquo;God sent not his Son to condemn the world; but that the world
         through him might be saved.&rdquo;
@@ -116,6 +130,9 @@ export default function WhyPage() {
         correction.
       </p>
 
+      <hr className="border-brand-border my-10" />
+
+      {/* ── SECTION 5: THE COMMANDMENTS ── */}
       <h2>The commandments that change everything</h2>
 
       <blockquote>
@@ -125,11 +142,18 @@ export default function WhyPage() {
           Gospel of Matthew 22:37-39
         </cite>
       </blockquote>
+      <p>If we live by this:</p>
+      <ul>
+        <li>Love the Most High fully</li>
+        <li>Treat others how we want to be treated</li>
+      </ul>
       <p>
-        If we live by this — love the Most High fully, treat others how we want
-        to be treated — we can live in peace, unity, and real power as a people.
+        We can live in peace, unity, and real power as a people.
       </p>
 
+      <hr className="border-brand-border my-10" />
+
+      {/* ── SECTION 6: THE PURPOSE ── */}
       <h2>The purpose behind this movement</h2>
       <p>
         This is why I&apos;m doing this — to show what the power of the Father,
@@ -142,9 +166,11 @@ export default function WhyPage() {
         a testimony.
       </p>
 
-      <hr className="border-brand-border my-8" />
+      <hr className="border-brand-border my-10" />
 
-      <p className="font-semibold text-brand-cloud">
+      {/* ── CLOSING ── */}
+      <h2>The mission</h2>
+      <p className="font-semibold text-brand-cloud text-lg">
         &ldquo;Christ came to seek and save the lost and called us to
         repent — that&apos;s the mission.&rdquo;
       </p>
@@ -152,7 +178,7 @@ export default function WhyPage() {
         Luke 19:10, Mark 1:15
       </p>
 
-      <p className="mt-6 text-brand-softgold">All praises to the Most High.</p>
+      <p className="mt-8 text-brand-softgold">All praises to the Most High.</p>
 
       <blockquote>
         &ldquo;For we walk by faith, not by sight.&rdquo;
