@@ -9,7 +9,7 @@ export default function WhyPage() {
       <p className="text-brand-amber text-sm">A testimony, not a pitch.</p>
 
       {/* ── SECTION 1: THE WALK ── */}
-      <h2 className="mt-10">The walk</h2>
+      <h2 className="mt-10 text-2xl font-bold text-brand-cloud">The walk</h2>
       <p>
         Minister Zay is walking from Philadelphia, Pennsylvania to California.
         Three thousand miles, one step at a time, streaming daily on Twitch.
@@ -17,7 +17,7 @@ export default function WhyPage() {
       </p>
 
       {/* ── SECTION 2: THE PLATFORM ── */}
-      <h2>What this platform is</h2>
+      <h2 className="text-2xl font-bold text-brand-cloud">What this platform is</h2>
       <p>
         I&apos;m a believer who also happens to build software. When I saw what
         Zay was doing, I wanted to honor it — not monetize it, not own it, just
@@ -62,7 +62,7 @@ export default function WhyPage() {
       <hr className="border-brand-border my-10" />
 
       {/* ── SECTION 3: THE WHY ── */}
-      <h2>Why I&apos;m building this</h2>
+      <h2 className="text-2xl font-bold text-brand-cloud">Why I&apos;m building this</h2>
       <p>
         Why I am doing this is to spread the gospel and show the true power of
         the Ruach HaKadosh — the Holy Spirit — and Jesus Christ. What it can
@@ -81,7 +81,7 @@ export default function WhyPage() {
       <hr className="border-brand-border my-10" />
 
       {/* ── SECTION 4: SCRIPTURE FOUNDATION ── */}
-      <h2>Christ&apos;s mission — the foundation</h2>
+      <h2 className="text-2xl font-bold text-brand-cloud">Christ&apos;s mission — the foundation</h2>
 
       <h3>Seek and save the lost</h3>
       <blockquote>
@@ -133,7 +133,7 @@ export default function WhyPage() {
       <hr className="border-brand-border my-10" />
 
       {/* ── SECTION 5: THE COMMANDMENTS ── */}
-      <h2>The commandments that change everything</h2>
+      <h2 className="text-2xl font-bold text-brand-cloud">The commandments that change everything</h2>
 
       <blockquote>
         &ldquo;Thou shalt love the Lord thy God with all thy heart. And thou
@@ -154,7 +154,7 @@ export default function WhyPage() {
       <hr className="border-brand-border my-10" />
 
       {/* ── SECTION 6: THE PURPOSE ── */}
-      <h2>The purpose behind this movement</h2>
+      <h2 className="text-2xl font-bold text-brand-cloud">The purpose behind this movement</h2>
       <p>
         This is why I&apos;m doing this — to show what the power of the Father,
         Christ, and the Holy Spirit can do in real time. We are witnessing faith
@@ -169,7 +169,7 @@ export default function WhyPage() {
       <hr className="border-brand-border my-10" />
 
       {/* ── CLOSING ── */}
-      <h2>The mission</h2>
+      <h2 className="text-2xl font-bold text-brand-cloud">The mission</h2>
       <p className="font-semibold text-brand-cloud text-lg">
         &ldquo;Christ came to seek and save the lost and called us to
         repent — that&apos;s the mission.&rdquo;
