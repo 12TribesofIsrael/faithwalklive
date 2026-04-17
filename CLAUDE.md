@@ -1,7 +1,8 @@
 # Faith Walk Live
 
-**Current Version: v0.2.0**
+**Current Version: v0.3.0**
 **Status:** Live at [faithwalklive.com](https://faithwalklive.com) (deployed Apr 17, 2026 on Vercel).
+**Sponsor:** [AI Bible Gospels](https://www.youtube.com/@AIBIBLEGOSPELS) on YouTube
 
 > **Before you do anything else:** read [docs/faith-tech-pivot-strategy.md](docs/faith-tech-pivot-strategy.md). That's the full thesis behind this project. Positioning rules in that doc are non-negotiable.
 
@@ -35,7 +36,8 @@ Eventually we'll add a `scripts/sync-checkpoints.js` that reads the remote track
 ## Stack
 
 - **Next.js 16** (App Router, Turbopack) + **TypeScript** + **Tailwind v4**
-- **Leaflet + react-leaflet** for the map (lazy-loaded client-only via `src/components/MapClient.tsx`)
+- **Leaflet + react-leaflet** for the map (dark tiles, pulsing beacon, lazy-loaded client-only via `src/components/MapClient.tsx`)
+- **AI Bible Gospels brand theme** — Deep Navy + Divine Gold + Soft Gold palette (see `brand-colors.md`)
 - **Deploy target:** Vercel (live)
 - **Domain:** [faithwalklive.com](https://faithwalklive.com) (Vercel + GoDaddy DNS)
 
@@ -55,8 +57,9 @@ Eventually we'll add a `scripts/sync-checkpoints.js` that reads the remote track
 | `src/app/prayer/page.tsx` | Prayer wall form (frontend only — Phase 1.5 backend) |
 | `src/app/subscribe/page.tsx` | Email signup (frontend only — Phase 1.5 backend) |
 | `src/components/Nav.tsx`, `Footer.tsx` | Chrome |
-| `src/components/TrackerMap.tsx` | Leaflet map (client component; uses `window` at load) |
-| `src/components/MapClient.tsx` | Client wrapper that does `dynamic(..., { ssr: false })` |
+| `src/components/TrackerMap.tsx` | Leaflet map (dark tiles, pulsing beacon, flyTo, fit bounds) |
+| `src/components/MapClient.tsx` | Map wrapper + progress bar + checkpoint list panel |
+| `brand-colors.md` | AI Bible Gospels brand color palette reference |
 | `src/components/ScriptureCard.tsx` | Verse-of-the-day card |
 | `src/lib/checkpoints.ts` | Checkpoint types + `getStats()` / `getClips()` helpers |
 | `src/lib/scripture.ts` | Verse rotation (deterministic by day since walk start) |
@@ -88,16 +91,19 @@ From the pivot doc's positioning rules — these apply to every piece of copy yo
 Done:
 - [x] Next.js + Tailwind + Leaflet scaffold
 - [x] 7 routes, static build passes
-- [x] Homepage with live stats
-- [x] Map (port of tracker)
+- [x] Homepage with live stats + steps calculation
+- [x] Interactive map (dark tiles, pulsing beacon, checkpoint list, flyTo, fit bounds)
 - [x] Clip archive grid
 - [x] Scripture of the day
-- [x] Why testimony page
+- [x] Why testimony page (full scripture content + Christ's mission)
 - [x] Prayer + Subscribe form shells
+- [x] AI Bible Gospels brand theme sitewide
+- [x] AI Bible Gospels sponsorship (nav, footer, homepage, why, subscribe)
+- [x] Mobile hamburger nav
+- [x] GitHub repo created + pushed (`12TribesofIsrael/faithwalklive`, public)
+- [x] Vercel project + connect faithwalklive.com
 
 Up next (Phase 1.5):
-- [x] GitHub repo created + pushed (`12TribesofIsrael/faithwalklive`, private until launch)
-- [x] Vercel project + connect faithwalklive.com
 - [ ] Prayer wall backend — Vercel Postgres or Supabase free tier, simple moderation flag
 - [ ] Email signup backend — Buttondown or ConvertKit API route
 - [ ] OG image + favicon
