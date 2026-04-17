@@ -16,6 +16,8 @@ export const checkpoints: Checkpoint[] = raw as Checkpoint[];
 
 const TOTAL_MILES = 3000;
 
+const STEPS_PER_MILE = 2000;
+
 export function getStats() {
   const walkingOnly = checkpoints.filter((c) => !c.restOnly);
   const last = walkingOnly[walkingOnly.length - 1];
@@ -26,6 +28,8 @@ export function getStats() {
     miles,
     totalMiles: TOTAL_MILES,
     percent: Math.round((miles / TOTAL_MILES) * 1000) / 10,
+    steps: miles * STEPS_PER_MILE,
+    totalSteps: TOTAL_MILES * STEPS_PER_MILE,
     clipCount: checkpoints.filter((c) => c.clip).length,
   };
 }

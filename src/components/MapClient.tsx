@@ -25,6 +25,7 @@ export default function MapClient({
   const walking = checkpoints.filter((c) => !c.restOnly);
   const last = walking[walking.length - 1];
   const miles = last?.miles ?? 0;
+  const steps = miles * 2000;
   const percent = Math.round((miles / totalMiles) * 1000) / 10;
 
   const handleSelect = useCallback((day: number) => {
@@ -35,11 +36,19 @@ export default function MapClient({
     <div className="space-y-6">
       {/* Progress overlay bar */}
       <div className="rounded-xl border border-neutral-800 bg-neutral-900/80 p-4 space-y-2">
-        <div className="flex items-center justify-between text-sm">
-          <span className="text-neutral-400">Miles walked</span>
-          <span className="font-semibold text-amber-400">
-            {miles.toLocaleString()} / {totalMiles.toLocaleString()} mi
-          </span>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-sm">
+          <div className="flex items-center justify-between sm:justify-start sm:gap-6">
+            <span className="text-neutral-400">Miles walked</span>
+            <span className="font-semibold text-amber-400">
+              {miles.toLocaleString()} / {totalMiles.toLocaleString()} mi
+            </span>
+          </div>
+          <div className="flex items-center justify-between sm:justify-start sm:gap-6">
+            <span className="text-neutral-400">Steps walked</span>
+            <span className="font-semibold text-amber-400">
+              {steps.toLocaleString()}
+            </span>
+          </div>
         </div>
         <div className="h-2 rounded-full bg-neutral-800 overflow-hidden">
           <div

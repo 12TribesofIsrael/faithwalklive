@@ -20,10 +20,11 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         <Stat label="Current day" value={`Day ${s.currentDay}`} />
         <Stat label="Location" value={s.currentLocation} />
-        <Stat label="Miles walked" value={`${s.miles} / ${s.totalMiles}`} />
+        <Stat label="Miles walked" value={`${s.miles.toLocaleString()} / ${s.totalMiles.toLocaleString()}`} />
+        <Stat label="Steps walked" value={`${s.steps.toLocaleString()}`} />
         <Stat label="Progress" value={`${s.percent}%`} />
       </section>
 
