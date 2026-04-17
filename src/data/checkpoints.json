@@ -184,5 +184,23 @@
     "lng": -81.1059309,
     "miles": 393,
     "date": "Apr 15, 2026"
+  },
+  {
+    "day": 21,
+    "location": "Canton, OH",
+    "lat": 40.7985464,
+    "lng": -81.3749508,
+    "miles": 415,
+    "date": "Apr 16, 2026",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/PricklyBeautifulWerewolfTwitchRaid-hwEU0-MSbqdpGjkY"
+  },
+  {
+    "day": 22,
+    "location": "Wilmot, OH",
+    "lat": 40.6558931,
+    "lng": -81.63207,
+    "miles": 437,
+    "date": "Apr 16, 2026",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/EntertainingSpineyBunnyHumbleLife-WwCyH0brYgyXUg16"
   }
 ]
