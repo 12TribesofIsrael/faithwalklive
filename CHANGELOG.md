@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.1] — 2026-04-17
+
+### Added
+- Vercel Web Analytics (`@vercel/analytics`) — tracks visitors, page views, referrers, bounce rate
+- Why page reordered for seamless reading flow (platform intro first, then testimony + scripture)
+
 ## [0.3.0] — 2026-04-17
 
 ### Theme

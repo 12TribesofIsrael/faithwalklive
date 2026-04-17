@@ -1,6 +1,6 @@
 # Faith Walk Live
 
-**Current Version: v0.3.0**
+**Current Version: v0.3.1**
 **Status:** Live at [faithwalklive.com](https://faithwalklive.com) (deployed Apr 17, 2026 on Vercel).
 **Sponsor:** [AI Bible Gospels](https://www.youtube.com/@AIBIBLEGOSPELS) on YouTube
 
@@ -103,12 +103,19 @@ Done:
 - [x] GitHub repo created + pushed (`12TribesofIsrael/faithwalklive`, public)
 - [x] Vercel project + connect faithwalklive.com
 
+- [x] Vercel Web Analytics enabled
+
 Up next (Phase 1.5):
 - [ ] Prayer wall backend — Vercel Postgres or Supabase free tier, simple moderation flag
 - [ ] Email signup backend — Buttondown or ConvertKit API route
 - [ ] OG image + favicon
 - [ ] Viewer map (opt-in supporter pins) — nice-to-have
 - [ ] First social post announcing (don't post until above is done)
+
+Future (Phase 2+):
+- [ ] Facebook Pixel for ad tracking + retargeting
+- [ ] Google Analytics / Google Ads Pixel for ad campaigns
+- [ ] Faith-tech consulting landing page
 
 ## Success metrics (from pivot doc, 30 days)
 
