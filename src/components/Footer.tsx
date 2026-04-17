@@ -17,6 +17,20 @@ export default function Footer() {
           power, and a testament of what God can do through anybody through
           Christ.
         </p>
+        <p className="text-neutral-600 text-xs">
+          Disclaimer: All location data shown is publicly available information
+          sourced from the{" "}
+          <a
+            href="https://twitch.tv/hmblzayy"
+            className="text-amber-400/50 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            hmblzayy
+          </a>{" "}
+          Twitch stream title. No private location data is collected or
+          displayed.
+        </p>
         <p className="text-neutral-500">
           Credit where it&apos;s due: the walk is Minister Zay&apos;s. Follow him on{" "}
           <a
