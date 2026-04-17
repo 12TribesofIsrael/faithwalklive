@@ -1,7 +1,7 @@
 # Faith Walk Live
 
-**Current Version: v0.1.0**
-**Status:** Phase 1 scaffold shipped (Apr 15, 2026). Not deployed yet.
+**Current Version: v0.2.0**
+**Status:** Live at [faithwalklive.com](https://faithwalklive.com) (deployed Apr 17, 2026 on Vercel).
 
 > **Before you do anything else:** read [docs/faith-tech-pivot-strategy.md](docs/faith-tech-pivot-strategy.md). That's the full thesis behind this project. Positioning rules in that doc are non-negotiable.
 
@@ -36,8 +36,8 @@ Eventually we'll add a `scripts/sync-checkpoints.js` that reads the remote track
 
 - **Next.js 16** (App Router, Turbopack) + **TypeScript** + **Tailwind v4**
 - **Leaflet + react-leaflet** for the map (lazy-loaded client-only via `src/components/MapClient.tsx`)
-- **Deploy target:** Vercel
-- **Domain:** faithwalklive.com (owned by Thomas; not yet connected)
+- **Deploy target:** Vercel (live)
+- **Domain:** [faithwalklive.com](https://faithwalklive.com) (Vercel + GoDaddy DNS)
 
 ### Why this stack
 - Next.js for SSR/static pages + built-in API routes (needed for Phase 1.5 prayer wall + email signup)
@@ -96,8 +96,8 @@ Done:
 - [x] Prayer + Subscribe form shells
 
 Up next (Phase 1.5):
-- [ ] GitHub repo created + pushed (suggested: `12TribesofIsrael/faithwalklive`, private until launch)
-- [ ] Vercel project + connect faithwalklive.com
+- [x] GitHub repo created + pushed (`12TribesofIsrael/faithwalklive`, private until launch)
+- [x] Vercel project + connect faithwalklive.com
 - [ ] Prayer wall backend — Vercel Postgres or Supabase free tier, simple moderation flag
 - [ ] Email signup backend — Buttondown or ConvertKit API route
 - [ ] OG image + favicon
