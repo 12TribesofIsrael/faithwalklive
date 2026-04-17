@@ -53,7 +53,7 @@ export default function WhyPage() {
       <h3>What you won&apos;t find here</h3>
       <ul>
         <li>Merch sales (go to HMBL for that)</li>
-        <li>Drama, politics, or gossip about anyone on the route team</li>
+        <li>Drama, politics, or gossip about anyone</li>
         <li>Anything that gets in the way of the mission</li>
       </ul>
 
