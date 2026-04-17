@@ -1,5 +1,7 @@
 export const metadata = {
-  title: "Prayer Wall · Faith Walk Live",
+  title: "Prayer Wall",
+  description:
+    "Lift up Minister Zay and the 3,000-mile Faith Walk in prayer. Submit a prayer, see the community praying together.",
 };
 
 export default function PrayerPage() {

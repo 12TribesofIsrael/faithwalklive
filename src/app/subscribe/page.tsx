@@ -1,5 +1,7 @@
 export const metadata = {
-  title: "Subscribe · Faith Walk Live",
+  title: "Subscribe",
+  description:
+    "Get daily Faith Walk updates — the checkpoint, the clip, and the verse. One email a day. Sponsored by AI Bible Gospels.",
 };
 
 export default function SubscribePage() {

@@ -1,7 +1,9 @@
 import { getClips } from "@/lib/checkpoints";
 
 export const metadata = {
-  title: "Clip Archive · Faith Walk Live",
+  title: "Clip Archive",
+  description:
+    "Watch daily clips from Minister Zay's 3,000-mile Faith Walk. Faith, milestones, struggle, and support — all from the Twitch stream.",
 };
 
 export default function ClipsPage() {

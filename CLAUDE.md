@@ -1,6 +1,6 @@
 # Faith Walk Live
 
-**Current Version: v0.3.1**
+**Current Version: v0.4.0**
 **Status:** Live at [faithwalklive.com](https://faithwalklive.com) (deployed Apr 17, 2026 on Vercel).
 **Sponsor:** [AI Bible Gospels](https://www.youtube.com/@AIBIBLEGOSPELS) on YouTube
 
@@ -65,6 +65,7 @@ Eventually we'll add a `scripts/sync-checkpoints.js` that reads the remote track
 | `src/lib/scripture.ts` | Verse rotation (deterministic by day since walk start) |
 | `src/data/checkpoints.json` | Snapshot from sibling repo — DO NOT hand-edit |
 | `docs/faith-tech-pivot-strategy.md` | **The thesis.** Read first. |
+| `docs/seo-strategy.md` | SEO + traffic strategy with Thomas's action checklist |
 
 ## Commands
 
@@ -104,6 +105,7 @@ Done:
 - [x] Vercel project + connect faithwalklive.com
 
 - [x] Vercel Web Analytics enabled
+- [x] SEO: sitemap, robots.txt, OG tags, JSON-LD structured data, meta descriptions
 
 Up next (Phase 1.5):
 - [ ] Prayer wall backend — Vercel Postgres or Supabase free tier, simple moderation flag

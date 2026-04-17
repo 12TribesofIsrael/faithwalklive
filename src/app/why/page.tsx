@@ -1,5 +1,7 @@
 export const metadata = {
-  title: "Why this walk matters · Faith Walk Live",
+  title: "Why This Walk Matters",
+  description:
+    "The testimony behind Faith Walk Live. Why we built this platform, the scriptures that drive it, and what the power of Christ can do through anybody.",
 };
 
 export default function WhyPage() {

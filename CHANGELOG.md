@@ -1,10 +1,23 @@
 # Changelog
 
-## [0.3.1] — 2026-04-17
+## [0.4.0] — 2026-04-17
+
+### SEO
+- Auto-generated sitemap at `/sitemap.xml` (via `src/app/sitemap.ts`)
+- Robots.txt at `/robots.txt` (via `src/app/robots.ts`)
+- metadataBase set to `https://faithwalklive.com` for canonical URLs
+- OpenGraph + Twitter Card meta tags on root layout
+- JSON-LD structured data: WebSite schema + Event schema for the walk
+- Unique meta title + description on every page (map, clips, why, prayer, subscribe)
+- Target keywords added: faith walk, minister zay, christian twitch, etc.
+- SEO strategy doc created at `docs/seo-strategy.md` with full action checklist
 
 ### Added
 - Vercel Web Analytics (`@vercel/analytics`) — tracks visitors, page views, referrers, bounce rate
+
+### Improved
 - Why page reordered for seamless reading flow (platform intro first, then testimony + scripture)
+- Why page section headers upgraded to bold Cloud White for visual hierarchy
 
 ## [0.3.0] — 2026-04-17
 
