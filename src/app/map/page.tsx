@@ -1,6 +1,10 @@
 import { checkpoints, getStats } from "@/lib/checkpoints";
 import MapClient from "@/components/MapClient";
 
+export const metadata = {
+  title: "Live Map · Faith Walk Live",
+};
+
 export default function MapPage() {
   const s = getStats();
   return (
@@ -10,7 +14,7 @@ export default function MapPage() {
           <h1 className="text-3xl font-semibold">Live Map</h1>
           <p className="text-neutral-400 mt-1">
             Day {s.currentDay} · {s.currentLocation} · {s.miles} of{" "}
-            {s.totalMiles} mi ({s.percent}%)
+            {s.totalMiles} mi
           </p>
         </div>
         <a
@@ -22,9 +26,7 @@ export default function MapPage() {
           Watch live on Twitch
         </a>
       </div>
-      <div className="h-[70vh] rounded-2xl overflow-hidden border border-neutral-800">
-        <MapClient checkpoints={checkpoints} />
-      </div>
+      <MapClient checkpoints={checkpoints} totalMiles={s.totalMiles} />
     </div>
   );
 }
