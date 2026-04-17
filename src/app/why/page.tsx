@@ -111,6 +111,20 @@ export default function WhyPage() {
         into: a companion for anyone riding along.
       </p>
       <p>
+        Faith Walk Live is built and sponsored by{" "}
+        <a
+          href="https://www.youtube.com/@AIBIBLEGOSPELS"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-red-400 hover:underline font-medium"
+        >
+          AI Bible Gospels
+        </a>
+        , a channel dedicated to using technology to serve the gospel. If this
+        platform speaks to you, subscribe to the channel for more faith-driven
+        content.
+      </p>
+      <p>
         This platform is not affiliated with HMBL. There&apos;s no logo, no
         claim of official status. Just the record of where Zay has been and
         where he&apos;s going, told with the reverence it deserves.
