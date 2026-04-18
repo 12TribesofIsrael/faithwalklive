@@ -1,6 +1,6 @@
 # Faith Walk Live
 
-**Current Version: v0.4.0**
+**Current Version: v0.5.0**
 **Status:** Live at [faithwalklive.com](https://faithwalklive.com) (deployed Apr 17, 2026 on Vercel).
 **Sponsor:** [AI Bible Gospels](https://www.youtube.com/@AIBIBLEGOSPELS) on YouTube
 
@@ -56,6 +56,9 @@ Eventually we'll add a `scripts/sync-checkpoints.js` that reads the remote track
 | `src/app/why/page.tsx` | "Why this walk matters" testimony page |
 | `src/app/prayer/page.tsx` | Prayer wall form (frontend only — Phase 1.5 backend) |
 | `src/app/subscribe/page.tsx` | Email signup (frontend only — Phase 1.5 backend) |
+| `src/app/obs/page.tsx` | OBS stream overlay — full-bleed map for Twitch browser source (`?bare=1` `?brand=0`) |
+| `src/app/live/route.ts` | `/live` UTM redirect → home (stream-overlay attribution source) |
+| `src/components/OBSMap.tsx`, `OBSView.tsx` | Overlay-specific Leaflet map + stats/brand chrome |
 | `src/components/Nav.tsx`, `Footer.tsx` | Chrome |
 | `src/components/TrackerMap.tsx` | Leaflet map (dark tiles, pulsing beacon, flyTo, fit bounds) |
 | `src/components/MapClient.tsx` | Map wrapper + progress bar + checkpoint list panel |

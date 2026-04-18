@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.5.0] — 2026-04-18
+
+### OBS Stream Overlay (shipped to production)
+- `/obs` route live at [faithwalklive.com/obs](https://faithwalklive.com/obs?bare=1) — full-bleed dark map for Zay's Twitch browser source
+- Gold polyline route + pulsing amber beacon on latest checkpoint
+- `?bare=1` hides stats panel; `?brand=0` hides AI Bible Gospels watermark
+- `robots: noindex` — not for search, for stream only
+- Merged from `feat/obs-overlay` branch after ShuggC confirmation
+- Delivered to ShuggC Apr 18 for OBS Remote / IRL Toolkit use
+
+### Added
+- `/live` route — UTM redirect (`?utm_source=twitch&utm_medium=stream_overlay&utm_campaign=faith_walk`) for trackable attribution of stream-overlay traffic
+- Brand watermark component (AI Bible Gospels) on `/obs` — first overlay-level exposure on Zay's stream
+
+### Infrastructure
+- Route group refactor: site pages moved under `(site)` group for layout isolation from overlay routes
+
 ## [0.4.0] — 2026-04-17
 
 ### SEO
