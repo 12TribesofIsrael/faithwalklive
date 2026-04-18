@@ -26,12 +26,14 @@ const OBSMap = dynamic(() => import("./OBSMap"), {
 export default function OBSView({
   checkpoints,
   bare,
+  brand,
   currentDay,
   miles,
   percent,
 }: {
   checkpoints: Checkpoint[];
   bare: boolean;
+  brand: boolean;
   currentDay: number;
   miles: number;
   percent: number;
@@ -74,6 +76,30 @@ export default function OBSView({
           <span>{miles} mi</span>
           <span style={{ color: "rgba(255,255,255,0.5)", margin: "0 8px" }}>·</span>
           <span style={{ color: "#fbbf24" }}>{percent}%</span>
+        </div>
+      )}
+
+      {brand && (
+        <div
+          style={{
+            position: "absolute",
+            bottom: 20,
+            right: 20,
+            padding: "6px 12px",
+            background: "rgba(10,10,10,0.7)",
+            border: "1px solid rgba(251,191,36,0.25)",
+            borderRadius: 8,
+            color: "#fbbf24",
+            fontFamily: "Inter, system-ui, sans-serif",
+            fontSize: 12,
+            fontWeight: 600,
+            letterSpacing: 0.6,
+            backdropFilter: "blur(6px)",
+            zIndex: 1000,
+            pointerEvents: "none",
+          }}
+        >
+          faithwalklive.com
         </div>
       )}
     </div>
