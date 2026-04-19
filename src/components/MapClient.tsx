@@ -73,7 +73,7 @@ export default function MapClient({
       {/* Checkpoint list */}
       <div className="space-y-3">
         <h2 className="text-lg font-semibold text-brand-cloud">
-          Checkpoints ({walking.length})
+          Checkpoints ({walking.length + (hasRestDayCard ? 1 : 0)})
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {hasRestDayCard && last && (
