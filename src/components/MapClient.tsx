@@ -27,6 +27,8 @@ export default function MapClient({
   const miles = last?.miles ?? 0;
   const steps = miles * 2000;
   const percent = Math.round((miles / totalMiles) * 1000) / 10;
+  const hasRestDayCard = !!last?.restDay;
+  const restDayNumber = last?.inProgressDay ?? last?.day ?? 0;
 
   const handleSelect = useCallback((day: number) => {
     setActiveDay((prev) => (prev === day ? null : day));
@@ -74,11 +76,34 @@ export default function MapClient({
           Checkpoints ({walking.length})
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {hasRestDayCard && last && (
+            <button
+              key={`rest-${restDayNumber}`}
+              onClick={() => handleSelect(last.day)}
+              className="text-left rounded-xl border p-4 transition-all border-brand-gold/60 bg-brand-gold/10"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-medium uppercase tracking-wider text-brand-bronze">
+                  Day {restDayNumber}
+                  <span className="ml-2 text-brand-gold">NOW</span>
+                </span>
+                <span className="text-xs text-brand-brown">
+                  {last.restDayDate ?? ""}
+                </span>
+              </div>
+              <p className="mt-1 font-semibold text-brand-cloud">
+                {last.location}
+              </p>
+              <div className="mt-1 flex items-center justify-between">
+                <span className="text-sm text-brand-amber">REST DAY 💤</span>
+              </div>
+            </button>
+          )}
           {walking
             .slice()
             .reverse()
             .map((c) => {
-              const isCurrent = c.day === last?.day;
+              const isCurrent = c.day === last?.day && !hasRestDayCard;
               const isActive = activeDay === c.day;
               return (
                 <button
