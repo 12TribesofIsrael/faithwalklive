@@ -21,7 +21,7 @@ export default function Home() {
       </section>
 
       <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-        <Stat label="Current day" value={`Day ${s.currentDay}`} />
+        <Stat label="Current day" value={s.isRestDay ? `Day ${s.currentDay} · REST` : `Day ${s.currentDay}`} />
         <Stat label="Location" value={s.currentLocation} />
         <Stat label="Miles walked" value={`${s.miles.toLocaleString()} / ${s.totalMiles.toLocaleString()}`} />
         <Stat label="Steps walked" value={`${s.steps.toLocaleString()}`} />

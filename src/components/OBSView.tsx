@@ -30,6 +30,7 @@ export default function OBSView({
   currentDay,
   miles,
   percent,
+  isRestDay = false,
 }: {
   checkpoints: Checkpoint[];
   bare: boolean;
@@ -37,6 +38,7 @@ export default function OBSView({
   currentDay: number;
   miles: number;
   percent: number;
+  isRestDay?: boolean;
 }) {
   return (
     <div
@@ -72,6 +74,12 @@ export default function OBSView({
           }}
         >
           <span style={{ color: "#fbbf24" }}>Day {currentDay}</span>
+          {isRestDay && (
+            <>
+              <span style={{ color: "rgba(255,255,255,0.5)", margin: "0 8px" }}>·</span>
+              <span style={{ color: "#fbbf24" }}>REST</span>
+            </>
+          )}
           <span style={{ color: "rgba(255,255,255,0.5)", margin: "0 8px" }}>·</span>
           <span>{miles} mi</span>
           <span style={{ color: "rgba(255,255,255,0.5)", margin: "0 8px" }}>·</span>

@@ -10,6 +10,18 @@ export type Checkpoint = {
   clip?: string;
   estimatedMiles?: boolean;
   restOnly?: boolean;
+  // Annotations applied to the latest walking checkpoint by the
+  // consulting repo's title-driven updater. Reflect the *current*
+  // day even when no new arrival is logged yet.
+  inProgressDay?: number;
+  restDay?: boolean;
+  restDayDate?: string;
+  destination?: string;
+  destinationLat?: number;
+  destinationLng?: number;
+  milesRemaining?: number;
+  estimatedSegmentMiles?: number;
+  inProgressStartedAt?: string;
 };
 
 export const checkpoints: Checkpoint[] = raw as Checkpoint[];
@@ -22,8 +34,9 @@ export function getStats() {
   const walkingOnly = checkpoints.filter((c) => !c.restOnly);
   const last = walkingOnly[walkingOnly.length - 1];
   const miles = last?.miles ?? 0;
+  const currentDay = last?.inProgressDay ?? last?.day ?? 0;
   return {
-    currentDay: last?.day ?? 0,
+    currentDay,
     currentLocation: last?.location ?? "Philadelphia, PA",
     miles,
     totalMiles: TOTAL_MILES,
@@ -31,6 +44,9 @@ export function getStats() {
     steps: miles * STEPS_PER_MILE,
     totalSteps: TOTAL_MILES * STEPS_PER_MILE,
     clipCount: checkpoints.filter((c) => c.clip).length,
+    isRestDay: last?.restDay === true,
+    destination: last?.destination ?? null,
+    milesRemaining: last?.milesRemaining ?? null,
   };
 }
 

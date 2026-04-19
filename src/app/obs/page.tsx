@@ -25,6 +25,7 @@ export default async function OBSPage({
       currentDay={s.currentDay}
       miles={s.miles}
       percent={s.percent}
+      isRestDay={s.isRestDay}
     />
   );
 }

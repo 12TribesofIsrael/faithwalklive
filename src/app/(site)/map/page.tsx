@@ -15,8 +15,10 @@ export default function MapPage() {
         <div>
           <h1 className="text-3xl font-semibold text-brand-cloud">Live Map</h1>
           <p className="text-brand-amber mt-1">
-            Day {s.currentDay} · {s.currentLocation} · {s.miles} of{" "}
-            {s.totalMiles} mi
+            Day {s.currentDay}
+            {s.isRestDay ? " · REST" : s.destination ? ` → ${s.destination}` : ""}
+            {" · "}
+            {s.currentLocation} · {s.miles} of {s.totalMiles} mi
           </p>
         </div>
         <a
