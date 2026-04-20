@@ -30,6 +30,17 @@ export default function MapClient({
   const hasRestDayCard = !!last?.restDay;
   const restDayNumber = last?.inProgressDay ?? last?.day ?? 0;
 
+  // Surface the most recent archived rest day as a NOW card when it sits
+  // ahead of the latest walking checkpoint (e.g. Day 25 rest archived after
+  // Day 24 arrival, Day 26 walk in progress). Closes the visual gap between
+  // header day and NOW badge by 1 without narrating the in-progress
+  // destination on a card.
+  const lastEntry = checkpoints[checkpoints.length - 1];
+  const restOnlyAsNow =
+    lastEntry?.restOnly && last && lastEntry.day > last.day
+      ? lastEntry
+      : null;
+
   const handleSelect = useCallback((day: number) => {
     setActiveDay((prev) => (prev === day ? null : day));
   }, []);
@@ -73,7 +84,8 @@ export default function MapClient({
       {/* Checkpoint list */}
       <div className="space-y-3">
         <h2 className="text-lg font-semibold text-brand-cloud">
-          Checkpoints ({walking.length + (hasRestDayCard ? 1 : 0)})
+          Checkpoints (
+          {walking.length + (hasRestDayCard ? 1 : 0) + (restOnlyAsNow ? 1 : 0)})
         </h2>
         <p className="text-brand-cloud/60 text-sm max-w-2xl">
           <span className="text-brand-gold font-medium">NOW</span> marks the
@@ -81,6 +93,40 @@ export default function MapClient({
           the walk.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {restOnlyAsNow && (
+            <button
+              key={`restonly-${restOnlyAsNow.day}`}
+              onClick={() => handleSelect(restOnlyAsNow.day)}
+              className="text-left rounded-xl border p-4 transition-all border-brand-gold/60 bg-brand-gold/10"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-medium uppercase tracking-wider text-brand-bronze">
+                  Day {restOnlyAsNow.day}
+                  <span className="ml-2 text-brand-gold">NOW</span>
+                </span>
+                <span className="text-xs text-brand-brown">
+                  {restOnlyAsNow.date}
+                </span>
+              </div>
+              <p className="mt-1 font-semibold text-brand-cloud">
+                {restOnlyAsNow.location}
+              </p>
+              <div className="mt-1 flex items-center justify-between">
+                <span className="text-sm text-brand-amber">REST DAY 💤</span>
+                {restOnlyAsNow.clip && (
+                  <a
+                    href={restOnlyAsNow.clip}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-xs text-brand-gold hover:underline"
+                  >
+                    Watch clip →
+                  </a>
+                )}
+              </div>
+            </button>
+          )}
           {hasRestDayCard && last && (
             <button
               key={`rest-${restDayNumber}`}
@@ -108,7 +154,8 @@ export default function MapClient({
             .slice()
             .reverse()
             .map((c) => {
-              const isCurrent = c.day === last?.day && !hasRestDayCard;
+              const isCurrent =
+                c.day === last?.day && !hasRestDayCard && !restOnlyAsNow;
               const isActive = activeDay === c.day;
               return (
                 <button
