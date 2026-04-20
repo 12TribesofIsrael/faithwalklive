@@ -75,6 +75,13 @@ export default function MapClient({
         <h2 className="text-lg font-semibold text-brand-cloud">
           Checkpoints ({walking.length + (hasRestDayCard ? 1 : 0)})
         </h2>
+        <p className="text-brand-cloud/60 text-sm max-w-2xl">
+          New here? The card marked{" "}
+          <span className="text-brand-gold font-medium">NOW</span> is the last
+          spot Zay actually <em>arrived</em> at. The header above shows what day
+          he&apos;s <em>walking right now</em> — they sync up once he finishes
+          the day&apos;s walk.
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {hasRestDayCard && last && (
             <button
