@@ -10,7 +10,10 @@ export default function ScriptureCard() {
       <blockquote className="text-lg leading-relaxed text-brand-cloud">
         &ldquo;{v.text}&rdquo;
       </blockquote>
-      <p className="mt-3 text-sm text-brand-amber">— {v.ref}</p>
+      <p className="mt-3 text-sm text-brand-amber">
+        — {v.ref}
+        <span className="ml-2 text-xs text-brand-bronze">KJV 1611</span>
+      </p>
     </div>
   );
 }

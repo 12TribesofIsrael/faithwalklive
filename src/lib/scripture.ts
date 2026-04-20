@@ -3,27 +3,27 @@ export type Verse = { ref: string; text: string };
 export const verses: Verse[] = [
   {
     ref: "Jeremiah 29:11",
-    text: "For I know the plans I have for you, declares the LORD, plans to prosper you and not to harm you, plans to give you hope and a future.",
+    text: "For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end.",
   },
   {
     ref: "Isaiah 40:31",
-    text: "But those who hope in the LORD will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.",
+    text: "But they that wait upon the LORD shall renew [their] strength; they shall mount up with wings as eagles; they shall run, and not be weary; [and] they shall walk, and not faint.",
   },
   {
     ref: "Philippians 4:13",
-    text: "I can do all this through him who gives me strength.",
+    text: "I can do all things through Christ which strengtheneth me.",
   },
   {
     ref: "Hebrews 12:1",
-    text: "Let us run with perseverance the race marked out for us.",
+    text: "Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight, and the sin which doth so easily beset us, and let us run with patience the race that is set before us.",
   },
   {
     ref: "Proverbs 3:5-6",
-    text: "Trust in the LORD with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.",
+    text: "Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.",
   },
   {
     ref: "Psalm 23:4",
-    text: "Even though I walk through the darkest valley, I will fear no evil, for you are with me.",
+    text: "Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou [art] with me; thy rod and thy staff they comfort me.",
   },
   {
     ref: "2 Corinthians 5:7",
@@ -31,7 +31,7 @@ export const verses: Verse[] = [
   },
   {
     ref: "Galatians 6:9",
-    text: "Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up.",
+    text: "And let us not be weary in well doing: for in due season we shall reap, if we faint not.",
   },
 ];
 
