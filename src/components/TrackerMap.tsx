@@ -118,8 +118,19 @@ export default function TrackerMap({
   const line: [number, number][] = walking.map((c) => [c.lat, c.lng]);
   const first = walking[0];
   const last = walking[walking.length - 1];
-  const center: [number, number] = last
-    ? [last.lat, last.lng]
+
+  // Mirror the card NOW logic: if an archived rest day sits ahead of the
+  // latest walking checkpoint, that's the most-recent confirmed event and
+  // should carry the beacon's NOW label. Coords usually match the walking
+  // day (rest at same city), but use the entry's own coords if present.
+  const lastEntry = checkpoints[checkpoints.length - 1];
+  const now =
+    lastEntry?.restOnly && last && lastEntry.day > last.day
+      ? lastEntry
+      : last;
+
+  const center: [number, number] = now
+    ? [now.lat ?? last?.lat, now.lng ?? last?.lng]
     : [39.9526, -75.1652];
 
   useEffect(() => {
@@ -198,20 +209,25 @@ export default function TrackerMap({
       ))}
 
       {/* Current location — pulsing beacon */}
-      {last && last !== first && (
-        <Marker position={[last.lat, last.lng]} icon={pulseIcon}>
+      {now && now !== first && (
+        <Marker
+          position={[now.lat ?? last.lat, now.lng ?? last.lng]}
+          icon={pulseIcon}
+        >
           <Popup>
             <div className="text-sm">
               <p className="font-bold text-amber-600">
-                NOW — Day {last.day}
+                NOW — Day {now.day}
+                {now.restOnly ? " · REST" : ""}
               </p>
-              <p className="font-semibold">{last.location}</p>
+              <p className="font-semibold">{now.location}</p>
               <p className="text-neutral-600">
-                {last.date} · {last.miles} mi
+                {now.date}
+                {now.restOnly ? " · REST DAY 💤" : ` · ${now.miles} mi`}
               </p>
-              {last.clip && (
+              {now.clip && (
                 <a
-                  href={last.clip}
+                  href={now.clip}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-amber-600 hover:underline"
