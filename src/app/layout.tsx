@@ -60,33 +60,53 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://faithwalklive.com/#aibiblegospels",
+      name: "AI Bible Gospels",
+      url: "https://www.youtube.com/@AIBIBLEGOSPELS",
+      description:
+        "Faith-driven technology channel and ministry using software and AI in service of the gospel. Publisher and sponsor of Faith Walk Live.",
+      sameAs: [
+        "https://www.youtube.com/@AIBIBLEGOSPELS",
+        "https://faithwalklive.com",
+      ],
+    },
+    {
+      "@type": "Person",
+      "@id": "https://faithwalklive.com/#ministerzay",
+      name: "Minister Zay",
+      alternateName: "Isaiah M. Thomas",
+      description:
+        "Minister walking 3,000 miles from Philadelphia, Pennsylvania to California to spread the gospel. Founder of Stay Humble Stay Hungry (HMBL) Clothing. Streams the walk daily on Twitch.",
+      sameAs: ["https://www.twitch.tv/hmblzayy"],
+    },
+    {
       "@type": "WebSite",
+      "@id": "https://faithwalklive.com/#website",
       name: "Faith Walk Live",
       url: "https://faithwalklive.com",
       description:
-        "A believer's companion to Minister Zay's 3,000-mile Faith Walk from Philadelphia to California.",
-      publisher: {
-        "@type": "Organization",
-        name: "AI Bible Gospels",
-        url: "https://www.youtube.com/@AIBIBLEGOSPELS",
-      },
+        "A believer's companion to Minister Zay's 3,000-mile Faith Walk from Philadelphia to California. Supporter-built, not affiliated with HMBL.",
+      inLanguage: "en-US",
+      publisher: { "@id": "https://faithwalklive.com/#aibiblegospels" },
+      about: { "@id": "https://faithwalklive.com/#faithwalk" },
     },
     {
       "@type": "Event",
+      "@id": "https://faithwalklive.com/#faithwalk",
       name: "Minister Zay's 3,000-Mile Faith Walk",
       description:
-        "Minister Zay is walking 3,000 miles from Philadelphia, PA to California, streaming daily on Twitch.",
+        "Minister Zay is walking 3,000 miles from Philadelphia, Pennsylvania to California, streaming daily on Twitch. A walk of faith, not a publicity stunt or charity race.",
       startDate: "2026-03-25",
       eventStatus: "https://schema.org/EventScheduled",
       eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
       location: {
         "@type": "VirtualLocation",
-        url: "https://twitch.tv/hmblzayy",
+        url: "https://www.twitch.tv/hmblzayy",
       },
-      organizer: {
-        "@type": "Person",
-        name: "Minister Zay",
-      },
+      organizer: { "@id": "https://faithwalklive.com/#ministerzay" },
+      performer: { "@id": "https://faithwalklive.com/#ministerzay" },
+      sponsor: { "@id": "https://faithwalklive.com/#aibiblegospels" },
     },
   ],
 };

@@ -8,6 +8,7 @@ const links = [
   { href: "/map", label: "Live Map" },
   { href: "/clips", label: "Clips" },
   { href: "/why", label: "Why" },
+  { href: "/faq", label: "FAQ" },
   { href: "/prayer", label: "Prayer Wall" },
   { href: "/subscribe", label: "Subscribe" },
 ];
