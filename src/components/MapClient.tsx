@@ -25,7 +25,7 @@ export default function MapClient({
   const walking = checkpoints.filter((c) => !c.restOnly);
   const last = walking[walking.length - 1];
   const miles = last?.miles ?? 0;
-  const steps = miles * 2000;
+  const steps = miles * 2200;
   const percent = Math.round((miles / totalMiles) * 1000) / 10;
   const hasRestDayCard = !!last?.restDay;
   const restDayNumber = last?.inProgressDay ?? last?.day ?? 0;

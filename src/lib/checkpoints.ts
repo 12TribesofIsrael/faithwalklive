@@ -28,7 +28,7 @@ export const checkpoints: Checkpoint[] = raw as Checkpoint[];
 
 const TOTAL_MILES = 3000;
 
-const STEPS_PER_MILE = 2000;
+const STEPS_PER_MILE = 2200;
 
 export function getStats() {
   const walkingOnly = checkpoints.filter((c) => !c.restOnly);
