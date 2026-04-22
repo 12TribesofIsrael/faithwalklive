@@ -90,7 +90,7 @@ Answer engines resolve entities by matching names + URLs across sources. We win 
 
 - [ ] YouTube channel "About" on @AIBIBLEGOSPELS — add `https://faithwalklive.com` as an external link
 - [ ] Every YouTube video description — link faithwalklive.com
-- [ ] LinkedIn company page for AI Bible Gospels — list faithwalklive.com as the site
+- [x] LinkedIn company page for AI Bible Gospels — list faithwalklive.com as the site (Apr 22 2026)
 - [x] GitHub repo README (both this repo and the consulting repo) — link faithwalklive.com in the header (Apr 22 2026)
 - [ ] Any future guest posts or press interviews — request a natural link with the anchor "Faith Walk Live" or "AI Bible Gospels"
 
