@@ -14,7 +14,7 @@ Standalone companion platform for Minister Zay's 3,000-mile Faith Walk (Philadel
 
 ## Owner
 
-- **Thomas** (Technology Gurus LLC) — AI automation engineer, believer, building this as flagship portfolio for a faith-tech consulting brand.
+- **Thomas** (AI Bible Gospels) — AI automation engineer, believer, building this as flagship portfolio for a faith-tech consulting brand.
 - Target market beyond this project: Christian Twitch streamers, ministers, missionary orgs, worship leaders, Christian podcasters.
 
 ## Relationship to sibling repo

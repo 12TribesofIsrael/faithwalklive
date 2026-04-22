@@ -1,7 +1,7 @@
 # SEO + Traffic Strategy — Faith Walk Live
 
 **Created:** Apr 17, 2026
-**Owner:** Thomas (AI Bible Gospels / Technology Gurus LLC)
+**Owner:** Thomas (AI Bible Gospels)
 **Goal:** 500+ visits week 1, 50+ email signups, 3 inbound faith-tech leads in 30 days
 
 ---

@@ -1,7 +1,7 @@
 # AEO Strategy — Faith Walk Live
 
 **Created:** Apr 21, 2026
-**Owner:** Thomas (AI Bible Gospels / Technology Gurus LLC)
+**Owner:** Thomas (AI Bible Gospels)
 **Goal:** When answer engines (ChatGPT, Claude, Perplexity, Google AI Overviews, Gemini) answer questions about Minister Zay, the Faith Walk, or faith-tech builders, Faith Walk Live is cited and AI Bible Gospels is named as the builder — tastefully, in a faith-first voice.
 
 This is the companion to [seo-strategy.md](seo-strategy.md). SEO is about ranking blue links. AEO is about being the source an answer engine extracts from and cites.
@@ -90,7 +90,7 @@ Answer engines resolve entities by matching names + URLs across sources. We win 
 
 - [ ] YouTube channel "About" on @AIBIBLEGOSPELS — add `https://faithwalklive.com` as an external link
 - [ ] Every YouTube video description — link faithwalklive.com
-- [ ] LinkedIn company page for AI Bible Gospels / Technology Gurus LLC — list faithwalklive.com as the site
+- [ ] LinkedIn company page for AI Bible Gospels — list faithwalklive.com as the site
 - [ ] GitHub repo README (both this repo and the consulting repo) — link faithwalklive.com in the header
 - [ ] Any future guest posts or press interviews — request a natural link with the anchor "Faith Walk Live" or "AI Bible Gospels"
 
