@@ -74,9 +74,11 @@ Being explicit signals intent and gives us a single file to edit if a specific b
 ### Google Search Console (Thomas)
 Already in the SEO plan — doubly important for AEO. Google AI Overviews pull heavily from sitemap-indexed, GSC-verified domains.
 
-- [ ] Verify `faithwalklive.com` in search.google.com/search-console
+- [x] Verify `faithwalklive.com` in search.google.com/search-console (HTML file method, auto-verified Apr 22 2026)
 - [ ] Submit `https://faithwalklive.com/sitemap.xml`
 - [ ] Monitor "Search appearance" for AI Overview impressions once available
+
+> ⚠️ **Do not delete `public/google5a916fab341fe7e9.html`.** GSC re-checks this file periodically and will un-verify the property if it 404s. If we ever want to stop serving it, add a Domain (DNS TXT) verification method first via Settings → Ownership verification.
 
 ### Bing Webmaster (Thomas)
 Bing powers ChatGPT's web browsing and Copilot. Worth 10 minutes.
