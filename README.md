@@ -1,8 +1,10 @@
 # Faith Walk Live
 
+**Live at [https://faithwalklive.com](https://faithwalklive.com)**
+
 A believer's companion to Minister Zay's 3,000-mile Philly→Cali Faith Walk.
 
-Standalone platform — **not** affiliated with HMBL. Built by a supporter riding with the mission.
+Standalone platform — **not** affiliated with HMBL. Built by [AI Bible Gospels](https://aibiblegospels.com), a supporter riding with the mission.
 
 ## Stack
 

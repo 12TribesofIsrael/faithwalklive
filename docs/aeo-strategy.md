@@ -91,7 +91,7 @@ Answer engines resolve entities by matching names + URLs across sources. We win 
 - [ ] YouTube channel "About" on @AIBIBLEGOSPELS — add `https://faithwalklive.com` as an external link
 - [ ] Every YouTube video description — link faithwalklive.com
 - [ ] LinkedIn company page for AI Bible Gospels — list faithwalklive.com as the site
-- [ ] GitHub repo README (both this repo and the consulting repo) — link faithwalklive.com in the header
+- [x] GitHub repo README (both this repo and the consulting repo) — link faithwalklive.com in the header (Apr 22 2026)
 - [ ] Any future guest posts or press interviews — request a natural link with the anchor "Faith Walk Live" or "AI Bible Gospels"
 
 The goal: when Perplexity or ChatGPT asks "who is AI Bible Gospels," multiple independent sources agree, and our own JSON-LD confirms it.
