@@ -68,6 +68,10 @@ const faqs: QA[] = [
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: [".faq-q", ".faq-a"],
+  },
   mainEntity: faqs.map(({ q, a }) => ({
     "@type": "Question",
     name: q,
@@ -98,8 +102,8 @@ export default function FAQPage() {
             key={q}
             className="border-b border-brand-border pb-6 last:border-b-0"
           >
-            <dt className="text-lg font-semibold text-brand-cloud">{q}</dt>
-            <dd className="text-brand-softgold mt-2 leading-relaxed">{a}</dd>
+            <dt className="faq-q text-lg font-semibold text-brand-cloud">{q}</dt>
+            <dd className="faq-a text-brand-softgold mt-2 leading-relaxed">{a}</dd>
           </div>
         ))}
       </dl>

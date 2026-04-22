@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.6.0] — 2026-04-21
+
+### AEO / SEO polish
+- **OG image** — `src/app/opengraph-image.tsx` generates a 1200×630 branded share card via `next/og` (ImageResponse). Auto-wires `og:image` across every page. Dark navy gradient + gold beacon mark + `"3,000 miles on faith."` headline + `faithwalklive.com` / `Built by AI Bible Gospels` footer. Twitter card mirrors via `src/app/twitter-image.tsx`.
+- **Branded icons** — replaced stock Next.js `favicon.ico` with dynamic `src/app/icon.tsx` (32×32 gold beacon on navy, tab-bar-readable) and `src/app/apple-icon.tsx` (180×180 iOS home-screen icon with glow + `FAITH WALK` label).
+- **Speakable schema on FAQ** — `FAQPage` JSON-LD now includes `SpeakableSpecification` with `cssSelector: [".faq-q", ".faq-a"]`; the `<dt>` / `<dd>` elements carry matching classes. Makes every Q&A eligible for voice-assistant readout (Google Assistant, Bing/Alexa).
+
+### Strategy docs updated
+- `docs/seo-strategy.md` — OG image + favicon checked off in Phase A.
+- `docs/aeo-strategy.md` — Speakable moved from Phase C ("future") to Phase A ("shipped").
+
 ## [0.5.0] — 2026-04-18
 
 ### OBS Stream Overlay (shipped to production)

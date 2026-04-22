@@ -17,8 +17,8 @@
 - [x] Unique meta title + description on every page
 - [x] Keywords meta tag with target terms
 - [x] Vercel Web Analytics enabled
-- [ ] OG image (1200x630 branded image — next session)
-- [ ] Favicon + Apple touch icon — next session
+- [x] OG image (1200x630 branded) — `src/app/opengraph-image.tsx` via `next/og`, Twitter mirror at `twitter-image.tsx`
+- [x] Favicon + Apple touch icon — `src/app/icon.tsx` (32×32) + `src/app/apple-icon.tsx` (180×180), both branded gold-beacon-on-navy
 - [ ] Google Search Console setup (Thomas does this — see below)
 
 ---

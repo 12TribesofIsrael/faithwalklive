@@ -1,6 +1,6 @@
 # Faith Walk Live
 
-**Current Version: v0.5.0**
+**Current Version: v0.6.0**
 **Status:** Live at [faithwalklive.com](https://faithwalklive.com) (deployed Apr 17, 2026 on Vercel).
 **Sponsor:** [AI Bible Gospels](https://www.youtube.com/@AIBIBLEGOSPELS) on YouTube
 

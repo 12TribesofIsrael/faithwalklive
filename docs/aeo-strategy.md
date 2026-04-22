@@ -61,6 +61,12 @@ Being explicit signals intent and gives us a single file to edit if a specific b
 ### Sitemap + Nav
 `/faq` added to `sitemap.ts` (priority 0.7, weekly). Added to the main `Nav` so humans can find it alongside Why and Prayer Wall.
 
+### Speakable schema on FAQ (shipped Apr 21, v0.6.0)
+`FAQPage` JSON-LD now carries a `SpeakableSpecification` pointing at `cssSelector: [".faq-q", ".faq-a"]`. The `<dt>`/`<dd>` elements carry matching classes. Voice assistants (Google Assistant; Alexa via Bing) are now eligible to lift FAQ answers verbatim for spoken responses — relevant as AI Overviews move into voice surfaces.
+
+### Branded share cards + icons (shipped Apr 21, v0.6.0)
+`src/app/opengraph-image.tsx` generates a 1200×630 share card via `next/og` (auto-wired as `og:image` across every page). `twitter-image.tsx` mirrors it for the Twitter card. `icon.tsx` + `apple-icon.tsx` replace the stock Next.js favicon with a branded gold-beacon-on-navy mark — makes AI Bible Gospels' visual identity consistent across browser tabs, iOS home screens, iMessage/Discord/Slack/X previews, and answer-engine "source card" thumbnails.
+
 ---
 
 ## Phase B: Content + distribution (next 30 days)
@@ -103,7 +109,7 @@ Reddit is heavily cited by Perplexity and Google AI Overviews. The single r/Chri
 - [ ] `/about` page (or merge into `/why`) with a concise bio for AI Bible Gospels + Minister Zay, each wrapped in its own `Person` / `Organization` JSON-LD block scoped to that page
 - [ ] Per-checkpoint pages once the walk completes a state (e.g., `/pennsylvania`, `/ohio`) — each answers "what happened in [state] on the Faith Walk" with a curated clip list. Adds `Article` schema.
 - [ ] Weekly walk-update posts (already in SEO plan) — each also gets `NewsArticle` schema for Google News / AI Overviews freshness signals
-- [ ] Speakable schema (`SpeakableSpecification`) on the FAQ — makes answers eligible for voice assistants (Google Assistant, Alexa via Bing)
+- [x] Speakable schema (`SpeakableSpecification`) on the FAQ — shipped v0.6.0, cssSelector targets `.faq-q` / `.faq-a`
 - [ ] `llms-full.txt` — expanded version of llms.txt with full extracted page content, for engines that prefer deeper context (build once the prayer + subscribe backends ship so the site is stable)
 
 ---
