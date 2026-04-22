@@ -85,7 +85,7 @@ export default function MapClient({
       <div className="space-y-3">
         <h2 className="text-lg font-semibold text-brand-cloud">
           Checkpoints (
-          {walking.length + (hasRestDayCard ? 1 : 0) + (restOnlyAsNow ? 1 : 0)})
+          {checkpoints.length + (hasRestDayCard ? 1 : 0)})
         </h2>
         <p className="text-brand-cloud/60 text-sm max-w-2xl">
           <span className="text-brand-gold font-medium">NOW</span> marks the
@@ -150,10 +150,52 @@ export default function MapClient({
               </div>
             </button>
           )}
-          {walking
+          {checkpoints
             .slice()
             .reverse()
             .map((c) => {
+              // restOnlyAsNow is already rendered as the NOW card above;
+              // don't double-render it here.
+              if (restOnlyAsNow && c === restOnlyAsNow) return null;
+
+              // Historical restOnly entries (e.g. Day 25 rest archived
+              // between walking arrivals) get a compact secondary card so
+              // the calendar stays continuous. Mirrors the GitHub Pages
+              // tracker's rest-only card variant.
+              if (c.restOnly) {
+                return (
+                  <button
+                    key={`restonly-${c.day}-${c.date}`}
+                    onClick={() => handleSelect(c.day)}
+                    className="text-left rounded-xl border p-4 transition-all border-brand-border/60 bg-brand-black/30 hover:border-brand-amber/30 hover:bg-brand-black/50"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-medium uppercase tracking-wider text-brand-bronze/70">
+                        Day {c.day} · REST
+                      </span>
+                      <span className="text-xs text-brand-brown">{c.date}</span>
+                    </div>
+                    <p className="mt-1 font-semibold text-brand-cloud/70">
+                      {c.location}
+                    </p>
+                    <div className="mt-1 flex items-center justify-between">
+                      <span className="text-sm text-brand-amber/80">💤</span>
+                      {c.clip && (
+                        <a
+                          href={c.clip}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="text-xs text-brand-gold hover:underline"
+                        >
+                          Watch clip →
+                        </a>
+                      )}
+                    </div>
+                  </button>
+                );
+              }
+
               const isCurrent =
                 c.day === last?.day && !hasRestDayCard && !restOnlyAsNow;
               const isActive = activeDay === c.day;
