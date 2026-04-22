@@ -83,7 +83,7 @@ Already in the SEO plan — doubly important for AEO. Google AI Overviews pull h
 ### Bing Webmaster (Thomas)
 Bing powers ChatGPT's web browsing and Copilot. Worth 10 minutes.
 - [x] Add property at bing.com/webmasters (verified Apr 22 2026, ~48hr data-processing window)
-- [ ] Submit sitemap at bing.com/webmasters → Sitemaps → `https://faithwalklive.com/sitemap.xml`
+- [x] Submit sitemap at bing.com/webmasters → Sitemaps → `https://faithwalklive.com/sitemap.xml` (submitted Apr 22 2026, initial status: Processing)
 
 ### Entity consistency across the web
 Answer engines resolve entities by matching names + URLs across sources. We win by making sure the same signals appear in multiple authoritative places:
