@@ -75,15 +75,15 @@ Being explicit signals intent and gives us a single file to edit if a specific b
 Already in the SEO plan — doubly important for AEO. Google AI Overviews pull heavily from sitemap-indexed, GSC-verified domains.
 
 - [x] Verify `faithwalklive.com` in search.google.com/search-console (HTML file method, auto-verified Apr 22 2026)
-- [ ] Submit `https://faithwalklive.com/sitemap.xml`
+- [x] Submit `https://faithwalklive.com/sitemap.xml` (submitted Apr 17 2026, last read Apr 20, Status: Success, 6 pages discovered)
 - [ ] Monitor "Search appearance" for AI Overview impressions once available
 
 > ⚠️ **Do not delete `public/google5a916fab341fe7e9.html`.** GSC re-checks this file periodically and will un-verify the property if it 404s. If we ever want to stop serving it, add a Domain (DNS TXT) verification method first via Settings → Ownership verification.
 
 ### Bing Webmaster (Thomas)
 Bing powers ChatGPT's web browsing and Copilot. Worth 10 minutes.
-- [ ] Add property at bing.com/webmasters
-- [ ] Submit sitemap
+- [x] Add property at bing.com/webmasters (verified Apr 22 2026, ~48hr data-processing window)
+- [ ] Submit sitemap at bing.com/webmasters → Sitemaps → `https://faithwalklive.com/sitemap.xml`
 
 ### Entity consistency across the web
 Answer engines resolve entities by matching names + URLs across sources. We win by making sure the same signals appear in multiple authoritative places:
