@@ -46,7 +46,7 @@ export default function WhyPage() {
         where he&apos;s going, told with the reverence it deserves.
       </p>
 
-      <h3>What you&apos;ll find here</h3>
+      <h2 className="text-2xl font-bold text-brand-cloud">What you&apos;ll find here</h2>
       <ul>
         <li>The live map — every checkpoint, updated daily</li>
         <li>A clip archive — faith, milestones, struggle, support</li>
@@ -54,7 +54,7 @@ export default function WhyPage() {
         <li>A prayer wall where you can lift the walk up with us</li>
       </ul>
 
-      <h3>What you won&apos;t find here</h3>
+      <h2 className="text-2xl font-bold text-brand-cloud">What you won&apos;t find here</h2>
       <ul>
         <li>Merch sales (go to HMBL for that)</li>
         <li>Drama, politics, or gossip about anyone</li>
