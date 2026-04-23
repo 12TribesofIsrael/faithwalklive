@@ -88,9 +88,9 @@ Bing powers ChatGPT's web browsing and Copilot. Worth 10 minutes.
 ### Entity consistency across the web
 Answer engines resolve entities by matching names + URLs across sources. We win by making sure the same signals appear in multiple authoritative places:
 
-- [ ] YouTube channel "About" on @AIBIBLEGOSPELS — add `https://faithwalklive.com` as an external link
+- [x] YouTube channel "About" on @AIBIBLEGOSPELS — `https://faithwalklive.com` added as external link (Apr 23 2026)
 - [ ] Every YouTube video description — link faithwalklive.com
-- [x] LinkedIn company page for AI Bible Gospels — list faithwalklive.com as the site (Apr 22 2026)
+- [x] LinkedIn profile for AI Bible Gospels (`https://www.linkedin.com/in/ai-bible-gospels-049005353/`) — faithwalklive.com listed (Apr 22 2026)
 - [x] GitHub repo README (both this repo and the consulting repo) — link faithwalklive.com in the header (Apr 22 2026)
 - [ ] Any future guest posts or press interviews — request a natural link with the anchor "Faith Walk Live" or "AI Bible Gospels"
 
