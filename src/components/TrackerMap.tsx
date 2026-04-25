@@ -13,6 +13,46 @@ import {
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import type { Checkpoint } from "@/lib/checkpoints";
+import { clipsFor } from "@/lib/checkpoints";
+
+function ClipLinks({ c, label }: { c: Checkpoint; label: string }) {
+  const arr = clipsFor(c);
+  if (arr.length === 0) return null;
+  if (arr.length === 1) {
+    return (
+      <a
+        href={arr[0]}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-amber-600 hover:underline"
+      >
+        {label}
+      </a>
+    );
+  }
+  return (
+    <div>
+      {c.clipsTitle && (
+        <p className="text-[10px] uppercase tracking-wider text-amber-600 font-semibold mt-1">
+          {c.clipsTitle}
+        </p>
+      )}
+      <div className="mt-1 flex flex-wrap gap-x-2 gap-y-0">
+        {arr.map((url, i) => (
+          <a
+            key={url}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-amber-600 hover:underline"
+          >
+            ▶ Clip {i + 1}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 /* ── pulsing beacon CSS (injected once) ── */
 const PULSE_CSS = `
@@ -193,16 +233,7 @@ export default function TrackerMap({
                 {c.date} · {c.miles} mi
                 {c.estimatedMiles ? " (est)" : ""}
               </p>
-              {c.clip && (
-                <a
-                  href={c.clip}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-amber-600 hover:underline"
-                >
-                  Watch clip →
-                </a>
-              )}
+              <ClipLinks c={c} label="Watch clip →" />
             </div>
           </Popup>
         </CircleMarker>
@@ -225,16 +256,8 @@ export default function TrackerMap({
                 {now.date}
                 {now.restOnly ? " · REST DAY 💤" : ` · ${now.miles} mi`}
               </p>
-              {now.clip && (
-                <a
-                  href={now.clip}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-amber-600 hover:underline"
-                >
-                  Watch clip →
-                </a>
-              )}
+              <ClipLinks c={now} label="Watch clip →" />
+
             </div>
           </Popup>
         </Marker>

@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import dynamic from "next/dynamic";
 import type { Checkpoint } from "@/lib/checkpoints";
+import { clipsFor } from "@/lib/checkpoints";
 
 const TrackerMap = dynamic(() => import("./TrackerMap"), {
   ssr: false,
@@ -12,6 +13,62 @@ const TrackerMap = dynamic(() => import("./TrackerMap"), {
     </div>
   ),
 });
+
+// Footer slot for a checkpoint card. For single-clip days renders the
+// classic inline "Watch clip →" link; for multi-clip days (the Love Wall
+// pattern) renders the title + a row of numbered pills.
+function CardClipsFooter({ c }: { c: Checkpoint }) {
+  const arr = clipsFor(c);
+  if (arr.length === 0) return null;
+  if (arr.length === 1) {
+    return (
+      <a
+        href={arr[0]}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => e.stopPropagation()}
+        className="text-xs text-brand-gold hover:underline"
+      >
+        Watch clip →
+      </a>
+    );
+  }
+  return (
+    <span className="text-xs text-brand-gold font-medium">
+      {arr.length} clips ▶
+    </span>
+  );
+}
+
+// Full-width pill row for multi-clip days, rendered below the metric row.
+// Returns null for 0 or 1 clips so single-clip cards keep their inline link.
+function ClipWallRow({ c }: { c: Checkpoint }) {
+  const arr = clipsFor(c);
+  if (arr.length < 2) return null;
+  return (
+    <div className="mt-3 pt-3 border-t border-dashed border-brand-gold/20">
+      {c.clipsTitle && (
+        <p className="text-[10px] uppercase tracking-wider text-brand-gold font-semibold mb-2">
+          {c.clipsTitle}
+        </p>
+      )}
+      <div className="flex flex-wrap gap-2">
+        {arr.map((url, i) => (
+          <a
+            key={url}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="text-xs text-brand-gold border border-brand-gold/30 bg-brand-gold/10 hover:bg-brand-gold/20 hover:border-brand-gold/60 rounded-md px-2 py-1 transition"
+          >
+            ▶ Clip {i + 1}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function MapClient({
   checkpoints,
@@ -113,18 +170,9 @@ export default function MapClient({
               </p>
               <div className="mt-1 flex items-center justify-between">
                 <span className="text-sm text-brand-amber">REST DAY 💤</span>
-                {restOnlyAsNow.clip && (
-                  <a
-                    href={restOnlyAsNow.clip}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="text-xs text-brand-gold hover:underline"
-                  >
-                    Watch clip →
-                  </a>
-                )}
+                <CardClipsFooter c={restOnlyAsNow} />
               </div>
+              <ClipWallRow c={restOnlyAsNow} />
             </button>
           )}
           {hasRestDayCard && last && (
@@ -180,18 +228,9 @@ export default function MapClient({
                     </p>
                     <div className="mt-1 flex items-center justify-between">
                       <span className="text-sm text-brand-amber/80">💤</span>
-                      {c.clip && (
-                        <a
-                          href={c.clip}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="text-xs text-brand-gold hover:underline"
-                        >
-                          Watch clip →
-                        </a>
-                      )}
+                      <CardClipsFooter c={c} />
                     </div>
+                    <ClipWallRow c={c} />
                   </button>
                 );
               }
@@ -227,18 +266,9 @@ export default function MapClient({
                     <span className="text-sm text-brand-amber">
                       {c.miles} mi{c.estimatedMiles ? " (est)" : ""}
                     </span>
-                    {c.clip && (
-                      <a
-                        href={c.clip}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="text-xs text-brand-gold hover:underline"
-                      >
-                        Watch clip →
-                      </a>
-                    )}
+                    <CardClipsFooter c={c} />
                   </div>
+                  <ClipWallRow c={c} />
                 </button>
               );
             })}

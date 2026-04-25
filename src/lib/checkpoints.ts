@@ -8,6 +8,12 @@ export type Checkpoint = {
   miles: number;
   date: string;
   clip?: string;
+  // Multi-clip "wall" support — when a day collects several stream clips
+  // (e.g. milestones, multiple supporters showing up), the consulting
+  // repo writes them here. `clip` is also set to the first entry as a
+  // legacy fallback for any code path still reading the single field.
+  clips?: string[];
+  clipsTitle?: string;
   estimatedMiles?: boolean;
   restOnly?: boolean;
   // Annotations applied to the latest walking checkpoint by the
@@ -30,6 +36,15 @@ const TOTAL_MILES = 3000;
 
 const STEPS_PER_MILE = 2200;
 
+// Flatten any single/multi clip configuration into a single URL list.
+// Always prefer the explicit `clips` array when present; fall back to
+// the legacy `clip` field for older entries.
+export function clipsFor(c: Checkpoint): string[] {
+  if (c.clips && c.clips.length) return c.clips;
+  if (c.clip) return [c.clip];
+  return [];
+}
+
 export function getStats() {
   const walkingOnly = checkpoints.filter((c) => !c.restOnly);
   const last = walkingOnly[walkingOnly.length - 1];
@@ -43,7 +58,7 @@ export function getStats() {
     percent: Math.round((miles / TOTAL_MILES) * 1000) / 10,
     steps: miles * STEPS_PER_MILE,
     totalSteps: TOTAL_MILES * STEPS_PER_MILE,
-    clipCount: checkpoints.filter((c) => c.clip).length,
+    clipCount: checkpoints.reduce((n, c) => n + clipsFor(c).length, 0),
     isRestDay: last?.restDay === true,
     destination: last?.destination ?? null,
     milesRemaining: last?.milesRemaining ?? null,
@@ -51,5 +66,5 @@ export function getStats() {
 }
 
 export function getClips(): Checkpoint[] {
-  return checkpoints.filter((c) => c.clip);
+  return checkpoints.filter((c) => clipsFor(c).length > 0);
 }
