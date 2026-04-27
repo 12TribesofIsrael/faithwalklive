@@ -49,7 +49,11 @@ export function getStats() {
   const walkingOnly = checkpoints.filter((c) => !c.restOnly);
   const last = walkingOnly[walkingOnly.length - 1];
   const miles = last?.miles ?? 0;
-  const currentDay = last?.inProgressDay ?? last?.day ?? 0;
+  // In-progress fields can live on the latest walking checkpoint OR on
+  // a trailing rest-only entry archived after a rest-day rollover.
+  // Walk tail-first so the rest-only entry's annotations win when present.
+  const inProgress = [...checkpoints].reverse().find((c) => c.inProgressDay);
+  const currentDay = inProgress?.inProgressDay ?? last?.day ?? 0;
   return {
     currentDay,
     currentLocation: last?.location ?? "Philadelphia, PA",
@@ -60,8 +64,8 @@ export function getStats() {
     totalSteps: TOTAL_MILES * STEPS_PER_MILE,
     clipCount: checkpoints.reduce((n, c) => n + clipsFor(c).length, 0),
     isRestDay: last?.restDay === true,
-    destination: last?.destination ?? null,
-    milesRemaining: last?.milesRemaining ?? null,
+    destination: inProgress?.destination ?? last?.destination ?? null,
+    milesRemaining: inProgress?.milesRemaining ?? last?.milesRemaining ?? null,
   };
 }
 
