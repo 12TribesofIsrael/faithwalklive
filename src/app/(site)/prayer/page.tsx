@@ -1,49 +1,37 @@
 export const metadata = {
-  title: "Prayer Wall",
+  title: "Pray for Zay",
   description:
-    "Lift up Minister Zay and the 3,000-mile Faith Walk in prayer. Submit a prayer, see the community praying together.",
+    "Lift up Minister Zay in prayer with the HMBL community. The prayer section lives inside HMBL University Discord — join us there.",
 };
+
+const HMBL_DISCORD = "https://discord.gg/MzWAdRbDqu";
 
 export default function PrayerPage() {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-12 space-y-6">
-      <div>
-        <h1 className="text-3xl font-semibold text-brand-cloud">Prayer Wall</h1>
-        <p className="text-brand-amber mt-2">
-          Lift up Zay and the walk. Prayers are moderated before they appear.
+    <div className="max-w-2xl mx-auto px-4 py-12 space-y-8">
+      <header>
+        <h1 className="text-3xl font-semibold text-brand-cloud">Pray for Zay</h1>
+        <p className="text-brand-amber mt-3 leading-relaxed">
+          Zay is recovering after an accident on the route on April 28, 2026.
+          The walk is paused while he heals. Believers are praying together in
+          HMBL University Discord — Zay&apos;s own community. Join us there to
+          lift him up.
         </p>
-      </div>
+      </header>
 
-      <form className="space-y-3 rounded-2xl border border-brand-border bg-brand-black/50 p-6">
-        <label className="block text-sm text-brand-softgold">
-          Your name (or how you want to be seen)
-          <input
-            type="text"
-            name="name"
-            placeholder="Believer from Philly"
-            className="mt-1 w-full rounded-lg bg-brand-navy border border-brand-border px-3 py-2 focus:border-brand-gold outline-none text-brand-cloud placeholder:text-brand-bronze"
-          />
-        </label>
-        <label className="block text-sm text-brand-softgold">
-          Your prayer
-          <textarea
-            name="prayer"
-            rows={5}
-            placeholder="Father, we cover Zay in protection and strength as he walks…"
-            className="mt-1 w-full rounded-lg bg-brand-navy border border-brand-border px-3 py-2 focus:border-brand-gold outline-none text-brand-cloud placeholder:text-brand-bronze"
-          />
-        </label>
-        <button
-          type="submit"
-          disabled
-          className="px-5 py-2 rounded-full bg-brand-gold text-brand-black font-medium disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          Submit (coming soon)
-        </button>
-        <p className="text-xs text-brand-bronze">
-          Prayer wall backend ships with Phase 1.5. Bookmark this page.
-        </p>
-      </form>
+      <a
+        href={HMBL_DISCORD}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block w-full text-center px-6 py-4 rounded-2xl bg-brand-gold text-brand-black font-semibold text-lg hover:opacity-90 transition"
+      >
+        🙏 Pray with us in HMBL Discord
+      </a>
+
+      <p className="text-brand-bronze text-xs">
+        New to Discord? It&apos;s a free chat platform — sign-up takes a
+        minute. The link above is a permanent invite into HMBL University.
+      </p>
     </div>
   );
 }

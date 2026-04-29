@@ -57,7 +57,7 @@ const faqs: QA[] = [
   },
   {
     q: "What is Faith Walk Live?",
-    a: "Faith Walk Live is a companion platform for the walk. It includes a live checkpoint map, a daily clip archive, scripture for the road, and a prayer wall. The site is supporter-built, not an official HMBL property.",
+    a: "Faith Walk Live is a companion platform for the walk. It includes a live checkpoint map, a daily clip archive, scripture for the road, and a prayer hub that points to HMBL University Discord. The site is supporter-built, not an official HMBL property.",
   },
   {
     q: "Is Faith Walk Live affiliated with HMBL?",
@@ -73,11 +73,11 @@ const faqs: QA[] = [
   },
   {
     q: "How can I support the walk?",
-    a: "Pray for it. Watch the live stream on Twitch. Submit a prayer at faithwalklive.com/prayer. Share the walk with your church, your family, or your community.",
+    a: "Pray for it. Watch the live stream on Twitch when the walk resumes. Pray with the HMBL community at faithwalklive.com/prayer. Share the walk with your church, your family, or your community.",
   },
   {
     q: "How can I pray for Minister Zay?",
-    a: "Submit a prayer at faithwalklive.com/prayer. Prayers are moderated and lifted up with the walk. Pray for protection on the road, endurance of body and spirit, and a clear gospel witness everywhere Zay goes.",
+    a: "Pray with the HMBL community at faithwalklive.com/prayer, which points to the prayer section inside HMBL University Discord — Zay's own community, where believers lift him up daily. Pray for protection, healing, endurance of body and spirit, and a clear gospel witness everywhere Zay goes.",
   },
   {
     q: "Does Faith Walk Live sell merch?",
