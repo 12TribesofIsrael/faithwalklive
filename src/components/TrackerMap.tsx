@@ -81,6 +81,19 @@ const PULSE_CSS = `
   background: #fbbf24;
   border: 2px solid #fff;
 }
+/* Paused-state marker — steady gold ring with prayer glyph, no pulse. */
+.paused-marker {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(251, 191, 36, 0.18);
+  border: 2px solid #fbbf24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.35);
+}
 .start-marker {
   width: 16px;
   height: 16px;
@@ -106,6 +119,13 @@ const pulseIcon = L.divIcon({
   html: '<div class="pulse-marker"></div>',
   iconSize: [20, 20],
   iconAnchor: [10, 10],
+});
+
+const pausedIcon = L.divIcon({
+  className: "",
+  html: '<div class="paused-marker">🙏</div>',
+  iconSize: [28, 28],
+  iconAnchor: [14, 14],
 });
 
 const startIcon = L.divIcon({
@@ -239,25 +259,41 @@ export default function TrackerMap({
         </CircleMarker>
       ))}
 
-      {/* Current location — pulsing beacon */}
+      {/* Current location — pulsing beacon, OR a steady prayers marker
+          when the latest checkpoint is paused (off-route safety event). */}
       {now && now !== first && (
         <Marker
           position={[now.lat ?? last.lat, now.lng ?? last.lng]}
-          icon={pulseIcon}
+          icon={now.paused ? pausedIcon : pulseIcon}
         >
           <Popup>
             <div className="text-sm">
-              <p className="font-bold text-amber-600">
-                NOW — Day {now.day}
-                {now.restOnly ? " · REST" : ""}
-              </p>
-              <p className="font-semibold">{now.location}</p>
-              <p className="text-neutral-600">
-                {now.date}
-                {now.restOnly ? " · REST DAY 💤" : ` · ${now.miles} mi`}
-              </p>
-              <ClipLinks c={now} label="Watch clip →" />
-
+              {now.paused ? (
+                <>
+                  <p className="font-bold text-amber-600">
+                    🙏 WALK PAUSED — Day {now.day}
+                  </p>
+                  <p className="font-semibold">{now.location}</p>
+                  <p className="text-neutral-600">{now.date}</p>
+                  <p className="mt-2 text-neutral-700 leading-snug">
+                    {now.pausedNote ??
+                      "Walk paused. Please keep Zay in your prayers."}
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p className="font-bold text-amber-600">
+                    NOW — Day {now.day}
+                    {now.restOnly ? " · REST" : ""}
+                  </p>
+                  <p className="font-semibold">{now.location}</p>
+                  <p className="text-neutral-600">
+                    {now.date}
+                    {now.restOnly ? " · REST DAY 💤" : ` · ${now.miles} mi`}
+                  </p>
+                  <ClipLinks c={now} label="Watch clip →" />
+                </>
+              )}
             </div>
           </Popup>
         </Marker>

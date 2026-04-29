@@ -20,8 +20,37 @@ export default function Home() {
         </p>
       </section>
 
+      {s.isPaused && (
+        <section className="rounded-2xl border border-brand-gold/40 bg-brand-black/80 p-6 text-center">
+          <p className="text-xs uppercase tracking-[0.3em] text-brand-gold mb-3">
+            🙏 Walk Paused
+          </p>
+          <p className="text-brand-cloud/90 max-w-2xl mx-auto leading-relaxed">
+            {s.pausedNote ??
+              "Walk paused. Please keep Zay in your prayers. Updates to follow when the team is ready."}
+          </p>
+          <div className="mt-4">
+            <Link
+              href="/prayer"
+              className="inline-block px-5 py-2 rounded-full bg-brand-gold text-brand-black font-medium hover:bg-brand-amber transition text-sm"
+            >
+              Drop a prayer for Zay
+            </Link>
+          </div>
+        </section>
+      )}
+
       <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-        <Stat label="Current day" value={s.isRestDay ? `Day ${s.currentDay} · REST` : `Day ${s.currentDay}`} />
+        <Stat
+          label="Current day"
+          value={
+            s.isPaused
+              ? `Day ${s.currentDay} · PAUSED`
+              : s.isRestDay
+                ? `Day ${s.currentDay} · REST`
+                : `Day ${s.currentDay}`
+          }
+        />
         <Stat label="Location" value={s.currentLocation} />
         <Stat label="Miles walked" value={`${s.miles.toLocaleString()} / ${s.totalMiles.toLocaleString()}`} />
         <Stat label="Steps walked" value={`${s.steps.toLocaleString()}`} />

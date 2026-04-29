@@ -86,6 +86,8 @@ export default function MapClient({
   const percent = Math.round((miles / totalMiles) * 1000) / 10;
   const hasRestDayCard = !!last?.restDay;
   const restDayNumber = last?.inProgressDay ?? last?.day ?? 0;
+  const isPaused = last?.paused === true;
+  const pausedNote = last?.pausedNote ?? null;
 
   // Surface the most recent archived rest day as a NOW card when it sits
   // ahead of the latest walking checkpoint (e.g. Day 25 rest archived after
@@ -104,6 +106,20 @@ export default function MapClient({
 
   return (
     <div className="space-y-6">
+      {/* Paused-state banner — shown when latest checkpoint has paused: true.
+          Somber gold-on-dark, never sensational. */}
+      {isPaused && (
+        <div className="rounded-xl border border-brand-gold/40 bg-brand-black/80 p-5 text-center">
+          <div className="text-xs font-bold uppercase tracking-[0.3em] text-brand-gold mb-2">
+            🙏 Walk Paused
+          </div>
+          <p className="text-sm text-brand-cloud/90 max-w-2xl mx-auto leading-relaxed">
+            {pausedNote ??
+              "Walk paused. Please keep Zay in your prayers. Updates to follow when the team is ready."}
+          </p>
+        </div>
+      )}
+
       {/* Progress overlay bar */}
       <div className="rounded-xl border border-brand-border bg-brand-black/80 p-4 space-y-2">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-sm">
@@ -238,6 +254,35 @@ export default function MapClient({
               const isCurrent =
                 c.day === last?.day && !hasRestDayCard && !restOnlyAsNow;
               const isActive = activeDay === c.day;
+              // Paused checkpoints render the prayers state in place of
+              // miles/clip — never narrate the off-route event itself.
+              if (c.paused) {
+                return (
+                  <button
+                    key={c.day}
+                    onClick={() => handleSelect(c.day)}
+                    className="text-left rounded-xl border p-4 transition-all border-brand-gold/60 bg-brand-gold/10"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-medium uppercase tracking-wider text-brand-bronze">
+                        Day {c.day}
+                        {isCurrent && (
+                          <span className="ml-2 text-brand-gold">NOW</span>
+                        )}
+                      </span>
+                      <span className="text-xs text-brand-brown">{c.date}</span>
+                    </div>
+                    <p className="mt-1 font-semibold text-brand-cloud">
+                      {c.location}
+                    </p>
+                    <div className="mt-1">
+                      <span className="text-sm font-semibold text-brand-gold">
+                        🙏 WALK PAUSED
+                      </span>
+                    </div>
+                  </button>
+                );
+              }
               return (
                 <button
                   key={c.day}

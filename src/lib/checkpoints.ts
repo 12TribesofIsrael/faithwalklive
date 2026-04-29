@@ -28,6 +28,10 @@ export type Checkpoint = {
   milesRemaining?: number;
   estimatedSegmentMiles?: number;
   inProgressStartedAt?: string;
+  // Walk-paused state: walk halted by an off-route event (e.g. accident).
+  // pausedNote is shown verbatim on the public banner + map popup.
+  paused?: boolean;
+  pausedNote?: string;
 };
 
 export const checkpoints: Checkpoint[] = raw as Checkpoint[];
@@ -66,6 +70,8 @@ export function getStats() {
     isRestDay: last?.restDay === true,
     destination: inProgress?.destination ?? last?.destination ?? null,
     milesRemaining: inProgress?.milesRemaining ?? last?.milesRemaining ?? null,
+    isPaused: last?.paused === true,
+    pausedNote: last?.pausedNote ?? null,
   };
 }
 
