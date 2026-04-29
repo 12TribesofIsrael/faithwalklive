@@ -4,7 +4,13 @@ export const metadata = {
     "Common questions about Minister Zay, the 3,000-mile Faith Walk from Philadelphia to California, and Faith Walk Live. Plain answers, faith-first voice.",
 };
 
-type QA = { q: string; a: string };
+type QA = {
+  q: string;
+  a: string;
+  // Optional outbound links rendered under the answer. The answer text
+  // itself stays clean strings so FAQPage JSON-LD remains canonical.
+  links?: { label: string; href: string }[];
+};
 
 const faqs: QA[] = [
   {
@@ -30,6 +36,24 @@ const faqs: QA[] = [
   {
     q: "Where is Minister Zay on the walk right now?",
     a: "The live map at faithwalklive.com/map shows every confirmed checkpoint and the latest one Zay has reached. Location is updated once per day, typically at the end of the night or the following morning, so the map is the most current source.",
+  },
+  {
+    q: "Why is the walk paused?",
+    a: "On April 28, 2026 (Day 34), Minister Zay was struck by a vehicle on the route between Richmond, Indiana and Lewisville, Indiana. He was taken to the hospital and is recovering. The walk and the daily livestream are paused while he heals. Updates will come from Zay's team when they are ready. Please keep him in your prayers. Coverage from TMZ and The Shade Room is linked below for those who want context.",
+    links: [
+      {
+        label: "TMZ — incident coverage (TikTok)",
+        href: "https://www.tiktok.com/@tmz/video/7633948800264047885",
+      },
+      {
+        label: "The Shade Room — incident coverage (Instagram)",
+        href: "https://www.instagram.com/p/DXsREFagUhr/",
+      },
+      {
+        label: "Drop a prayer for Zay",
+        href: "/prayer",
+      },
+    ],
   },
   {
     q: "What is Faith Walk Live?",
@@ -97,13 +121,31 @@ export default function FAQPage() {
       </header>
 
       <dl className="space-y-8">
-        {faqs.map(({ q, a }) => (
+        {faqs.map(({ q, a, links }) => (
           <div
             key={q}
             className="border-b border-brand-border pb-6 last:border-b-0"
           >
             <dt className="faq-q text-lg font-semibold text-brand-cloud">{q}</dt>
             <dd className="faq-a text-brand-softgold mt-2 leading-relaxed">{a}</dd>
+            {links && links.length > 0 && (
+              <ul className="mt-3 space-y-1.5 text-sm">
+                {links.map(({ label, href }) => (
+                  <li key={href}>
+                    <a
+                      href={href}
+                      target={href.startsWith("http") ? "_blank" : undefined}
+                      rel={
+                        href.startsWith("http") ? "noopener noreferrer" : undefined
+                      }
+                      className="text-brand-gold hover:underline"
+                    >
+                      {label} →
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         ))}
       </dl>
