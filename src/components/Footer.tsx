@@ -43,6 +43,15 @@ export default function Footer() {
           </a>
           .
         </p>
+        <p className="text-brand-bronze text-xs">
+          Press / media:{" "}
+          <a
+            href="mailto:aibiblegospels444@gmail.com"
+            className="text-brand-gold hover:underline"
+          >
+            aibiblegospels444@gmail.com
+          </a>
+        </p>
         <div className="border-t border-brand-border pt-4 mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <p className="text-brand-bronze">
             Sponsored by{" "}

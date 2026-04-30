@@ -58,6 +58,10 @@ export function getStats() {
   // Walk tail-first so the rest-only entry's annotations win when present.
   const inProgress = [...checkpoints].reverse().find((c) => c.inProgressDay);
   const currentDay = inProgress?.inProgressDay ?? last?.day ?? 0;
+  // pausedSince: date of the last walking checkpoint *before* the paused day.
+  // Drives Event JSON-LD `previousStartDate` when the walk is paused.
+  const pausedSinceCp = [...walkingOnly].reverse().find((c) => !c.paused);
+  const pausedSince = last?.paused === true ? pausedSinceCp?.date ?? null : null;
   return {
     currentDay,
     currentLocation: last?.location ?? "Philadelphia, PA",
@@ -72,6 +76,8 @@ export function getStats() {
     milesRemaining: inProgress?.milesRemaining ?? last?.milesRemaining ?? null,
     isPaused: last?.paused === true,
     pausedNote: last?.pausedNote ?? null,
+    pausedSince,
+    pausedDate: last?.paused === true ? last?.date ?? null : null,
   };
 }
 

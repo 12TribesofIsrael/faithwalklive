@@ -39,8 +39,20 @@ const faqs: QA[] = [
   },
   {
     q: "Why is the walk paused?",
-    a: "On April 28, 2026 (Day 34), Minister Zay was struck by a vehicle on the route between Richmond, Indiana and Lewisville, Indiana. He was taken to the hospital and is recovering. The walk and the daily livestream are paused while he heals. Updates will come from Zay's team when they are ready. Please keep him in your prayers. Coverage from TMZ and The Shade Room is linked below for those who want context.",
+    a: "On April 28, 2026 (Day 34), Minister Zay was struck by a vehicle on U.S. 40 in Indiana while livestreaming the walk. He was hospitalized; according to news coverage his condition is stable and not life-threatening, and he intends to finish the walk after he recovers. The walk and the daily livestream are paused while he heals. The full update — recovery timeline, every news outlet covering the story, and live status — is at faithwalklive.com/updates/april-28-incident. Please keep him in your prayers.",
     links: [
+      {
+        label: "Read the full update + recovery timeline",
+        href: "/updates/april-28-incident",
+      },
+      {
+        label: "Fox 29 Philadelphia — incident coverage",
+        href: "https://www.fox29.com/news/twitch-streamer-minister-zay-hit-car-during-faith-walk-from-philadelphia-california",
+      },
+      {
+        label: "Fox 59 Indianapolis — incident coverage",
+        href: "https://fox59.com/news/indynews/streamer-hit-by-car-in-indiana-while-walking-across-country-to-raise-money-for-children/",
+      },
       {
         label: "TMZ — incident coverage (TikTok)",
         href: "https://www.tiktok.com/@tmz/video/7633948800264047885",
@@ -103,12 +115,35 @@ const faqJsonLd = {
   })),
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://faithwalklive.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "FAQ",
+      item: "https://faithwalklive.com/faq",
+    },
+  ],
+};
+
 export default function FAQPage() {
   return (
     <article className="max-w-2xl mx-auto px-4 py-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <header className="mb-8">

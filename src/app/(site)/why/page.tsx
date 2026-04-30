@@ -4,9 +4,32 @@ export const metadata = {
     "The testimony behind Faith Walk Live. Why we built this platform, the scriptures that drive it, and what the power of Christ can do through anybody.",
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://faithwalklive.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Why",
+      item: "https://faithwalklive.com/why",
+    },
+  ],
+};
+
 export default function WhyPage() {
   return (
     <article className="max-w-2xl mx-auto px-4 py-12 prose prose-invert prose-amber">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <h1 className="text-3xl font-semibold mb-2">Why this walk matters</h1>
       <p className="text-brand-amber text-sm">A testimony, not a pitch.</p>
 
