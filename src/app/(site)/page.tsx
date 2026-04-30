@@ -45,7 +45,9 @@ export default function Home() {
           label="Current day"
           value={
             s.isPaused
-              ? `Day ${s.currentDay} · PAUSED`
+              ? s.recoveryDay > 0
+                ? `Day ${s.displayDay} · Recovery Day ${s.recoveryDay}`
+                : `Day ${s.currentDay} · PAUSED`
               : s.isRestDay
                 ? `Day ${s.currentDay} · REST`
                 : `Day ${s.currentDay}`

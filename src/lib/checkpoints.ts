@@ -62,8 +62,32 @@ export function getStats() {
   // Drives Event JSON-LD `previousStartDate` when the walk is paused.
   const pausedSinceCp = [...walkingOnly].reverse().find((c) => !c.paused);
   const pausedSince = last?.paused === true ? pausedSinceCp?.date ?? null : null;
+
+  // recoveryDay: calendar days elapsed since the paused day. 0 on the paused
+  // day itself, 1 on the next day, etc. Advances daily from build time —
+  // the daily `recovery:append` push in the consulting repo triggers a
+  // Vercel rebuild, which refreshes this number along with the new entry.
+  // displayDay: what the public stat bar shows. During pause, advances with
+  // calendar time (Day 34 + recoveryDay) so the tracker stays visibly alive
+  // even though no walking miles are being added. Outside pause, equals the
+  // current walking day. The underlying `currentDay` stays as the actual
+  // walking-day index; only `displayDay` carries the recovery offset.
+  const isPaused = last?.paused === true;
+  const pausedDate = isPaused ? last?.date ?? null : null;
+  const today = new Date();
+  const pausedDateObj = pausedDate ? new Date(pausedDate) : null;
+  const daysSincePaused = pausedDateObj
+    ? Math.floor(
+        (today.getTime() - pausedDateObj.getTime()) / (1000 * 60 * 60 * 24)
+      )
+    : 0;
+  const recoveryDay = isPaused && daysSincePaused > 0 ? daysSincePaused : 0;
+  const displayDay = isPaused ? currentDay + recoveryDay : currentDay;
+
   return {
     currentDay,
+    displayDay,
+    recoveryDay,
     currentLocation: last?.location ?? "Philadelphia, PA",
     miles,
     totalMiles: TOTAL_MILES,
@@ -74,10 +98,10 @@ export function getStats() {
     isRestDay: last?.restDay === true,
     destination: inProgress?.destination ?? last?.destination ?? null,
     milesRemaining: inProgress?.milesRemaining ?? last?.milesRemaining ?? null,
-    isPaused: last?.paused === true,
+    isPaused,
     pausedNote: last?.pausedNote ?? null,
     pausedSince,
-    pausedDate: last?.paused === true ? last?.date ?? null : null,
+    pausedDate,
   };
 }
 

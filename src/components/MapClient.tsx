@@ -89,6 +89,18 @@ export default function MapClient({
   const isPaused = last?.paused === true;
   const pausedNote = last?.pausedNote ?? null;
 
+  // Recovery day counter — calendar days since pause day. Mirrors getStats()
+  // logic so the map page stays in sync with the homepage stat bar.
+  const pausedDateObj =
+    isPaused && last?.date ? new Date(last.date) : null;
+  const daysSincePaused = pausedDateObj
+    ? Math.floor(
+        (Date.now() - pausedDateObj.getTime()) / (1000 * 60 * 60 * 24)
+      )
+    : 0;
+  const recoveryDay = isPaused && daysSincePaused > 0 ? daysSincePaused : 0;
+  const recoveryDisplayDay = (last?.day ?? 0) + recoveryDay;
+
   // Surface the most recent archived rest day as a NOW card when it sits
   // ahead of the latest walking checkpoint (e.g. Day 25 rest archived after
   // Day 24 arrival, Day 26 walk in progress). Closes the visual gap between
@@ -107,12 +119,18 @@ export default function MapClient({
   return (
     <div className="space-y-6">
       {/* Paused-state banner — shown when latest checkpoint has paused: true.
-          Somber gold-on-dark, never sensational. */}
+          Somber gold-on-dark, never sensational. Recovery-day pill renders
+          below the banner header once we're past the paused day itself. */}
       {isPaused && (
         <div className="rounded-xl border border-brand-gold/40 bg-brand-black/80 p-5 text-center">
           <div className="text-xs font-bold uppercase tracking-[0.3em] text-brand-gold mb-2">
             🙏 Walk Paused
           </div>
+          {recoveryDay > 0 && (
+            <div className="text-[11px] uppercase tracking-[0.25em] text-brand-amber mb-3">
+              Day {recoveryDisplayDay} · Recovery Day {recoveryDay}
+            </div>
+          )}
           <p className="text-sm text-brand-cloud/90 max-w-2xl mx-auto leading-relaxed">
             {pausedNote ??
               "Walk paused. Please keep Zay in your prayers. Updates to follow when the team is ready."}
