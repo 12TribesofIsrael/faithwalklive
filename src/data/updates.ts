@@ -39,4 +39,8 @@ export const aprilTwentyEightRecovery: RecoveryEntry[] = [
     date: "2026-04-30",
     body: "No new specifics released by Zay or his team beyond the initial news cycle. Walk remains paused. Recovery updates will be posted here as they enter the public record. To pray with the community in the meantime, visit faithwalklive.com/prayer.",
   },
+  {
+    date: "2026-05-01",
+    body: "Recovery Day 3. No new statements from Zay or his team have entered the public record today. Walk and daily livestream remain paused. To pray with the community in the meantime, visit faithwalklive.com/prayer.",
+  },
 ];
