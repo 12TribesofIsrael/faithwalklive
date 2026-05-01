@@ -41,6 +41,6 @@ export const aprilTwentyEightRecovery: RecoveryEntry[] = [
   },
   {
     date: "2026-05-01",
-    body: "Recovery Day 3. No new statements from Zay or his team have entered the public record today. Walk and daily livestream remain paused. To pray with the community in the meantime, visit faithwalklive.com/prayer.",
+    body: "Minister Zay confirmed in HMBL University Discord that the walk resumes Sunday at 12 noon. He'll return to the spot of the accident, pray over it, and continue walking from there. Streaming equipment is in transit; he'll go live on TikTok @hmblzayy at 5 PM today while waiting for it to arrive.",
   },
 ];
