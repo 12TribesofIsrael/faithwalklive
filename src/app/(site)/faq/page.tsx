@@ -39,7 +39,7 @@ const faqs: QA[] = [
   },
   {
     q: "Why is the walk paused?",
-    a: "On April 28, 2026 (Day 34), Minister Zay was struck by a vehicle on U.S. 40 in Indiana while livestreaming the walk. He was hospitalized; according to news coverage his condition is stable and not life-threatening, and he intends to finish the walk after he recovers. The walk and the daily livestream are paused while he heals. The full update — recovery timeline, every news outlet covering the story, and live status — is at faithwalklive.com/updates/april-28-incident. Please keep him in your prayers.",
+    a: "On April 28, 2026 (Day 34), Minister Zay was struck by a vehicle on U.S. 40 in Indiana while livestreaming the walk. He was hospitalized; according to news coverage his condition is stable and not life-threatening, and he intends to finish the walk after he recovers. The walk and the daily livestream are paused while he heals. Per Minister Zay's announcement on May 1, 2026, the walk resumes Sunday, May 3, 2026 at 12 noon, returning to the spot of the accident. The full update — recovery timeline, every news outlet covering the story, and live status — is at faithwalklive.com/updates/april-28-incident. Please keep him in your prayers.",
     links: [
       {
         label: "Read the full update + recovery timeline",
