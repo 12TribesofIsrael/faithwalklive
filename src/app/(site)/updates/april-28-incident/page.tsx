@@ -75,6 +75,10 @@ const outlets: Outlet[] = [
     name: "The Express Tribune",
     href: "https://tribune.com.pk/story/2605410/what-happened-to-hmblzayy-twitch-streamer-hit-during-3000-mile-faith-walk-in-indiana-crash",
   },
+  {
+    name: "Bystander video (TikTok)",
+    href: "https://www.tiktok.com/@kokie_luv43/video/7635070760310082830",
+  },
 ];
 
 const faqs = [

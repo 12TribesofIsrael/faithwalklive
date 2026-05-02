@@ -43,4 +43,8 @@ export const aprilTwentyEightRecovery: RecoveryEntry[] = [
     date: "2026-05-01",
     body: "Minister Zay confirmed in HMBL University Discord that the walk resumes Sunday at 12 noon. He'll return to the spot of the accident, pray over it, and continue walking from there. Streaming equipment is in transit; he'll go live on TikTok @hmblzayy at 5 PM today while waiting for it to arrive.",
   },
+  {
+    date: "2026-05-02",
+    body: "A bystander TikTok of the vehicle has circulated publicly; no further information posted by Zay or his team. Walk still set to resume Sunday at 12 noon ET — Zay returns to the spot of the accident to pray and continue from there.",
+  },
 ];
