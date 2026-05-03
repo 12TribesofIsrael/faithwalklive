@@ -38,8 +38,8 @@ const faqs: QA[] = [
     a: "The live map at faithwalklive.com/map shows every confirmed checkpoint and the latest one Zay has reached. Location is updated once per day, typically at the end of the night or the following morning, so the map is the most current source.",
   },
   {
-    q: "Why is the walk paused?",
-    a: "On April 28, 2026 (Day 34), Minister Zay was struck by a vehicle on U.S. 40 in Indiana while livestreaming the walk. He was hospitalized; according to news coverage his condition is stable and not life-threatening, and he intends to finish the walk after he recovers. The walk and the daily livestream are paused while he heals. Per Minister Zay's announcement on May 1, 2026, the walk resumes Sunday, May 3, 2026 at 12 noon, returning to the spot of the accident. The full update — recovery timeline, every news outlet covering the story, and live status — is at faithwalklive.com/updates/april-28-incident. Please keep him in your prayers.",
+    q: "What happened on Day 34 of the walk?",
+    a: "On April 28, 2026 (Day 34), Minister Zay was struck by a vehicle on U.S. 40 in Indiana while livestreaming the walk. He was hospitalized; news coverage reported his condition as stable and not life-threatening. The walk and the daily livestream were paused for the recovery period. Minister Zay returned to the spot of the accident on Sunday, May 3, 2026 at 12 noon and resumed the walk westward. The full record — recovery timeline, every news outlet that covered the story, and live status — is at faithwalklive.com/updates/april-28-incident.",
     links: [
       {
         label: "Read the full update + recovery timeline",
@@ -62,7 +62,7 @@ const faqs: QA[] = [
         href: "https://www.instagram.com/p/DXsREFagUhr/",
       },
       {
-        label: "Drop a prayer for Zay",
+        label: "Pray with the HMBL community",
         href: "/prayer",
       },
     ],
