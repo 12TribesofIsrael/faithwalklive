@@ -10,6 +10,7 @@ const links = [
   { href: "/why", label: "Why" },
   { href: "/faq", label: "FAQ" },
   { href: "/prayer", label: "Prayer Wall" },
+  { href: "/press", label: "Press" },
   { href: "/subscribe", label: "Subscribe" },
 ];
 

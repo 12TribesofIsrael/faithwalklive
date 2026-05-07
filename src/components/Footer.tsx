@@ -46,6 +46,13 @@ export default function Footer() {
         <p className="text-brand-bronze text-xs">
           Press / media:{" "}
           <a
+            href="/press"
+            className="text-brand-gold hover:underline"
+          >
+            press kit
+          </a>{" "}
+          ·{" "}
+          <a
             href="mailto:aibiblegospels444@gmail.com"
             className="text-brand-gold hover:underline"
           >

@@ -44,6 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/updates`, lastModified: updatesIndexDate, changeFrequency: "daily", priority: 0.95 },
     { url: `${base}/updates/april-28-incident`, lastModified: incidentDate, changeFrequency: "daily", priority: 0.95 },
     { url: `${base}/clips`, lastModified: trackerDate, changeFrequency: "daily", priority: 0.8 },
+    { url: `${base}/press`, lastModified: incidentDate, changeFrequency: "weekly", priority: 0.85 },
     { url: `${base}/why`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${base}/faq`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${base}/prayer`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
