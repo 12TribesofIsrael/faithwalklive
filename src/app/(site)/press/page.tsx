@@ -136,7 +136,7 @@ export default function PressPage() {
             📧 Press contact
           </a>
           <Link
-            href="/updates/april-28-incident"
+            href="/updates/rv-rolling-support"
             className="inline-flex items-center justify-center rounded-full border border-brand-gold/30 text-brand-softgold px-5 py-2.5 font-semibold hover:text-brand-gold transition-colors"
           >
             📰 Latest update

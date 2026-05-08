@@ -68,6 +68,30 @@ const faqs: QA[] = [
     ],
   },
   {
+    q: "Is Minister Zay still walking every mile, or is he riding in the RV?",
+    a: "Still walking — every mile on foot. On May 8, 2026, Minister Zay announced an RV that travels alongside the walk as a mobile support base for rest, gear, and the support team. The RV is a vehicle that follows him along the route, not a replacement for the walk itself. Zay continues to livestream daily on Twitch (@hmblzayy) when on the road.",
+    links: [
+      {
+        label: "Read the RV rolling-support announcement",
+        href: "/updates/rv-rolling-support",
+      },
+    ],
+  },
+  {
+    q: "Why did Minister Zay get an RV for the walk?",
+    a: "After the April 28, 2026 vehicle strike on U.S. 40 in Indiana, the team upgraded its logistics for the long road ahead. The RV provides safer rest stops, mobile shelter, and a base for support staff across the remaining ~2,300 miles to California. Zay announced the RV in a Reel on Instagram (@ministerzay) on May 8, 2026, with a tour from Indianapolis, IN.",
+    links: [
+      {
+        label: "Read the RV rolling-support announcement",
+        href: "/updates/rv-rolling-support",
+      },
+      {
+        label: "Apr 28 incident — recovery timeline",
+        href: "/updates/april-28-incident",
+      },
+    ],
+  },
+  {
     q: "What is Faith Walk Live?",
     a: "Faith Walk Live is a companion platform for the walk. It includes a live checkpoint map, a daily clip archive, scripture for the road, and a prayer hub that points to HMBL University Discord. The site is supporter-built, not an official HMBL property.",
   },

@@ -9,6 +9,7 @@ const links = [
   { href: "/clips", label: "Clips" },
   { href: "/why", label: "Why" },
   { href: "/faq", label: "FAQ" },
+  { href: "/updates", label: "Updates" },
   { href: "/prayer", label: "Prayer Wall" },
   { href: "/press", label: "Press" },
   { href: "/subscribe", label: "Subscribe" },
