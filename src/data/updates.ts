@@ -18,6 +18,13 @@ export type RecoveryEntry = {
 
 export const updates: UpdateEntry[] = [
   {
+    slug: "rv-rolling-support",
+    date: "2026-05-08",
+    headline: "Faith Walk Adds RV for Rolling Support",
+    summary:
+      "Minister Zay announced an RV that will roll alongside the 3,000-mile Faith Walk as a mobile support and rest vehicle. The RV is staged in Indianapolis, IN as Zay continues toward Camby and the next stretch of the route to California. Announced in a Reel on his Instagram (@ministerzay) on May 8, 2026.",
+  },
+  {
     slug: "april-28-incident",
     date: "2026-04-28",
     headline: "Walk Paused After Accident on the Route",

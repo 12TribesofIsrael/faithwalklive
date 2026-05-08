@@ -38,11 +38,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .pop();
   const incidentDate = incidentLatest ? new Date(incidentLatest) : now;
 
+  // /updates/rv-rolling-support: anchor on the entry date in updates.ts; bumps
+  // when the entry's date is changed (currently fixed at announcement date).
+  const rvEntry = updates.find((u) => u.slug === "rv-rolling-support");
+  const rvDate = rvEntry ? new Date(rvEntry.date) : now;
+
   return [
     { url: base, lastModified: trackerDate, changeFrequency: "daily", priority: 1 },
     { url: `${base}/map`, lastModified: trackerDate, changeFrequency: "daily", priority: 0.9 },
     { url: `${base}/updates`, lastModified: updatesIndexDate, changeFrequency: "daily", priority: 0.95 },
     { url: `${base}/updates/april-28-incident`, lastModified: incidentDate, changeFrequency: "daily", priority: 0.95 },
+    { url: `${base}/updates/rv-rolling-support`, lastModified: rvDate, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/clips`, lastModified: trackerDate, changeFrequency: "daily", priority: 0.8 },
     { url: `${base}/press`, lastModified: incidentDate, changeFrequency: "weekly", priority: 0.85 },
     { url: `${base}/why`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
