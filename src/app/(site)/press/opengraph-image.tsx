@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 export const alt =
-  "Press Kit — Faith Walk Live. Press assets, fast facts, and contact for the 3,000-mile Faith Walk.";
+  "Press Kit — Faith Walk Philly | Faith Walk Live. Press assets, fast facts, and contact for the 3,000-mile Philly-to-California Faith Walk.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -33,11 +33,11 @@ export default function OG() {
             marginBottom: "32px",
           }}
         >
-          Faith Walk Live · Press Kit
+          Faith Walk Philly · Faith Walk Live · Press Kit
         </div>
         <div
           style={{
-            fontSize: "72px",
+            fontSize: "64px",
             fontWeight: 700,
             lineHeight: 1.1,
             color: "#fff8e1",
@@ -45,12 +45,24 @@ export default function OG() {
             maxWidth: "1000px",
           }}
         >
-          PRESS KIT — FAITH WALK LIVE
+          PRESS KIT — FAITH WALK PHILLY
         </div>
         <div
           style={{
-            marginTop: "32px",
-            fontSize: "26px",
+            marginTop: "20px",
+            fontSize: "28px",
+            color: "#f3e7c0",
+            textAlign: "center",
+            maxWidth: "950px",
+            lineHeight: 1.3,
+          }}
+        >
+          Philly to California · 3,000 miles on faith
+        </div>
+        <div
+          style={{
+            marginTop: "20px",
+            fontSize: "22px",
             color: "#e6c870",
             textAlign: "center",
             maxWidth: "950px",

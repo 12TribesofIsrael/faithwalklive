@@ -13,6 +13,9 @@ export default function Home() {
         <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight text-brand-cloud">
           Faith Walk <span className="text-brand-gold">Live</span>
         </h1>
+        <h2 className="text-base sm:text-lg text-brand-gold/90 italic font-normal tracking-wide max-w-2xl mx-auto">
+          The Philly Faith Walk · Philly to California · 3,000 Miles on Faith
+        </h2>
         <p className="max-w-2xl mx-auto text-brand-softgold text-lg">
           Minister Zay is walking 3,000 miles from Philadelphia to California.
           Every day. On faith. This is where we follow along — the map, the

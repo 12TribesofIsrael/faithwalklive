@@ -79,6 +79,16 @@ npm run build        # Must pass before deploy
 npm start            # Production server
 ```
 
+## SEO posture (dual-target — do not undo)
+
+The site targets three brand families on the same domain:
+
+1. **Faith Walk Live** — primary brand keyword. Already #2 organic from the April-28 news cycle. Keep in every `<title>`, OG, and JSON-LD `name` field.
+2. **Faith Walk Philly** — geo target. Added 2026-05-14. Lives in `title.default`, `keywords`, JSON-LD `alternateName`, the `/philly` landing page, and OG image hero text.
+3. **Philly to California** / **Philadelphia to California** — journey long-tail. Woven into descriptions, OG subtitles, and the `/philly` page narrative.
+
+When editing copy, keep all three families findable. Do not strip "Faith Walk Live" from titles (that's the SEO mistake the dual-target avoids). The `/philly` route is the canonical geo landing page — do not duplicate its intent on the homepage.
+
 ## Voice / writing rules
 
 From the pivot doc's positioning rules — these apply to every piece of copy you write:

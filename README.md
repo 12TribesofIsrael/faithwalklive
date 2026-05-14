@@ -1,8 +1,8 @@
-# Faith Walk Live
+# Faith Walk Live (a.k.a. Faith Walk Philly)
 
 **Live at [https://faithwalklive.com](https://faithwalklive.com)**
 
-A believer's companion to Minister Zay's 3,000-mile Philly→Cali Faith Walk.
+A believer's companion to Minister Zay's 3,000-mile Philly→Cali Faith Walk. SEO targets all three brand variants — **Faith Walk Live** (primary brand), **Faith Walk Philly** (geo), and **Philly to California** (journey) — pointing at the same domain. See `/philly` for the geo-focused landing page.
 
 Standalone platform — **not** affiliated with HMBL. Built by [AI Bible Gospels](https://aibiblegospels.com), a supporter riding with the mission.
 

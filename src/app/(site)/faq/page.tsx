@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Common Questions",
   description:
-    "Common questions about Minister Zay, the 3,000-mile Faith Walk from Philadelphia to California, and Faith Walk Live. Plain answers, faith-first voice.",
+    "Common questions about Minister Zay, the 3,000-mile Faith Walk Philly (a.k.a. Faith Walk Live) — the Philly-to-California walk on faith. Plain answers, faith-first voice.",
 };
 
 type QA = {
@@ -15,7 +15,7 @@ type QA = {
 const faqs: QA[] = [
   {
     q: "What is the Faith Walk?",
-    a: "A 3,000-mile walk of faith from Philadelphia, Pennsylvania to California. Minister Zay is walking the distance on foot and streaming the journey daily on Twitch at twitch.tv/hmblzayy. It is not a publicity stunt and not a charity race — it is a walk of faith.",
+    a: "A 3,000-mile walk of faith from Philadelphia, Pennsylvania to California — also called the Faith Walk Philly or the Philly-to-California Faith Walk. Minister Zay is walking the distance on foot and streaming the journey daily on Twitch at twitch.tv/hmblzayy. It is not a publicity stunt and not a charity race — it is a walk of faith.",
   },
   {
     q: "Who is Minister Zay?",
@@ -93,7 +93,7 @@ const faqs: QA[] = [
   },
   {
     q: "What is Faith Walk Live?",
-    a: "Faith Walk Live is a companion platform for the walk. It includes a live checkpoint map, a daily clip archive, scripture for the road, and a prayer hub that points to HMBL University Discord. The site is supporter-built, not an official HMBL property.",
+    a: "Faith Walk Live (also known as Faith Walk Philly) is a companion platform for the walk. It includes a live checkpoint map, a daily clip archive, scripture for the road, and a prayer hub that points to HMBL University Discord. The site is supporter-built, not an official HMBL property.",
   },
   {
     q: "Is Faith Walk Live affiliated with HMBL?",

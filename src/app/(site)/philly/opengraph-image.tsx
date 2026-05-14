@@ -2,11 +2,11 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 export const alt =
-  "Faith Walk Philly | Faith Walk Live — Follow Minister Zay's 3,000-mile Philly-to-California faith walk";
+  "Faith Walk Philly — Philly to California 3,000-Mile Faith Walk. The Philadelphia roots of Faith Walk Live.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpengraphImage() {
+export default function PhillyOG() {
   return new ImageResponse(
     (
       <div
@@ -18,7 +18,7 @@ export default function OpengraphImage() {
           justifyContent: "space-between",
           padding: "80px",
           background:
-            "radial-gradient(ellipse at 30% 20%, #1a1a4a 0%, #0A0A2A 55%, #05051a 100%)",
+            "radial-gradient(ellipse at 20% 25%, #2a1a3a 0%, #0A0A2A 55%, #05051a 100%)",
           fontFamily: "sans-serif",
         }}
       >
@@ -48,25 +48,25 @@ export default function OpengraphImage() {
           <div
             style={{
               color: "#E8C46B",
-              fontSize: 104,
+              fontSize: 112,
               fontWeight: 700,
-              lineHeight: 1.02,
+              lineHeight: 1.0,
               letterSpacing: -2,
-              textShadow: "0 0 40px rgba(232, 196, 107, 0.25)",
+              textShadow: "0 0 40px rgba(232, 196, 107, 0.3)",
             }}
           >
-            3,000 miles on faith.
+            Faith Walk Philly.
           </div>
           <div
             style={{
               color: "#F5DEB3",
-              fontSize: 42,
+              fontSize: 44,
               lineHeight: 1.2,
-              maxWidth: 960,
+              maxWidth: 1000,
             }}
           >
-            Follow Minister Zay&apos;s Philly-to-California faith walk — live
-            map, daily clips, scripture, prayer wall.
+            Philly to California — 3,000 miles on faith. The Philadelphia
+            roots of Faith Walk Live.
           </div>
         </div>
 
@@ -79,7 +79,7 @@ export default function OpengraphImage() {
             fontSize: 24,
           }}
         >
-          <span style={{ color: "#F0E6D2" }}>faithwalklive.com</span>
+          <span style={{ color: "#F0E6D2" }}>faithwalklive.com/philly</span>
           <span>Built by AI Bible Gospels</span>
         </div>
       </div>

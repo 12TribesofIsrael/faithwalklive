@@ -5,22 +5,22 @@ import { outlets } from "@/data/outlets";
 const PAGE_URL = "https://faithwalklive.com/press";
 
 export const metadata = {
-  title: "Press Kit — Faith Walk Live",
+  title: "Press Kit — Faith Walk Philly | Faith Walk Live",
   description:
-    "Press assets, fast facts, and contact for Faith Walk Live — the live-tracker app following Minister Humble Zay's 3,000-mile walk from Philadelphia to California.",
+    "Press assets, fast facts, and contact for Faith Walk Philly (a.k.a. Faith Walk Live) — the live-tracker app following Minister Humble Zay's 3,000-mile Philly-to-California faith walk.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     type: "website",
     url: PAGE_URL,
-    title: "Press Kit — Faith Walk Live",
+    title: "Press Kit — Faith Walk Philly | Faith Walk Live",
     description:
-      "Press assets, fast facts, and contact for Faith Walk Live — the live-tracker app following Minister Humble Zay's 3,000-mile walk from Philadelphia to California.",
+      "Press assets, fast facts, and contact for Faith Walk Philly (a.k.a. Faith Walk Live) — the live-tracker app following Minister Humble Zay's 3,000-mile Philly-to-California faith walk.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Press Kit — Faith Walk Live",
+    title: "Press Kit — Faith Walk Philly | Faith Walk Live",
     description:
-      "Press assets, fast facts, and contact for Faith Walk Live — Minister Humble Zay's 3,000-mile walk from Philly to Cali.",
+      "Press assets, fast facts, and contact for Faith Walk Philly / Faith Walk Live — Minister Humble Zay's 3,000-mile Philly-to-Cali faith walk.",
     creator: "@AIBIBLEGOSPELS",
   },
   robots: { index: true, follow: true },
@@ -34,17 +34,17 @@ const boilerplates = [
   {
     label: "Short (40 words)",
     text:
-      "Faith Walk Live is the live-tracker app for Minister Humble Zay's 3,000-mile walk from Philadelphia to California, raising awareness for HMBL University, a trade school initiative for underprivileged youth. Built by AI Bible Gospels, a faith-tech project by Tommy Lee.",
+      "Faith Walk Philly (a.k.a. Faith Walk Live) is the live-tracker app for Minister Humble Zay's 3,000-mile Philly-to-California faith walk on foot, raising awareness for HMBL University, a trade school initiative for underprivileged youth. Built by AI Bible Gospels.",
   },
   {
     label: "Medium (80 words)",
     text:
-      "Faith Walk Live is the public live-tracker app following Minister Isaiah \"Humble Zay\" Thomas's 3,000-mile walk on foot from Philadelphia to California. The walk, which began March 25, 2026, raises awareness for HMBL University — a trade school initiative for underprivileged youth in Philadelphia. Faith Walk Live shows real-time mileage, current location, and the daily Twitch broadcast in one place. The app was built by AI Bible Gospels, a faith-tech project by Tommy Lee, as a supporter-side tool — not affiliated with HMBL.",
+      "Faith Walk Philly (a.k.a. Faith Walk Live) is the public live-tracker app following Minister Isaiah \"Humble Zay\" Thomas's 3,000-mile Philly-to-California walk on foot. The walk, which began March 25, 2026 in Philadelphia, raises awareness for HMBL University — a trade school initiative for underprivileged youth in Philly. Faith Walk Live shows real-time mileage, current location, and the daily Twitch broadcast in one place. Built by AI Bible Gospels, a faith-tech project by Tommy Lee, as a supporter-side tool — not affiliated with HMBL.",
   },
   {
     label: "Long (160 words)",
     text:
-      "Faith Walk Live is the public live-tracker app following Minister Isaiah \"Humble Zay\" Thomas's 3,000-mile walk on foot from Philadelphia, Pennsylvania to California. The walk, which began March 25, 2026, raises awareness for HMBL University — a trade school initiative aimed at giving underprivileged youth practical skills and career opportunities. Zay broadcasts every step live on Twitch (twitch.tv/hmblzayy). On April 28, 2026 — Day 34 of the walk — Zay was struck by a vehicle on U.S. 40 in Indiana while livestreaming. He was hospitalized with non-life-threatening injuries and resumed walking on May 3, reaching Indianapolis the following day. Faith Walk Live (faithwalklive.com) was built by AI Bible Gospels — a faith-tech project by Tommy Lee — to make the walk supportable in real time without scrolling Twitch. The tracker shows live mileage, current location, daily updates, and an embedded stream. Faith Walk Live is supporter-built and is not affiliated with HMBL.",
+      "Faith Walk Philly (a.k.a. Faith Walk Live) is the public live-tracker app following Minister Isaiah \"Humble Zay\" Thomas's 3,000-mile Philly-to-California walk on foot from Philadelphia, Pennsylvania to California. The walk, which began March 25, 2026 in Philly, raises awareness for HMBL University — a trade school initiative aimed at giving underprivileged youth practical skills and career opportunities. Zay broadcasts every step live on Twitch (twitch.tv/hmblzayy). On April 28, 2026 — Day 34 of the Philly-to-California faith walk — Zay was struck by a vehicle on U.S. 40 in Indiana while livestreaming. He was hospitalized with non-life-threatening injuries and resumed walking on May 3, reaching Indianapolis the following day. Faith Walk Live (faithwalklive.com) was built by AI Bible Gospels — a faith-tech project by Tommy Lee — to make the walk supportable in real time without scrolling Twitch. Faith Walk Live / Faith Walk Philly is supporter-built and is not affiliated with HMBL.",
   },
 ];
 
@@ -67,9 +67,9 @@ export default function PressPage() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": `${PAGE_URL}#webpage`,
-    name: "Press Kit — Faith Walk Live",
+    name: "Press Kit — Faith Walk Philly | Faith Walk Live",
     description:
-      "Press assets, fast facts, and contact for Faith Walk Live — the live-tracker app following Minister Humble Zay's 3,000-mile walk from Philadelphia to California.",
+      "Press assets, fast facts, and contact for Faith Walk Philly (a.k.a. Faith Walk Live) — the live-tracker app following Minister Humble Zay's 3,000-mile Philly-to-California faith walk.",
     url: PAGE_URL,
     publisher: { "@id": "https://faithwalklive.com/#aibiblegospels" },
     about: { "@id": "https://faithwalklive.com/#faithwalk" },
@@ -115,12 +115,13 @@ export default function PressPage() {
           Press Kit
         </div>
         <h1 className="text-3xl md:text-4xl font-semibold text-brand-cloud leading-tight">
-          Press Kit — Faith Walk Live
+          Press Kit — Faith Walk Philly | Faith Walk Live
         </h1>
         <p className="text-brand-amber mt-4 leading-relaxed">
-          Faith Walk Live is the live-tracker app following Minister Humble
-          Zay's 3,000-mile walk from Philadelphia to California — live mileage,
-          current location, and stream embed in one place.
+          Faith Walk Philly (a.k.a. Faith Walk Live) is the live-tracker app
+          following Minister Humble Zay&apos;s 3,000-mile Philly-to-California
+          faith walk — live mileage, current location, and stream embed in one
+          place.
         </p>
         <div className="mt-6 flex flex-col sm:flex-row gap-3 text-sm">
           <a

@@ -4,7 +4,7 @@ import MapClient from "@/components/MapClient";
 export const metadata = {
   title: "Live Map",
   description:
-    "Interactive map tracking Minister Zay's 3,000-mile Faith Walk from Philadelphia to California. Every checkpoint, updated daily.",
+    "Faith Walk Philly live map: track Minister Zay's 3,000-mile Philly-to-California Faith Walk. Every checkpoint from Philadelphia heading west, updated daily on Faith Walk Live.",
 };
 
 export default function MapPage() {
