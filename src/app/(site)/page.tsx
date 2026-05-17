@@ -1,4 +1,5 @@
 import Link from "next/link";
+import EmailCapture from "@/components/EmailCapture";
 import ScriptureCard from "@/components/ScriptureCard";
 import { getStats } from "@/lib/checkpoints";
 
@@ -42,6 +43,13 @@ export default function Home() {
           </div>
         </section>
       )}
+
+      <EmailCapture
+        variant="hero"
+        source="home-hero"
+        heading="Follow the walk by email"
+        body="One short email a day — the checkpoint, the clip, the verse. No sales. Unsubscribe any time."
+      />
 
       <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         <Stat
@@ -121,18 +129,12 @@ export default function Home() {
         </a>
       </section>
 
-      <section className="rounded-2xl border border-brand-border bg-brand-black/50 p-6 text-center space-y-3">
-        <h2 className="text-2xl font-semibold text-brand-cloud">Get daily walk updates</h2>
-        <p className="text-brand-amber">
-          One short email a day with the checkpoint, a clip, and the verse.
-        </p>
-        <Link
-          href="/subscribe"
-          className="inline-block px-5 py-2 rounded-full bg-brand-gold text-brand-black font-medium hover:bg-brand-amber transition"
-        >
-          Subscribe
-        </Link>
-      </section>
+      <EmailCapture
+        variant="compact"
+        source="home-footer"
+        heading="Get daily walk updates"
+        body="One short email a day — the checkpoint, the clip, the verse."
+      />
     </div>
   );
 }

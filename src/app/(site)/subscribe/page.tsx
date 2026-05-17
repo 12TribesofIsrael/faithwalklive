@@ -1,3 +1,5 @@
+import EmailCapture from "@/components/EmailCapture";
+
 export const metadata = {
   title: "Subscribe",
   description:
@@ -15,28 +17,12 @@ export default function SubscribePage() {
         </p>
       </div>
 
-      <form className="space-y-3 rounded-2xl border border-brand-border bg-brand-black/50 p-6">
-        <label className="block text-sm text-brand-softgold">
-          Email
-          <input
-            type="email"
-            name="email"
-            placeholder="you@email.com"
-            className="mt-1 w-full rounded-lg bg-brand-navy border border-brand-border px-3 py-2 focus:border-brand-gold outline-none text-brand-cloud placeholder:text-brand-bronze"
-          />
-        </label>
-        <button
-          type="submit"
-          disabled
-          className="px-5 py-2 rounded-full bg-brand-gold text-brand-black font-medium disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          Subscribe (wiring up)
-        </button>
-        <p className="text-xs text-brand-bronze">
-          Email updates coming soon. In the meantime, follow the journey on
-          YouTube.
-        </p>
-      </form>
+      <EmailCapture
+        variant="hero"
+        source="subscribe-page"
+        heading="Subscribe"
+        body="Type your email below. You'll get a welcome note right away, then one short email a day for the rest of the walk."
+      />
 
       <div className="rounded-2xl border border-brand-border bg-brand-black/50 p-6 text-center space-y-3">
         <p className="text-xs uppercase tracking-[0.2em] text-brand-bronze">
@@ -59,8 +45,7 @@ export default function SubscribePage() {
           AI Bible Gospels
         </a>
         <p className="text-brand-amber text-sm">
-          Subscribe on YouTube for more faith-driven content while we finish
-          wiring up email updates.
+          More faith-driven content on YouTube while you wait for the daily emails.
         </p>
         <a
           href="https://www.youtube.com/@AIBIBLEGOSPELS"
