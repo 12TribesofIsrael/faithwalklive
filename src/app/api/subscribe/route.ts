@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, after } from "next/server";
+import { pushLeadToCrm } from "@/lib/crm";
 
 export const runtime = "nodejs";
 
@@ -79,6 +80,17 @@ export async function POST(req: NextRequest) {
   if (!welcome.ok) {
     console.error("Resend welcome error", welcome.status, await welcome.text().catch(() => ""));
   }
+
+  // Mirror the signup into the CRM so every lead lives in one place. Daily-walk
+  // subscribers land as contacts (no pipeline stage) — reachable, but not on the
+  // sales board. Runs after the response, so it never delays or breaks the form.
+  after(() =>
+    pushLeadToCrm({
+      email,
+      source: "website-form",
+      tags: ["faithwalklive", `src:${source}`.slice(0, 80)],
+    }),
+  );
 
   return NextResponse.json({ ok: true });
 }

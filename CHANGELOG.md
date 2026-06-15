@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- **CRM lead ingestion** — `/api/subscribe` now also mirrors each signup into the BMB LeadStack CRM as a contact (no pipeline stage; tagged `faithwalklive` + source). Runs via Next `after()` *after* the response is sent, with an 8s timeout and full error-swallowing, so the CRM can never slow or break the subscribe form. New helper [src/lib/crm.ts](src/lib/crm.ts); gated by two new **optional** env vars `BMB_CRM_INGEST_URL` + `BMB_CRM_API_KEY` (push silently no-ops if unset). Subscriber nurture is copy-safe per Faith Walk recovery mode — see `bmbaiautomations/docs/sales/subscriber-nurture-framework.md`.
+
 ## [0.6.0] — 2026-04-21
 
 ### AEO / SEO polish
