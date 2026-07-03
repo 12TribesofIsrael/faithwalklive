@@ -944,7 +944,7 @@
     "lat": 37.6235234,
     "lng": -104.780995,
     "miles": 2157,
-    "date": "Jul 2, 2026",
+    "date": "Jul 1, 2026",
     "estimatedMiles": true,
     "destinationLat": 37.5050118,
     "destinationLng": -105.0077747,
@@ -952,6 +952,7 @@
     "inProgressDay": 99,
     "milesRemaining": 18,
     "estimatedSegmentMiles": 19,
-    "inProgressStartedAt": "2026-07-03T00:05:59.103Z"
+    "inProgressStartedAt": "2026-07-03T00:05:59.103Z",
+    "clip": "https://www.twitch.tv/hmblzayy/clip/ColdGoldenPoxEleGiggle-pnaqeyv77SjikEcW"
   }
 ]
