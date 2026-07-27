@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  let body: { email?: string; source?: string };
+  let body: { email?: string; source?: string; phone?: string };
   try {
     body = await req.json();
   } catch {
@@ -28,6 +28,13 @@ export async function POST(req: NextRequest) {
 
   const email = (body.email ?? "").trim().toLowerCase();
   const source = (body.source ?? "subscribe-form").slice(0, 64);
+  // Optional, for future SMS. Strip-and-truncate rather than reject — a badly
+  // typed number must never turn a valid email signup into a 400. Resend
+  // audiences have no phone field, so this goes to the CRM only.
+  const phone = (body.phone ?? "")
+    .replace(/[^\d+()\-.\s]/g, "")
+    .trim()
+    .slice(0, 32);
 
   if (!email || !EMAIL_RE.test(email) || email.length > 254) {
     return NextResponse.json(
@@ -89,6 +96,7 @@ export async function POST(req: NextRequest) {
       email,
       source: "website-form",
       tags: ["faithwalklive", `src:${source}`.slice(0, 80)],
+      ...(phone ? { phone } : {}),
     }),
   );
 

@@ -18,6 +18,7 @@ export default function EmailCapture({
   body = "One short email a day — the checkpoint, the clip, the verse. No sales. Unsubscribe any time.",
 }: EmailCaptureProps) {
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [state, setState] = useState<"idle" | "loading" | "ok" | "error">("idle");
   const [message, setMessage] = useState<string | null>(null);
 
@@ -32,7 +33,7 @@ export default function EmailCapture({
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source }),
+        body: JSON.stringify({ email, source, phone }),
       });
       const data = await res.json().catch(() => ({}));
 
@@ -40,6 +41,7 @@ export default function EmailCapture({
         setState("ok");
         setMessage("You're in. Check your inbox for the welcome note.");
         setEmail("");
+        setPhone("");
       } else {
         setState("error");
         setMessage(data?.error ?? "Something went wrong. Try again.");
@@ -71,25 +73,41 @@ export default function EmailCapture({
         </p>
       </div>
 
-      <form
-        onSubmit={onSubmit}
-        className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto"
-      >
-        <label htmlFor={`email-${source}`} className="sr-only">
-          Email address
-        </label>
-        <input
-          id={`email-${source}`}
-          type="email"
-          name="email"
-          required
-          autoComplete="email"
-          placeholder="you@email.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          disabled={state === "loading" || state === "ok"}
-          className="flex-1 rounded-full bg-brand-navy border border-brand-border px-4 py-2.5 text-brand-cloud placeholder:text-brand-bronze focus:border-brand-gold outline-none disabled:opacity-60"
-        />
+      <form onSubmit={onSubmit} className="flex flex-col gap-2 max-w-md mx-auto">
+        <div className="flex flex-col sm:flex-row gap-2">
+          <label htmlFor={`email-${source}`} className="sr-only">
+            Email address
+          </label>
+          <input
+            id={`email-${source}`}
+            type="email"
+            name="email"
+            required
+            autoComplete="email"
+            placeholder="you@email.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            disabled={state === "loading" || state === "ok"}
+            className="flex-1 rounded-full bg-brand-navy border border-brand-border px-4 py-2.5 text-brand-cloud placeholder:text-brand-bronze focus:border-brand-gold outline-none disabled:opacity-60"
+          />
+          {/* Optional. `type="tel"` does no native validation in any browser, so
+              this can never block a valid email signup. */}
+          <label htmlFor={`phone-${source}`} className="sr-only">
+            Phone number (optional)
+          </label>
+          <input
+            id={`phone-${source}`}
+            type="tel"
+            name="phone"
+            inputMode="tel"
+            autoComplete="tel"
+            placeholder="Phone (optional)"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            disabled={state === "loading" || state === "ok"}
+            className="flex-1 rounded-full bg-brand-navy border border-brand-border px-4 py-2.5 text-brand-cloud placeholder:text-brand-bronze focus:border-brand-gold outline-none disabled:opacity-60"
+          />
+        </div>
         <button
           type="submit"
           disabled={state === "loading" || state === "ok"}
@@ -101,6 +119,10 @@ export default function EmailCapture({
               ? "Subscribed ✓"
               : "Subscribe"}
         </button>
+        <p className="text-brand-bronze text-xs">
+          Phone is optional — text updates only. Msg &amp; data rates may apply.
+          Reply STOP to opt out.
+        </p>
       </form>
 
       {message && (
