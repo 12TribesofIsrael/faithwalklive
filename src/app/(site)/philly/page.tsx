@@ -167,9 +167,20 @@ export default function PhillyPage() {
         <p className="text-brand-softgold leading-relaxed">
           Roughly 3,000 miles from Philadelphia, Pennsylvania to California, on
           foot, one day at a time. Through Pennsylvania, Ohio, Indiana,
-          Illinois, and west. {s.miles.toLocaleString()} miles walked so far of{" "}
-          {s.totalMiles.toLocaleString()} — {s.percent}% of the way. The
-          checkpoint map is the source of truth for where Zay actually is.
+          Illinois, and west.{" "}
+          {s.isComplete ? (
+            <>
+              He finished on {s.completedDate} — {s.totalDays} days, all{" "}
+              {s.totalMiles.toLocaleString()} miles, ending at the California
+              state line. The checkpoint map is the record of every mile of it.
+            </>
+          ) : (
+            <>
+              {s.miles.toLocaleString()} miles walked so far of{" "}
+              {s.totalMiles.toLocaleString()} — {s.percent}% of the way. The
+              checkpoint map is the source of truth for where Zay actually is.
+            </>
+          )}
         </p>
         {s.isPaused && (
           <p className="text-brand-amber mt-4 leading-relaxed">

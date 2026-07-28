@@ -58,9 +58,11 @@ export default function PressPage() {
       .pop() ?? null;
 
   const milesRounded = Math.round(stats.miles);
-  const statusLine = stats.isPaused
-    ? `Paused — Day ${stats.currentDay} (~${milesRounded} mi). Resumed walking May 3 after the Apr 28 incident.`
-    : `In progress — Day ${stats.currentDay} (~${milesRounded} mi).`;
+  const statusLine = stats.isComplete
+    ? `Complete — finished ${stats.completedDate}, day ${stats.totalDays}, crossing the California state line (~${milesRounded} mi). Walk paused Apr 28 after he was struck by a vehicle in Indiana; he resumed May 3.`
+    : stats.isPaused
+      ? `Paused — Day ${stats.currentDay} (~${milesRounded} mi). Resumed walking May 3 after the Apr 28 incident.`
+      : `In progress — Day ${stats.currentDay} (~${milesRounded} mi).`;
   const asOfLine = lastDataDate ? `As of ${lastDataDate}` : null;
 
   const webPageJsonLd = {

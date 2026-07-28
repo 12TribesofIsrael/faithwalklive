@@ -32,6 +32,11 @@ export type Checkpoint = {
   // pausedNote is shown verbatim on the public banner + map popup.
   paused?: boolean;
   pausedNote?: string;
+  // Walk-complete state: set on the final checkpoint only. He crossed the
+  // California line on Day 124 (Jul 27, 2026). completedNote is shown
+  // verbatim on the public banner + map popup, same contract as pausedNote.
+  completed?: boolean;
+  completedNote?: string;
 };
 
 export const checkpoints: Checkpoint[] = raw as Checkpoint[];
@@ -84,15 +89,37 @@ export function getStats() {
   const recoveryDay = isPaused && daysSincePaused > 0 ? daysSincePaused : 0;
   const displayDay = isPaused ? currentDay + recoveryDay : currentDay;
 
+  // Walk complete — set on the final checkpoint (Day 124, Jul 27 2026).
+  const isComplete = last?.completed === true;
+
+  // Reported mileage once the walk is finished.
+  //
+  // Our per-leg numbers are straight-line haversine x 1.3, which is an
+  // ESTIMATE and a known-biased one: the v2.26.0 Strava reconciliation showed
+  // it ran ~8.5% high across July, and the pre-July history was never
+  // re-measured. The estimate chain lands at 2,957 mi, which would render a
+  // finished walk as "98.6%" — wrong in the way that matters most.
+  //
+  // The walk IS finished. Zay, his GoFundMe, and every outlet that covered
+  // the finish (Complex, The Source, NBC10 Philadelphia, the Philadelphia
+  // Tribune) report 3,000 miles. So on completion we report the walk's stated
+  // distance rather than our own estimate, and the underlying checkpoint keeps
+  // its honest estimated figure for anyone reading the data.
+  const reportedMiles = isComplete ? TOTAL_MILES : miles;
+  const percent = isComplete
+    ? 100
+    : Math.round((miles / TOTAL_MILES) * 1000) / 10;
+
   return {
     currentDay,
     displayDay,
     recoveryDay,
     currentLocation: last?.location ?? "Philadelphia, PA",
-    miles,
+    miles: reportedMiles,
+    estimatedMiles: miles,
     totalMiles: TOTAL_MILES,
-    percent: Math.round((miles / TOTAL_MILES) * 1000) / 10,
-    steps: miles * STEPS_PER_MILE,
+    percent,
+    steps: reportedMiles * STEPS_PER_MILE,
     totalSteps: TOTAL_MILES * STEPS_PER_MILE,
     clipCount: checkpoints.reduce((n, c) => n + clipsFor(c).length, 0),
     isRestDay: last?.restDay === true,
@@ -102,6 +129,12 @@ export function getStats() {
     pausedNote: last?.pausedNote ?? null,
     pausedSince,
     pausedDate,
+    isComplete,
+    completedNote: last?.completedNote ?? null,
+    completedDate: isComplete ? last?.date ?? null : null,
+    finishLocation: isComplete ? last?.location ?? null : null,
+    startDate: checkpoints[0]?.date ?? null,
+    totalDays: isComplete ? last?.day ?? currentDay : currentDay,
   };
 }
 

@@ -9,7 +9,9 @@ export default function Home() {
     <div className="max-w-5xl mx-auto px-4 py-12 space-y-12">
       <section className="text-center space-y-4">
         <p className="text-xs uppercase tracking-[0.3em] text-brand-gold">
-          A believer&apos;s companion to the Philly → Cali Faith Walk
+          {s.isComplete
+            ? "A believer's record of the Philly → Cali Faith Walk"
+            : "A believer's companion to the Philly → Cali Faith Walk"}
         </p>
         <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight text-brand-cloud">
           Faith Walk <span className="text-brand-gold">Live</span>
@@ -18,11 +20,49 @@ export default function Home() {
           The Philly Faith Walk · Philly to California · 3,000 Miles on Faith
         </h2>
         <p className="max-w-2xl mx-auto text-brand-softgold text-lg">
-          Minister Zay is walking 3,000 miles from Philadelphia to California.
-          Every day. On faith. This is where we follow along — the map, the
-          clips, the scripture, the prayers.
+          {s.isComplete ? (
+            <>
+              Minister Zay walked 3,000 miles from Philadelphia to California —
+              on foot, on faith, streamed nearly every mile. He finished on{" "}
+              {s.completedDate}, day {s.totalDays}. This is the whole road: the
+              map, the clips, the scripture, the prayers.
+            </>
+          ) : (
+            <>
+              Minister Zay is walking 3,000 miles from Philadelphia to
+              California. Every day. On faith. This is where we follow along —
+              the map, the clips, the scripture, the prayers.
+            </>
+          )}
         </p>
       </section>
+
+      {s.isComplete && (
+        <section className="rounded-2xl border border-brand-gold/50 bg-brand-black/80 p-6 sm:p-8 text-center">
+          <p className="text-xs uppercase tracking-[0.3em] text-brand-gold mb-3">
+            🏁 Walk Complete · Day {s.totalDays} · {s.completedDate}
+          </p>
+          <p className="text-brand-cloud/90 max-w-2xl mx-auto leading-relaxed">
+            {s.completedNote}
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3 justify-center">
+            <a
+              href="https://www.gofundme.com/f/help-launch-hmbl-summer-camp-for-teens"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-5 py-2 rounded-full bg-brand-gold text-brand-black font-medium hover:bg-brand-amber transition text-sm"
+            >
+              Help finish HMBL University
+            </a>
+            <Link
+              href="/map"
+              className="inline-block px-5 py-2 rounded-full border border-brand-gold/50 text-brand-gold font-medium hover:bg-brand-gold/10 transition text-sm"
+            >
+              Walk the whole route
+            </Link>
+          </div>
+        </section>
+      )}
 
       {s.isPaused && (
         <section className="rounded-2xl border border-brand-gold/40 bg-brand-black/80 p-6 text-center">
@@ -47,24 +87,37 @@ export default function Home() {
       <EmailCapture
         variant="hero"
         source="home-hero"
-        heading="Follow the walk by email"
-        body="One short email a day — the checkpoint, the clip, the verse. No sales. Unsubscribe any time."
+        heading={
+          s.isComplete
+            ? "Stay with the mission"
+            : "Follow the walk by email"
+        }
+        body={
+          s.isComplete
+            ? "The walk is done — the school isn't built yet. Get word when HMBL University breaks ground, and whatever Zay walks next. No sales. Unsubscribe any time."
+            : "One short email a day — the checkpoint, the clip, the verse. No sales. Unsubscribe any time."
+        }
       />
 
       <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         <Stat
-          label="Current day"
+          label={s.isComplete ? "Days walked" : "Current day"}
           value={
-            s.isPaused
-              ? s.recoveryDay > 0
-                ? `Day ${s.displayDay} · Recovery Day ${s.recoveryDay}`
-                : `Day ${s.currentDay} · PAUSED`
-              : s.isRestDay
-                ? `Day ${s.currentDay} · REST`
-                : `Day ${s.currentDay}`
+            s.isComplete
+              ? `${s.totalDays} days · DONE`
+              : s.isPaused
+                ? s.recoveryDay > 0
+                  ? `Day ${s.displayDay} · Recovery Day ${s.recoveryDay}`
+                  : `Day ${s.currentDay} · PAUSED`
+                : s.isRestDay
+                  ? `Day ${s.currentDay} · REST`
+                  : `Day ${s.currentDay}`
           }
         />
-        <Stat label="Location" value={s.currentLocation} />
+        <Stat
+          label={s.isComplete ? "Finished at" : "Location"}
+          value={s.currentLocation}
+        />
         <Stat label="Miles walked" value={`${s.miles.toLocaleString()} / ${s.totalMiles.toLocaleString()}`} />
         <Stat label="Steps walked" value={`${s.steps.toLocaleString()}`} />
         <Stat label="Progress" value={`${s.percent}%`} />
@@ -75,8 +128,12 @@ export default function Home() {
       <section className="grid sm:grid-cols-2 gap-4">
         <Card
           href="/map"
-          title="Live Map"
-          body="Every confirmed checkpoint from Philadelphia to now, plus where the walk is headed today."
+          title={s.isComplete ? "The Whole Route" : "Live Map"}
+          body={
+            s.isComplete
+              ? `All ${s.totalDays} days, Philadelphia to the California line — every checkpoint he walked.`
+              : "Every confirmed checkpoint from Philadelphia to now, plus where the walk is headed today."
+          }
         />
         <Card
           href="/clips"
@@ -90,8 +147,12 @@ export default function Home() {
         />
         <Card
           href="/prayer"
-          title="Prayer Wall"
-          body="Drop a prayer for Zay and the walk. Moderated, public, lifted up daily."
+          title={s.isComplete ? "Pray for Zay" : "Prayer Wall"}
+          body={
+            s.isComplete
+              ? "He finished the road. Keep him and the school in prayer with the HMBL community."
+              : "Drop a prayer for Zay and the walk. Moderated, public, lifted up daily."
+          }
         />
       </section>
 

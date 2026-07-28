@@ -81,9 +81,16 @@ export default function MapClient({
 
   const walking = checkpoints.filter((c) => !c.restOnly);
   const last = walking[walking.length - 1];
-  const miles = last?.miles ?? 0;
+  // Walk complete: report the walk's stated 3,000 mi rather than our
+  // haversine-x-1.3 estimate, so a finished walk doesn't render as 98.6%.
+  // Same rule as getStats() — see the comment there for why.
+  const isComplete = last?.completed === true;
+  const completedNote = last?.completedNote ?? null;
+  const miles = isComplete ? totalMiles : (last?.miles ?? 0);
   const steps = miles * 2200;
-  const percent = Math.round((miles / totalMiles) * 1000) / 10;
+  const percent = isComplete
+    ? 100
+    : Math.round((miles / totalMiles) * 1000) / 10;
   const hasRestDayCard = !!last?.restDay;
   const restDayNumber = last?.inProgressDay ?? last?.day ?? 0;
   const isPaused = last?.paused === true;
@@ -118,6 +125,23 @@ export default function MapClient({
 
   return (
     <div className="space-y-6">
+      {/* Walk-complete banner — shown when the final checkpoint carries
+          completed: true. Celebratory but not loud; same gold-on-dark
+          treatment as the paused banner it replaces. */}
+      {isComplete && (
+        <div className="rounded-xl border border-brand-gold/50 bg-brand-black/80 p-5 text-center">
+          <div className="text-xs font-bold uppercase tracking-[0.3em] text-brand-gold mb-2">
+            🏁 Walk Complete
+          </div>
+          <div className="text-[11px] uppercase tracking-[0.25em] text-brand-amber mb-3">
+            Day {last?.day} · {last?.date} · {last?.location}
+          </div>
+          <p className="text-sm text-brand-cloud/90 max-w-2xl mx-auto leading-relaxed">
+            {completedNote}
+          </p>
+        </div>
+      )}
+
       {/* Paused-state banner — shown when latest checkpoint has paused: true.
           Somber gold-on-dark, never sensational. Recovery-day pill renders
           below the banner header once we're past the paused day itself. */}
@@ -179,9 +203,19 @@ export default function MapClient({
           {checkpoints.length + (hasRestDayCard ? 1 : 0)})
         </h2>
         <p className="text-brand-cloud/60 text-sm max-w-2xl">
-          <span className="text-brand-gold font-medium">NOW</span> marks the
-          latest checkpoint card. The day in the header is the current day on
-          the walk.
+          {isComplete ? (
+            <>
+              <span className="text-brand-gold font-medium">FINISH</span> marks
+              the last checkpoint of the walk — the California state line, Day{" "}
+              {last?.day}. Everything below it is the road that got him there.
+            </>
+          ) : (
+            <>
+              <span className="text-brand-gold font-medium">NOW</span> marks the
+              latest checkpoint card. The day in the header is the current day
+              on the walk.
+            </>
+          )}
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {restOnlyAsNow && (
@@ -272,6 +306,36 @@ export default function MapClient({
               const isCurrent =
                 c.day === last?.day && !hasRestDayCard && !restOnlyAsNow;
               const isActive = activeDay === c.day;
+              // The finish. Reads FINISH rather than NOW, carries the walk's
+              // stated total instead of the day's estimate, and keeps its
+              // clip wall — the arrival clips are the point of the card.
+              if (c.completed) {
+                return (
+                  <button
+                    key={c.day}
+                    onClick={() => handleSelect(c.day)}
+                    className="text-left rounded-xl border p-4 transition-all border-brand-gold bg-brand-gold/15"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-medium uppercase tracking-wider text-brand-bronze">
+                        Day {c.day}
+                        <span className="ml-2 text-brand-gold">FINISH</span>
+                      </span>
+                      <span className="text-xs text-brand-brown">{c.date}</span>
+                    </div>
+                    <p className="mt-1 font-semibold text-brand-cloud">
+                      {c.location}
+                    </p>
+                    <div className="mt-1 flex items-center justify-between">
+                      <span className="text-sm font-semibold text-brand-gold">
+                        🏁 {totalMiles.toLocaleString()} mi — WALK COMPLETE
+                      </span>
+                      <CardClipsFooter c={c} />
+                    </div>
+                    <ClipWallRow c={c} />
+                  </button>
+                );
+              }
               // Paused checkpoints render the prayers state in place of
               // miles/clip — never narrate the off-route event itself.
               if (c.paused) {

@@ -94,6 +94,20 @@ const PULSE_CSS = `
   font-size: 14px;
   box-shadow: 0 0 12px rgba(251, 191, 36, 0.35);
 }
+/* Finish marker — the walk is over, so no pulse: a solid gold medallion
+   with the checkered flag, sitting on the California line. */
+.finish-marker {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(251, 191, 36, 0.28);
+  border: 3px solid #fbbf24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  box-shadow: 0 0 18px rgba(251, 191, 36, 0.55);
+}
 .start-marker {
   width: 16px;
   height: 16px;
@@ -126,6 +140,13 @@ const pausedIcon = L.divIcon({
   html: '<div class="paused-marker">🙏</div>',
   iconSize: [28, 28],
   iconAnchor: [14, 14],
+});
+
+const finishIcon = L.divIcon({
+  className: "",
+  html: '<div class="finish-marker">🏁</div>',
+  iconSize: [32, 32],
+  iconAnchor: [16, 16],
 });
 
 const startIcon = L.divIcon({
@@ -259,16 +280,31 @@ export default function TrackerMap({
         </CircleMarker>
       ))}
 
-      {/* Current location — pulsing beacon, OR a steady prayers marker
-          when the latest checkpoint is paused (off-route safety event). */}
+      {/* Current location — pulsing beacon, OR a steady prayers marker when
+          the latest checkpoint is paused (off-route safety event), OR the
+          checkered finish medallion once the walk is complete. */}
       {now && now !== first && (
         <Marker
           position={[now.lat ?? last.lat, now.lng ?? last.lng]}
-          icon={now.paused ? pausedIcon : pulseIcon}
+          icon={
+            now.completed ? finishIcon : now.paused ? pausedIcon : pulseIcon
+          }
         >
           <Popup>
             <div className="text-sm">
-              {now.paused ? (
+              {now.completed ? (
+                <>
+                  <p className="font-bold text-amber-600">
+                    🏁 WALK COMPLETE — Day {now.day}
+                  </p>
+                  <p className="font-semibold">{now.location}</p>
+                  <p className="text-neutral-600">{now.date}</p>
+                  <p className="mt-2 text-neutral-700 leading-snug">
+                    {now.completedNote}
+                  </p>
+                  <ClipLinks c={now} label="Watch the finish →" />
+                </>
+              ) : now.paused ? (
                 <>
                   <p className="font-bold text-amber-600">
                     🙏 WALK PAUSED — Day {now.day}
