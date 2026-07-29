@@ -189,13 +189,6 @@ export default function Home() {
           Subscribe on YouTube
         </a>
       </section>
-
-      <EmailCapture
-        variant="compact"
-        source="home-footer"
-        heading="Get daily walk updates"
-        body="One short email a day — the checkpoint, the clip, the verse."
-      />
     </div>
   );
 }
