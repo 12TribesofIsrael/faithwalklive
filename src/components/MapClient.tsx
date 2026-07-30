@@ -206,7 +206,7 @@ export default function MapClient({
           {isComplete ? (
             <>
               <span className="text-brand-gold font-medium">FINISH</span> marks
-              the last checkpoint of the walk — the California state line, Day{" "}
+              the last checkpoint of the walk — {last?.location}, Day{" "}
               {last?.day}. Everything below it is the road that got him there.
             </>
           ) : (

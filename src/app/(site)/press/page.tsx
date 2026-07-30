@@ -39,12 +39,12 @@ const boilerplates = [
   {
     label: "Medium (80 words)",
     text:
-      "Faith Walk Philly (a.k.a. Faith Walk Live) is the public live-tracker app following Minister Isaiah \"Humble Zay\" Thomas's 3,000-mile Philly-to-California walk on foot. The walk, which began March 25, 2026 in Philadelphia, raises awareness for HMBL University — a trade school initiative for underprivileged youth in Philly. Faith Walk Live shows real-time mileage, current location, and the daily Twitch broadcast in one place. Built by AI Bible Gospels, a faith-tech project by Tommy Lee, as a supporter-side tool — not affiliated with HMBL.",
+      "Faith Walk Philly (a.k.a. Faith Walk Live) is the public live-tracker app following Minister Isaiah \"Humble Zay\" Thomas's 3,000-mile Philly-to-California walk on foot. The walk, which began March 26, 2026 in Philadelphia, raises awareness for HMBL University — a trade school initiative for underprivileged youth in Philly. Faith Walk Live shows real-time mileage, current location, and the daily Twitch broadcast in one place. Built by AI Bible Gospels, a faith-tech project by Tommy Lee, as a supporter-side tool — not affiliated with HMBL.",
   },
   {
     label: "Long (160 words)",
     text:
-      "Faith Walk Philly (a.k.a. Faith Walk Live) is the public live-tracker app following Minister Isaiah \"Humble Zay\" Thomas's 3,000-mile Philly-to-California walk on foot from Philadelphia, Pennsylvania to California. The walk, which began March 25, 2026 in Philly, raises awareness for HMBL University — a trade school initiative aimed at giving underprivileged youth practical skills and career opportunities. Zay broadcasts every step live on Twitch (twitch.tv/hmblzayy). On April 28, 2026 — Day 34 of the Philly-to-California faith walk — Zay was struck by a vehicle on U.S. 40 in Indiana while livestreaming. He was hospitalized with non-life-threatening injuries and resumed walking on May 3, reaching Indianapolis the following day. Faith Walk Live (faithwalklive.com) was built by AI Bible Gospels — a faith-tech project by Tommy Lee — to make the walk supportable in real time without scrolling Twitch. Faith Walk Live / Faith Walk Philly is supporter-built and is not affiliated with HMBL.",
+      "Faith Walk Philly (a.k.a. Faith Walk Live) is the public live-tracker app following Minister Isaiah \"Humble Zay\" Thomas's 3,000-mile Philly-to-California walk on foot from Philadelphia, Pennsylvania to California. The walk, which began March 26, 2026 in Philly, raises awareness for HMBL University — a trade school initiative aimed at giving underprivileged youth practical skills and career opportunities. Zay broadcasts every step live on Twitch (twitch.tv/hmblzayy). On April 28, 2026 — Day 34 of the Philly-to-California faith walk — Zay was struck by a vehicle on U.S. 40 in Indiana while livestreaming. He was hospitalized with non-life-threatening injuries and resumed walking on May 3, reaching Indianapolis the following day. Faith Walk Live (faithwalklive.com) was built by AI Bible Gospels — a faith-tech project by Tommy Lee — to make the walk supportable in real time without scrolling Twitch. Faith Walk Live / Faith Walk Philly is supporter-built and is not affiliated with HMBL.",
   },
 ];
 
@@ -59,7 +59,7 @@ export default function PressPage() {
 
   const milesRounded = Math.round(stats.miles);
   const statusLine = stats.isComplete
-    ? `Complete — finished ${stats.completedDate}, day ${stats.totalDays}, crossing the California state line (~${milesRounded} mi). Walk paused Apr 28 after he was struck by a vehicle in Indiana; he resumed May 3.`
+    ? `Complete — finished ${stats.completedDate}, day ${stats.totalDays}, walking into ${stats.finishLocation} (~${milesRounded} mi). Walk paused Apr 28 after he was struck by a vehicle in Indiana; he resumed May 3.`
     : stats.isPaused
       ? `Paused — Day ${stats.currentDay} (~${milesRounded} mi). Resumed walking May 3 after the Apr 28 incident.`
       : `In progress — Day ${stats.currentDay} (~${milesRounded} mi).`;
@@ -153,7 +153,7 @@ export default function PressPage() {
         </h2>
         <dl className="border border-brand-border rounded-lg divide-y divide-brand-border overflow-hidden">
           <FactRow term="Walk" def="Philadelphia, PA → California (3,000 miles, on foot)" />
-          <FactRow term="Started" def="March 25, 2026" />
+          <FactRow term="Started" def="March 26, 2026" />
           <FactRow term="Current status" def={statusLine} />
           <FactRow
             term="Apr 28 incident"
@@ -242,7 +242,7 @@ export default function PressPage() {
         <div className="space-y-4 text-brand-softgold leading-relaxed text-sm">
           <p>
             Isaiah "Humble Zay" Thomas is a minister from Philadelphia,
-            Pennsylvania. On March 25, 2026, he set out on foot to walk
+            Pennsylvania. On March 26, 2026, he set out on foot to walk
             approximately 3,000 miles from Philadelphia to California —
             broadcasting every step live on Twitch (
             <a

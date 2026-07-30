@@ -43,7 +43,7 @@ const philadelphiaPlaceJsonLd = {
   name: "Philadelphia, Pennsylvania",
   alternateName: ["Philly", "City of Brotherly Love"],
   description:
-    "Starting city of the Faith Walk Philly — Minister Zay's 3,000-mile faith walk from Philadelphia to California, which began March 25, 2026.",
+    "Starting city of the Faith Walk Philly — Minister Zay's 3,000-mile faith walk from Philadelphia to California, which began March 26, 2026.",
   containedInPlace: {
     "@type": "State",
     name: "Pennsylvania",
@@ -135,7 +135,7 @@ export default function PhillyPage() {
           The Philly start — Day 1
         </h2>
         <p className="text-brand-softgold leading-relaxed">
-          The walk began on March 25, 2026 in Philadelphia, Pennsylvania.
+          The walk began on March 26, 2026 in Philadelphia, Pennsylvania.
           Minister Isaiah &quot;Humble Zay&quot; Thomas — a Philly minister and
           founder of Stay Humble Stay Hungry (HMBL) Clothing — stepped off on
           foot, headed west. The plan: 3,000 miles to California, on faith,

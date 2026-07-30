@@ -43,6 +43,23 @@ export const checkpoints: Checkpoint[] = raw as Checkpoint[];
 
 const TOTAL_MILES = 3000;
 
+// Canonical start of the walk. Single source of truth — every schema field
+// and every piece of copy that states a start date reads this, so the date
+// can never drift between the Event JSON-LD and the page a crawler reads.
+//
+// March 26, not 25. Two independent reasons: every outlet that covered the
+// finish (NBC10, Complex, Unheard Voices) reports he left Philadelphia on
+// March 26, AND it is the only date that makes our own day count work —
+// March 26 through July 27 inclusive is exactly 124 days, the day number on
+// the final checkpoint. March 25 yields 125 and contradicted our own data.
+//
+// NOTE: checkpoints.json still carries Day 1 (Philadelphia, 0 mi) at
+// "Mar 25, 2026" and the early legs are shifted with it. That is a separate
+// data-archaeology job on the map markers; it does not change the stated
+// start of the walk, which is what schema and copy assert.
+export const WALK_START_DATE = "2026-03-26"; // ISO, for schema
+export const WALK_START_DATE_LABEL = "March 26, 2026"; // prose
+
 const STEPS_PER_MILE = 2200;
 
 // Flatten any single/multi clip configuration into a single URL list.
@@ -133,7 +150,10 @@ export function getStats() {
     completedNote: last?.completedNote ?? null,
     completedDate: isComplete ? last?.date ?? null : null,
     finishLocation: isComplete ? last?.location ?? null : null,
-    startDate: checkpoints[0]?.date ?? null,
+    // Canonical, NOT checkpoints[0].date — that is a rest-only entry dated
+    // Mar 29 and reading it here silently published a wrong start date.
+    startDate: WALK_START_DATE,
+    startDateLabel: WALK_START_DATE_LABEL,
     totalDays: isComplete ? last?.day ?? currentDay : currentDay,
   };
 }

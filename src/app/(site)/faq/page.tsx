@@ -15,7 +15,7 @@ type QA = {
 const faqs: QA[] = [
   {
     q: "Did Minister Zay finish the walk?",
-    a: "Yes. Minister Zay completed the 3,000-mile Faith Walk on July 27, 2026 — Day 124 — crossing the California state line on foot after starting in Philadelphia on March 25, 2026. He livestreamed nearly every mile on Twitch, including a hospitalization in Indiana on Day 34 that he came back from five days later. The finish was covered by Complex, NBC10 Philadelphia, CBS News Philadelphia, The Source, and others.",
+    a: "Yes. Minister Zay completed the 3,000-mile Faith Walk on July 27, 2026 — Day 124 — crossing into California at Needles on foot after starting in Philadelphia on March 26, 2026. He livestreamed nearly every mile on Twitch, including a hospitalization in Indiana on Day 34 that he came back from five days later. The finish was covered by Complex, NBC10 Philadelphia, CBS News Philadelphia, The Source, and others.",
     links: [
       {
         label: "Read the full record of the finish",
@@ -33,7 +33,7 @@ const faqs: QA[] = [
   },
   {
     q: "When did the Faith Walk begin and end?",
-    a: "The walk began on March 25, 2026 in Philadelphia, Pennsylvania and finished on July 27, 2026 at the California state line — 124 days on the road.",
+    a: "The walk began on March 26, 2026 in Philadelphia, Pennsylvania and finished on July 27, 2026 at Needles, California — 124 days on the road.",
   },
   {
     q: "How long was the Faith Walk?",
@@ -45,7 +45,7 @@ const faqs: QA[] = [
   },
   {
     q: "Where did the Faith Walk end?",
-    a: "At the California state line on July 27, 2026 — Day 124 — after passing through Lake Havasu City, Arizona the day before. Some coverage names Needles, California as the arrival point in San Bernardino County. The map at faithwalklive.com/map holds the full route with every confirmed checkpoint.",
+    a: "In Needles, California, on July 27, 2026 — Day 124. Minister Zay crossed the Arizona-California line into Needles, in San Bernardino County, after passing through Lake Havasu City, Arizona the day before. The map at faithwalklive.com/map holds the full route with every confirmed checkpoint.",
   },
   {
     q: "What happened on Day 34 of the walk?",
@@ -103,7 +103,7 @@ const faqs: QA[] = [
   },
   {
     q: "What is Faith Walk Live?",
-    a: "Faith Walk Live (also known as Faith Walk Philly) is a companion platform for the walk. It includes a live checkpoint map, a daily clip archive, scripture for the road, and a prayer hub that points to HMBL University Discord. The site is supporter-built, not an official HMBL property.",
+    a: "Faith Walk Live (also known as Faith Walk Philly) is a companion platform and permanent record of the walk. It includes the full checkpoint map of the route he walked, a daily clip archive covering all 124 days, scripture for the road, and a prayer hub that points to HMBL University Discord. The site is supporter-built, not an official HMBL property.",
   },
   {
     q: "Is Faith Walk Live affiliated with HMBL?",
@@ -118,8 +118,18 @@ const faqs: QA[] = [
     a: "AI Bible Gospels is a YouTube channel and faith-tech ministry that creates gospel-focused content using technology. It sponsors Faith Walk Live as a companion resource for believers following the walk. You can find the channel at youtube.com/@AIBIBLEGOSPELS.",
   },
   {
-    q: "How can I support the walk?",
-    a: "Pray for it. Watch the live stream on Twitch when the walk resumes. Pray with the HMBL community at faithwalklive.com/prayer. Share the walk with your church, your family, or your community.",
+    q: "How can I support the walk now that it's finished?",
+    a: "Support the reason he walked. HMBL University is not built yet, and the fundraiser toward it is still open. Pray with the HMBL community at faithwalklive.com/prayer, watch the walk back in the clip archive, and share the story with your church, your family, or your community.",
+    links: [
+      {
+        label: "Help finish HMBL University (GoFundMe)",
+        href: "https://www.gofundme.com/f/help-launch-hmbl-summer-camp-for-teens",
+      },
+      {
+        label: "Read the full record of the finish",
+        href: "/updates/walk-complete",
+      },
+    ],
   },
   {
     q: "How can I pray for Minister Zay?",
@@ -131,7 +141,7 @@ const faqs: QA[] = [
   },
   {
     q: "How often is the tracker updated?",
-    a: "Once per day. The checkpoint map is updated at the end of the night or the next morning after the stream, sourced from publicly available information in the Twitch stream title. No private location data is collected or displayed.",
+    a: "It is no longer updated — the walk finished on July 27, 2026, so the map is now a complete record rather than a live tracker. While the walk was underway it was updated once per day, at the end of the night or the next morning, sourced from publicly available information in the Twitch stream title. No private location data was ever collected or displayed.",
   },
 ];
 

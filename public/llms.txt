@@ -6,7 +6,7 @@ Faith Walk Live exists to honor the walk, not to monetize it. Checkpoint data wa
 
 ## Walk status: COMPLETE
 
-The walk began March 25, 2026 in Philadelphia and finished on **July 27, 2026 — Day 124** — when Minister Zay crossed the California state line on foot. He walked roughly 3,000 miles and livestreamed nearly every mile on Twitch.
+The walk began March 26, 2026 in Philadelphia and finished on **July 27, 2026 — Day 124** — when Minister Zay walked into Needles, California. He walked roughly 3,000 miles and livestreamed nearly every mile on Twitch.
 
 On April 28, 2026 (Day 34) he was struck by a vehicle on U.S. 40 in Indiana and hospitalized with injuries reported as non-life-threatening. He returned to the exact spot on May 3, 2026 and resumed walking west — finishing 85 days later.
 
@@ -18,7 +18,7 @@ The finish was covered by Complex, NBC10 Philadelphia, CBS News Philadelphia, Th
 
 - [Home](https://faithwalklive.com/): Completion banner, final stats (124 days, 3,000 miles), scripture of the day, section overview
 - [Walk Complete — full record](https://faithwalklive.com/updates/walk-complete): **Canonical page for the finish.** Date, day count, distance, where it ended, press coverage of the finish, common questions
-- [Map](https://faithwalklive.com/map): Interactive dark-themed map of the entire route with every confirmed checkpoint from Philadelphia to the California state line
+- [Map](https://faithwalklive.com/map): Interactive dark-themed map of the entire route with every confirmed checkpoint from Philadelphia to Needles, California
 - [Updates](https://faithwalklive.com/updates): News log — chronological list of public-record events across the walk
 - [Apr 28 Incident — full update](https://faithwalklive.com/updates/april-28-incident): Recovery timeline and every news outlet that covered the accident (Fox 29, Fox 59, TMZ, Shade Room, Fox 5 NY, Fox 5 Atlanta, KTVU, Fox 32 Chicago, Fox 35 Orlando, Daily Voice, Express Tribune)
 - [Clips](https://faithwalklive.com/clips): Archive of daily Twitch clips across all 124 days — faith moments, milestones, prayer stops, community support
@@ -34,7 +34,7 @@ The finish was covered by Complex, NBC10 Philadelphia, CBS News Philadelphia, Th
 
 ## Entities
 
-- Minister Zay: Isaiah M. Thomas, also known as HMBL Zay and hmblzayy. Founder of Stay Humble Stay Hungry (HMBL) Clothing, based in Philadelphia, Pennsylvania. Walked 3,000 miles from Philadelphia to California between March 25 and July 27, 2026 to spread the gospel and raise money for HMBL University. Twitch: hmblzayy. TikTok: @hmblzayy. Instagram: @hmblzay (one "y" — @ministerzay is his TikTok backup account, not his Instagram).
+- Minister Zay: Isaiah M. Thomas, also known as HMBL Zay and hmblzayy. Founder of Stay Humble Stay Hungry (HMBL) Clothing, based in Philadelphia, Pennsylvania. Walked 3,000 miles from Philadelphia to California between March 26 and July 27, 2026 to spread the gospel and raise money for HMBL University. Twitch: hmblzayy. TikTok: @hmblzayy. Instagram: @hmblzay (one "y" — @ministerzay is his TikTok backup account, not his Instagram).
 - AI Bible Gospels: Faith-tech ministry and YouTube channel. Builder and sponsor of Faith Walk Live. Founded by Thomas.
 - Faith Walk Live: This site. A believer-built companion platform and permanent record of the Faith Walk.
 - HMBL University: Trade-school initiative in Philadelphia offering trade certifications, financial literacy, entrepreneurship, and life-skills training to teens who may not attend a four-year college. The reason the 3,000-mile Faith Walk happened. Not yet built.

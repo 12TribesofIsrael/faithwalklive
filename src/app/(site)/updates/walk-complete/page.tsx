@@ -1,14 +1,13 @@
 import Link from "next/link";
 import { completionOutlets } from "@/data/outlets";
-import { getStats } from "@/lib/checkpoints";
+import { getStats, WALK_START_DATE_LABEL } from "@/lib/checkpoints";
 
 const PAGE_URL = "https://faithwalklive.com/updates/walk-complete";
 const ARTICLE_ID = `${PAGE_URL}#article`;
 
-// The walk's start date is canonical across the site (root Event JSON-LD,
-// /press, /philly, /faq all say March 25, 2026). getStats().startDate reads
-// checkpoints[0], which is a rest-only entry dated Mar 29 — do not use it here.
-const START_DATE = "March 25, 2026";
+// Canonical start date, shared with the root Event JSON-LD and every other
+// page that states it. Never hardcode a second copy here.
+const START_DATE = WALK_START_DATE_LABEL;
 
 export const metadata = {
   title: "Jul 27, 2026 — Minister Zay Completes the 3,000-Mile Walk",
@@ -20,7 +19,7 @@ export const metadata = {
     url: PAGE_URL,
     title: "He Made It — Minister Zay Completes the 3,000-Mile Faith Walk",
     description:
-      "Day 124. Philadelphia to the California state line on foot, livestreamed nearly every mile. Full record + news coverage.",
+      "Day 124. Philadelphia to Needles, California on foot, livestreamed nearly every mile. Full record + news coverage.",
     publishedTime: "2026-07-27T23:00:00Z",
     authors: ["AI Bible Gospels"],
   },
@@ -40,11 +39,11 @@ export const metadata = {
 const faqs = [
   {
     q: "Did Minister Zay finish the 3,000-mile walk?",
-    a: "Yes. Minister Zay (Isaiah M. Thomas) completed the 3,000-mile Faith Walk from Philadelphia to California on July 27, 2026 — Day 124 of the journey. He crossed the California state line and ended the walk there, livestreaming the arrival on Twitch. The finish was covered by Complex, NBC10 Philadelphia, CBS News Philadelphia, The Source, Hollywood Unlocked, and other outlets.",
+    a: "Yes. Minister Zay (Isaiah M. Thomas) completed the 3,000-mile Faith Walk from Philadelphia to California on July 27, 2026 — Day 124 of the journey. He crossed the Arizona-California line into Needles, California and ended the walk there, livestreaming the arrival on Twitch. The finish was covered by Complex, NBC10 Philadelphia, CBS News Philadelphia, The Source, Hollywood Unlocked, and other outlets.",
   },
   {
     q: "How long did the Faith Walk take?",
-    a: "124 days. Minister Zay set out from Philadelphia, Pennsylvania on March 25, 2026 and reached California on July 27, 2026. That total includes rest days and a recovery pause after he was struck by a vehicle in Indiana on Day 34.",
+    a: "124 days. Minister Zay set out from Philadelphia, Pennsylvania on March 26, 2026 and reached California on July 27, 2026. That total includes rest days and a recovery pause after he was struck by a vehicle in Indiana on Day 34.",
   },
   {
     q: "How many miles did Minister Zay walk?",
@@ -52,7 +51,7 @@ const faqs = [
   },
   {
     q: "Where did the Faith Walk end?",
-    a: "At the California state line, on July 27, 2026. Minister Zay crossed into California on Day 124 along the Arizona border after passing through Lake Havasu City, Arizona the day before. Some coverage names Needles, California as the arrival point in San Bernardino County.",
+    a: "In Needles, California — a town in San Bernardino County just across the Arizona line — on July 27, 2026. Minister Zay reached it on Day 124, the day after passing through Lake Havasu City, Arizona. He geotagged Needles in his own post from the finish, and CBS News Philadelphia names it as the arrival point.",
   },
   {
     q: "Was Minister Zay hit by a car during the walk?",
@@ -83,7 +82,7 @@ const newsArticleJsonLd = {
   headline:
     "Minister Zay Completes the 3,000-Mile Faith Walk From Philadelphia to California",
   description:
-    "Minister Zay finished the 3,000-mile Faith Walk on July 27, 2026 — Day 124 — crossing the California state line on foot after setting out from Philadelphia on March 25 and walking through a hospitalization in Indiana.",
+    "Minister Zay finished the 3,000-mile Faith Walk on July 27, 2026 — Day 124 — walking into Needles, California after setting out from Philadelphia on March 26 and coming back from a hospitalization in Indiana.",
   datePublished: "2026-07-27T23:00:00Z",
   dateModified: new Date().toISOString(),
   author: { "@id": "https://faithwalklive.com/#aibiblegospels" },
@@ -150,7 +149,7 @@ export default function WalkCompletePage() {
     { term: "Days on the road", def: `${s.totalDays}` },
     { term: "Distance", def: `${s.totalMiles.toLocaleString()} miles on foot` },
     { term: "Started", def: `${START_DATE} · Philadelphia, PA` },
-    { term: "Ended", def: s.finishLocation ?? "California state line" },
+    { term: "Ended", def: s.finishLocation ?? "Needles, CA" },
     { term: "Streamed on", def: "Twitch — twitch.tv/hmblzayy" },
   ];
 
@@ -178,11 +177,11 @@ export default function WalkCompletePage() {
         </h1>
         <p className="update-body text-brand-amber mt-3 leading-relaxed">
           On July 27, 2026 — Day {s.totalDays} — Minister Zay crossed the
-          California state line and finished the walk he started in
-          Philadelphia on {START_DATE}. He walked every mile of it on foot and
-          streamed nearly all of it live. Three months earlier a car had put
-          him in a hospital in Indiana. He was back on the road five days after
-          that, and he did not stop again until the state sign.
+          Arizona line into Needles, California and finished the walk he
+          started in Philadelphia on {START_DATE}. He walked every mile of it
+          on foot and streamed nearly all of it live. Three months earlier a
+          car had put him in a hospital in Indiana. He was back on the road
+          five days after that, and he did not stop again until the state sign.
         </p>
       </header>
 
@@ -234,8 +233,8 @@ export default function WalkCompletePage() {
           </p>
           <p>
             He reached Lake Havasu City, Arizona on July 26. The next morning
-            he was seventeen miles from the state line, and by mid-afternoon he
-            was standing at it.
+            his stream title read seventeen miles to California. He crossed the
+            line that afternoon and finished in Needles.
           </p>
         </div>
       </section>

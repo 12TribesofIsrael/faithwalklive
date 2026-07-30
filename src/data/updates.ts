@@ -22,7 +22,7 @@ export const updates: UpdateEntry[] = [
     date: "2026-07-27",
     headline: "Minister Zay Completes the 3,000-Mile Walk to California",
     summary:
-      "On Day 124, Minister Zay crossed the California state line and finished the 3,000-mile Faith Walk from Philadelphia — 124 days after setting out, and three months after a vehicle strike in Indiana that put him in the hospital. He livestreamed nearly every mile on Twitch. The walk raised money to build HMBL University, a trade school for Philadelphia teens. Covered by Complex, NBC10 Philadelphia, CBS News Philadelphia, The Source, Hollywood Unlocked, and others.",
+      "On Day 124, Minister Zay walked into Needles, California and finished the 3,000-mile Faith Walk from Philadelphia — 124 days after setting out, and three months after a vehicle strike in Indiana that put him in the hospital. He livestreamed nearly every mile on Twitch. The walk raised money to build HMBL University, a trade school for Philadelphia teens. Covered by Complex, NBC10 Philadelphia, CBS News Philadelphia, The Source, Hollywood Unlocked, and others.",
   },
   {
     slug: "rv-rolling-support",
