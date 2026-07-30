@@ -1,19 +1,30 @@
 import EmailCapture from "@/components/EmailCapture";
+import { getStats } from "@/lib/checkpoints";
+
+// Same source of truth as the homepage hero and the welcome email. This page
+// promised "one email a day for the rest of the walk" after the walk had
+// already ended — a promise nobody could keep and nobody would have caught,
+// since the only people who read it are strangers deciding whether to trust us.
+const { isComplete } = getStats();
 
 export const metadata = {
   title: "Subscribe",
-  description:
-    "Get daily Faith Walk updates — the checkpoint, the clip, and the verse. One email a day. Sponsored by AI Bible Gospels.",
+  description: isComplete
+    ? "Stay with the mission — word when HMBL University breaks ground, and whatever Zay walks next. Sponsored by AI Bible Gospels."
+    : "Get daily Faith Walk updates — the checkpoint, the clip, and the verse. One email a day. Sponsored by AI Bible Gospels.",
 };
 
 export default function SubscribePage() {
   return (
     <div className="max-w-xl mx-auto px-4 py-12 space-y-6">
       <div>
-        <h1 className="text-3xl font-semibold text-brand-cloud">Daily walk updates</h1>
+        <h1 className="text-3xl font-semibold text-brand-cloud">
+          {isComplete ? "Stay with the mission" : "Daily walk updates"}
+        </h1>
         <p className="text-brand-amber mt-2">
-          One short email per day: the checkpoint, the clip, the verse. No
-          sales. Unsubscribe anytime.
+          {isComplete
+            ? "The walk is done — the school isn't built yet. Get word when HMBL University breaks ground, and whatever Zay walks next. No sales. Unsubscribe anytime."
+            : "One short email per day: the checkpoint, the clip, the verse. No sales. Unsubscribe anytime."}
         </p>
       </div>
 
@@ -21,7 +32,11 @@ export default function SubscribePage() {
         variant="hero"
         source="subscribe-page"
         heading="Subscribe"
-        body="Type your email below. You'll get a welcome note right away, then one short email a day for the rest of the walk."
+        body={
+          isComplete
+            ? "Type your email below. You'll get a welcome note right away, then word when there's something worth telling you."
+            : "Type your email below. You'll get a welcome note right away, then one short email a day for the rest of the walk."
+        }
       />
 
       <div className="rounded-2xl border border-brand-border bg-brand-black/50 p-6 text-center space-y-3">

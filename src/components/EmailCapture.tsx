@@ -11,11 +11,16 @@ interface EmailCaptureProps {
   body?: string;
 }
 
+// Defaults are deliberately timeless. This is a client component, so it can't
+// read walk status itself — a walk-specific default here is a promise that
+// silently expires the day the walk ends, and the two live call sites already
+// pass copy driven by getStats(). Anything that has to change with the walk
+// belongs in the caller, not here.
 export default function EmailCapture({
   variant = "hero",
   source = "home-hero",
-  heading = "Daily walk updates by email",
-  body = "One short email a day — the checkpoint, the clip, the verse. No sales. Unsubscribe any time.",
+  heading = "Get Faith Walk Live by email",
+  body = "Updates from the road and what comes next. No sales. Unsubscribe any time.",
 }: EmailCaptureProps) {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");

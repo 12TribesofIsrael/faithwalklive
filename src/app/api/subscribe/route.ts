@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse, after } from "next/server";
 import { pushLeadToCrm } from "@/lib/crm";
+import { getStats } from "@/lib/checkpoints";
 
 export const runtime = "nodejs";
 
@@ -103,19 +104,50 @@ export async function POST(req: NextRequest) {
   return NextResponse.json({ ok: true });
 }
 
+/**
+ * What we actually promise a new subscriber.
+ *
+ * Read from the same `getStats()` the homepage hero reads, rather than
+ * hardcoded, because this email outlived the thing it described: it kept
+ * promising "one short email a day for as long as Minister Zay is walking"
+ * for days after he finished, and pointed at a "live" map of a route already
+ * walked. Copy tied to an event has to read the event's status, or it lies
+ * the moment the event ends — and nobody notices, because the sender never
+ * sees their own welcome email.
+ */
+function welcomeCopy(): { lead: string; map: string; mapLabel: string } {
+  const { isComplete } = getStats();
+  return isComplete
+    ? {
+        lead:
+          "The walk is finished — 3,000 miles from Philadelphia to California, on foot and on faith. " +
+          "You'll hear from us when HMBL University breaks ground, and whenever Zay walks next.",
+        map: "https://faithwalklive.com/map",
+        mapLabel: "the whole route",
+      }
+    : {
+        lead:
+          "You'll get one short email a day with the checkpoint, the clip, and the verse — " +
+          "for as long as Minister Zay is walking.",
+        map: "https://faithwalklive.com/map",
+        mapLabel: "the live map",
+      };
+}
+
 function welcomeHtml(): string {
+  const { lead, map, mapLabel } = welcomeCopy();
   return `<!DOCTYPE html>
 <html><body style="margin:0;padding:0;background:#0a0a0a;color:#f5f5f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
   <div style="max-width:560px;margin:0 auto;padding:40px 24px;">
     <h1 style="color:#FFD700;font-size:28px;font-weight:900;margin:0 0 16px;">🙏🏾 You're in.</h1>
     <p style="font-size:17px;line-height:1.6;color:#e5e5e5;margin:0 0 16px;">
-      You'll get one short email a day with the checkpoint, the clip, and the verse — for as long as Minister Zay is walking.
+      ${lead}
     </p>
     <p style="font-size:17px;line-height:1.6;color:#e5e5e5;margin:0 0 24px;">
       No sales. Unsubscribe any time.
     </p>
     <p style="font-size:16px;line-height:1.6;color:#bbb;margin:0 0 24px;">
-      In the meantime — the live map is at <a href="https://faithwalklive.com/map" style="color:#FFD700;text-decoration:none;">faithwalklive.com/map</a>, and prayer support runs in the HMBL University Discord: <a href="https://faithwalklive.com/prayer" style="color:#FFD700;text-decoration:none;">faithwalklive.com/prayer</a>.
+      In the meantime — ${mapLabel} is at <a href="${map}" style="color:#FFD700;text-decoration:none;">faithwalklive.com/map</a>, and prayer support runs in the HMBL University Discord: <a href="https://faithwalklive.com/prayer" style="color:#FFD700;text-decoration:none;">faithwalklive.com/prayer</a>.
     </p>
     <hr style="border:0;border-top:1px solid #333;margin:32px 0;" />
     <p style="font-size:13px;line-height:1.5;color:#888;margin:0;">
@@ -126,12 +158,15 @@ function welcomeHtml(): string {
 }
 
 function welcomeText(): string {
+  const { lead, mapLabel } = welcomeCopy();
+  const capitalizedMapLabel =
+    mapLabel.charAt(0).toUpperCase() + mapLabel.slice(1);
   return [
     "You're in.",
     "",
-    "You'll get one short email a day with the checkpoint, the clip, and the verse — for as long as Minister Zay is walking. No sales. Unsubscribe any time.",
+    `${lead} No sales. Unsubscribe any time.`,
     "",
-    "Live map: https://faithwalklive.com/map",
+    `${capitalizedMapLabel}: https://faithwalklive.com/map`,
     "Prayer (Discord): https://faithwalklive.com/prayer",
     "",
     "Faith Walk Live is built and funded by AI Bible Gospels — https://www.youtube.com/@AIBIBLEGOSPELS",

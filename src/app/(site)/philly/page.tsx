@@ -3,17 +3,28 @@ import { getStats } from "@/lib/checkpoints";
 
 const PAGE_URL = "https://faithwalklive.com/philly";
 
+// Module scope so metadata and the JSON-LD block can read walk status too —
+// both described "daily updates" and a "live map" for a walk that finished on
+// 2026-07-27. Search snippets are the first thing a stranger reads, so a stale
+// one costs trust before they ever reach the page. The Philly/Philadelphia,
+// 3,000-mile and Philly-to-California terms are load-bearing for search and
+// stay in both variants.
+const { isComplete: WALK_COMPLETE } = getStats();
+const PAGE_DESCRIPTION = WALK_COMPLETE
+  ? "Faith Walk Philly: Minister Zay's completed 3,000-mile faith walk from Philly (Philadelphia, PA) to California. The full route, the day-by-day record, and the story of the Philadelphia start. Tracked on Faith Walk Live."
+  : "Faith Walk Philly: Minister Zay's 3,000-mile faith walk from Philly (Philadelphia, PA) to California. Daily updates, live map, and the story of the Philadelphia start. Tracked on Faith Walk Live.";
+
 export const metadata = {
   title: "Faith Walk Philly — Philly to California 3,000-Mile Faith Walk",
-  description:
-    "Faith Walk Philly: Minister Zay's 3,000-mile faith walk from Philly (Philadelphia, PA) to California. Daily updates, live map, and the story of the Philadelphia start. Tracked on Faith Walk Live.",
+  description: PAGE_DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   openGraph: {
     type: "website",
     url: PAGE_URL,
     title: "Faith Walk Philly — Philly to California 3,000-Mile Faith Walk",
-    description:
-      "Faith Walk Philly: the Philadelphia roots of Minister Zay's 3,000-mile faith walk to California. Live tracker at Faith Walk Live.",
+    description: WALK_COMPLETE
+      ? "Faith Walk Philly: the Philadelphia roots of Minister Zay's completed 3,000-mile faith walk to California. The whole road at Faith Walk Live."
+      : "Faith Walk Philly: the Philadelphia roots of Minister Zay's 3,000-mile faith walk to California. Live tracker at Faith Walk Live.",
   },
   twitter: {
     card: "summary_large_image",
@@ -51,8 +62,9 @@ const webPageJsonLd = {
   "@type": "WebPage",
   "@id": `${PAGE_URL}#webpage`,
   name: "Faith Walk Philly — Philly to California 3,000-Mile Faith Walk",
-  description:
-    "The Philadelphia roots of Faith Walk Live: Minister Zay's 3,000-mile Philly-to-California faith walk, daily updates, and the story of the start.",
+  description: WALK_COMPLETE
+    ? "The Philadelphia roots of Faith Walk Live: Minister Zay's completed 3,000-mile Philly-to-California faith walk, the day-by-day record, and the story of the start."
+    : "The Philadelphia roots of Faith Walk Live: Minister Zay's 3,000-mile Philly-to-California faith walk, daily updates, and the story of the start.",
   url: PAGE_URL,
   publisher: { "@id": "https://faithwalklive.com/#aibiblegospels" },
   about: { "@id": "https://faithwalklive.com/#faithwalk" },
@@ -215,15 +227,16 @@ export default function PhillyPage() {
           Follow the Faith Walk Philly
         </h2>
         <p className="text-brand-softgold leading-relaxed text-sm mb-5">
-          One short email a day with the checkpoint, a clip, and the verse.
-          Or watch live on Twitch when the stream is on.
+          {s.isComplete
+            ? "Word when HMBL University breaks ground, and whatever Zay walks next. Or watch the archive on Twitch."
+            : "One short email a day with the checkpoint, a clip, and the verse. Or watch live on Twitch when the stream is on."}
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
           <Link
             href="/subscribe"
             className="inline-flex items-center justify-center rounded-full bg-brand-gold text-brand-black px-5 py-2.5 text-sm font-semibold hover:bg-brand-amber transition-colors"
           >
-            Subscribe to daily updates
+            {s.isComplete ? "Stay with the mission" : "Subscribe to daily updates"}
           </Link>
           <a
             href="https://www.twitch.tv/hmblzayy"
@@ -231,7 +244,7 @@ export default function PhillyPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full border border-brand-gold/60 text-brand-gold px-5 py-2.5 text-sm font-semibold hover:bg-brand-gold/10 transition-colors"
           >
-            Watch live on Twitch
+            {s.isComplete ? "Watch on Twitch" : "Watch live on Twitch"}
           </a>
           <Link
             href="/prayer"
