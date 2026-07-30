@@ -36,9 +36,10 @@ export default function WhyPage() {
       {/* ── SECTION 1: THE WALK ── */}
       <h2 className="mt-10 text-2xl font-bold text-brand-cloud">The walk</h2>
       <p>
-        Minister Zay is walking from Philadelphia, Pennsylvania to California.
-        Three thousand miles, one step at a time, streaming daily on Twitch.
-        Not a publicity stunt. Not a charity race. A walk of faith.
+        Minister Zay walked from Philadelphia, Pennsylvania to California.
+        Three thousand miles, one step at a time, streamed daily on Twitch. He
+        finished on July 27, 2026, on the 124th day. Not a publicity stunt. Not
+        a charity race. A walk of faith.
       </p>
 
       {/* ── SECTION 2: THE PLATFORM ── */}

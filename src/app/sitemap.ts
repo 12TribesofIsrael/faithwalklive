@@ -43,10 +43,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const rvEntry = updates.find((u) => u.slug === "rv-rolling-support");
   const rvDate = rvEntry ? new Date(rvEntry.date) : now;
 
+  // /updates/walk-complete: the finish. Anchored on the latest checkpoint date
+  // rather than the fixed entry date so the page keeps a fresh lastModified
+  // if the final checkpoints are ever corrected.
+  const completeEntry = updates.find((u) => u.slug === "walk-complete");
+  const completeDate = completeEntry ? new Date(completeEntry.date) : now;
+
   return [
     { url: base, lastModified: trackerDate, changeFrequency: "daily", priority: 1 },
     { url: `${base}/map`, lastModified: trackerDate, changeFrequency: "daily", priority: 0.9 },
     { url: `${base}/updates`, lastModified: updatesIndexDate, changeFrequency: "daily", priority: 0.95 },
+    { url: `${base}/updates/walk-complete`, lastModified: completeDate, changeFrequency: "weekly", priority: 0.95 },
     { url: `${base}/updates/april-28-incident`, lastModified: incidentDate, changeFrequency: "daily", priority: 0.95 },
     { url: `${base}/updates/rv-rolling-support`, lastModified: rvDate, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/clips`, lastModified: trackerDate, changeFrequency: "daily", priority: 0.8 },

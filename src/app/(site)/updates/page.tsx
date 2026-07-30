@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { updates } from "@/data/updates";
+import { getStats } from "@/lib/checkpoints";
 
 export const metadata = {
   title: "Updates",
   description:
-    "Recovery updates and news log for Minister Zay's 3,000-mile Faith Walk. Latest status, links to news coverage, and pointers to the prayer hub.",
+    "News log for Minister Zay's 3,000-mile Faith Walk from Philadelphia to California — the July 27, 2026 finish, the April 28 accident and recovery, and links to the original coverage of each.",
 };
 
 const breadcrumbJsonLd = {
@@ -27,6 +28,7 @@ const breadcrumbJsonLd = {
 };
 
 export default function UpdatesIndex() {
+  const s = getStats();
   const sorted = [...updates].sort((a, b) =>
     a.date < b.date ? 1 : a.date > b.date ? -1 : 0
   );
@@ -41,10 +43,23 @@ export default function UpdatesIndex() {
       <header className="mb-8">
         <h1 className="text-3xl font-semibold text-brand-cloud">Updates</h1>
         <p className="text-brand-amber mt-2 text-sm">
-          Recovery updates and news log for the Faith Walk. Plain language, dated
-          entries, links to original coverage. Updated as new public information
-          enters the record.
+          The news log for the Faith Walk. Plain language, dated entries, links
+          to the original coverage of each.
         </p>
+        {s.isComplete && (
+          <p className="text-brand-softgold mt-3 text-sm leading-relaxed">
+            The walk finished on {s.completedDate} — Day {s.totalDays},{" "}
+            {s.totalMiles.toLocaleString()} miles from Philadelphia to
+            California.{" "}
+            <Link
+              href="/updates/walk-complete"
+              className="text-brand-gold hover:underline"
+            >
+              Read the finish
+            </Link>
+            .
+          </p>
+        )}
       </header>
 
       <ul className="space-y-6">
@@ -72,9 +87,9 @@ export default function UpdatesIndex() {
       </ul>
 
       <p className="text-brand-bronze text-xs mt-10">
-        For real-time progress when the walk is active, see the{" "}
+        {s.isComplete ? "For the whole route he walked, see the " : "For real-time progress, see the "}
         <Link href="/map" className="text-brand-gold hover:underline">
-          live map
+          {s.isComplete ? "map" : "live map"}
         </Link>
         . For prayer, see the{" "}
         <Link href="/prayer" className="text-brand-gold hover:underline">

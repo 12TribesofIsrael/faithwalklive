@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Common Questions",
   description:
-    "Common questions about Minister Zay, the 3,000-mile Faith Walk Philly (a.k.a. Faith Walk Live) — the Philly-to-California walk on faith. Plain answers, faith-first voice.",
+    "Common questions about Minister Zay and the 3,000-mile Faith Walk Philly (a.k.a. Faith Walk Live) — the Philly-to-California walk on faith, completed July 27, 2026 in 124 days. Plain answers, faith-first voice.",
 };
 
 type QA = {
@@ -14,32 +14,42 @@ type QA = {
 
 const faqs: QA[] = [
   {
-    q: "What is the Faith Walk?",
-    a: "A 3,000-mile walk of faith from Philadelphia, Pennsylvania to California — also called the Faith Walk Philly or the Philly-to-California Faith Walk. Minister Zay is walking the distance on foot and streaming the journey daily on Twitch at twitch.tv/hmblzayy. It is not a publicity stunt and not a charity race — it is a walk of faith.",
+    q: "Did Minister Zay finish the walk?",
+    a: "Yes. Minister Zay completed the 3,000-mile Faith Walk on July 27, 2026 — Day 124 — crossing the California state line on foot after starting in Philadelphia on March 25, 2026. He livestreamed nearly every mile on Twitch, including a hospitalization in Indiana on Day 34 that he came back from five days later. The finish was covered by Complex, NBC10 Philadelphia, CBS News Philadelphia, The Source, and others.",
+    links: [
+      {
+        label: "Read the full record of the finish",
+        href: "/updates/walk-complete",
+      },
+    ],
+  },
+  {
+    q: "What was the Faith Walk?",
+    a: "A 3,000-mile walk of faith from Philadelphia, Pennsylvania to California — also called the Faith Walk Philly or the Philly-to-California Faith Walk. Minister Zay walked the distance on foot and streamed the journey daily on Twitch at twitch.tv/hmblzayy, finishing on July 27, 2026. It was not a publicity stunt and not a charity race — it was a walk of faith, undertaken to build a trade school for Philadelphia teens.",
   },
   {
     q: "Who is Minister Zay?",
-    a: "Minister Zay is Isaiah M. Thomas, founder of Stay Humble Stay Hungry (HMBL) Clothing, based in Philadelphia. He is walking across America to spread the gospel.",
+    a: "Minister Zay is Isaiah M. Thomas, founder of Stay Humble Stay Hungry (HMBL) Clothing, based in Philadelphia. He walked across America to spread the gospel and to raise money for HMBL University, a trade school for Philadelphia youth.",
   },
   {
-    q: "When did the Faith Walk begin?",
-    a: "The walk began on March 25, 2026 in Philadelphia, Pennsylvania.",
+    q: "When did the Faith Walk begin and end?",
+    a: "The walk began on March 25, 2026 in Philadelphia, Pennsylvania and finished on July 27, 2026 at the California state line — 124 days on the road.",
   },
   {
-    q: "How long is the Faith Walk?",
-    a: "Around 3,000 miles, from Philadelphia, Pennsylvania to California.",
+    q: "How long was the Faith Walk?",
+    a: "Around 3,000 miles on foot, from Philadelphia, Pennsylvania to California, walked over 124 days.",
   },
   {
-    q: "Where can I watch the Faith Walk live?",
-    a: "Live on Twitch at twitch.tv/hmblzayy. A daily clip archive is kept at faithwalklive.com/clips so you can catch up on what you missed.",
+    q: "Can I still watch the Faith Walk?",
+    a: "Yes. The daily clip archive at faithwalklive.com/clips holds moments from across all 124 days, and the map at faithwalklive.com/map shows every confirmed checkpoint of the route he walked. Minister Zay's Twitch channel is twitch.tv/hmblzayy.",
   },
   {
-    q: "Where is Minister Zay on the walk right now?",
-    a: "The live map at faithwalklive.com/map shows every confirmed checkpoint and the latest one Zay has reached. Location is updated once per day, typically at the end of the night or the following morning, so the map is the most current source.",
+    q: "Where did the Faith Walk end?",
+    a: "At the California state line on July 27, 2026 — Day 124 — after passing through Lake Havasu City, Arizona the day before. Some coverage names Needles, California as the arrival point in San Bernardino County. The map at faithwalklive.com/map holds the full route with every confirmed checkpoint.",
   },
   {
     q: "What happened on Day 34 of the walk?",
-    a: "On April 28, 2026 (Day 34), Minister Zay was struck by a vehicle on U.S. 40 in Indiana while livestreaming the walk. He was hospitalized; news coverage reported his condition as stable and not life-threatening. The walk and the daily livestream were paused for the recovery period. Minister Zay returned to the spot of the accident on Sunday, May 3, 2026 at 12 noon and resumed the walk westward. The full record — recovery timeline, every news outlet that covered the story, and live status — is at faithwalklive.com/updates/april-28-incident.",
+    a: "On April 28, 2026 (Day 34), Minister Zay was struck by a vehicle on U.S. 40 in Indiana while livestreaming the walk. He was hospitalized; news coverage reported his condition as stable and not life-threatening. The walk and the daily livestream were paused for the recovery period. Minister Zay returned to the spot of the accident on Sunday, May 3, 2026 at 12 noon and resumed the walk westward — and finished it 85 days later, on July 27, 2026. The full record — recovery timeline and every news outlet that covered the story — is at faithwalklive.com/updates/april-28-incident.",
     links: [
       {
         label: "Read the full update + recovery timeline",
@@ -68,8 +78,8 @@ const faqs: QA[] = [
     ],
   },
   {
-    q: "Is Minister Zay still walking every mile, or is he riding in the RV?",
-    a: "Still walking — every mile on foot. On May 8, 2026, Minister Zay announced an RV that travels alongside the walk as a mobile support base for rest, gear, and the support team. The RV is a vehicle that follows him along the route, not a replacement for the walk itself. Zay continues to livestream daily on Twitch (@hmblzayy) when on the road.",
+    q: "Did Minister Zay walk every mile, or did he ride in the RV?",
+    a: "He walked every mile on foot. On May 8, 2026, Minister Zay announced an RV that traveled alongside the walk as a mobile support base for rest, gear, and the support team. The RV followed him along the route; it was never a replacement for the walk itself. He livestreamed the walking on Twitch (@hmblzayy) nearly every day he was on the road.",
     links: [
       {
         label: "Read the RV rolling-support announcement",
@@ -79,7 +89,7 @@ const faqs: QA[] = [
   },
   {
     q: "Why did Minister Zay get an RV for the walk?",
-    a: "After the April 28, 2026 vehicle strike on U.S. 40 in Indiana, the team upgraded its logistics for the long road ahead. The RV provides safer rest stops, mobile shelter, and a base for support staff across the remaining ~2,300 miles to California. Zay announced the RV in a Reel on Instagram (@ministerzay) on May 8, 2026, with a tour from Indianapolis, IN.",
+    a: "After the April 28, 2026 vehicle strike on U.S. 40 in Indiana, the team upgraded its logistics for the long road ahead. The RV provided safer rest stops, mobile shelter, and a base for support staff across the remaining ~2,300 miles to California. Zay announced the RV in a Reel on Instagram on May 8, 2026, with a tour from Indianapolis, IN.",
     links: [
       {
         label: "Read the RV rolling-support announcement",

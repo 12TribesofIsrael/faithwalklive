@@ -7,7 +7,7 @@ const REEL_URL = "https://www.instagram.com/p/DYFFGDBSsOI/";
 export const metadata = {
   title: "May 8, 2026 — Faith Walk Adds RV for Rolling Support",
   description:
-    "Minister Zay announced an RV that will roll alongside the 3,000-mile Faith Walk as mobile support. Staged in Indianapolis, IN. Announced in a Reel on Instagram (@ministerzay) on May 8, 2026.",
+    "Minister Zay announced an RV that will roll alongside the 3,000-mile Faith Walk as mobile support. Staged in Indianapolis, IN. Announced in a Reel on Instagram (@hmblzay) on May 8, 2026.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     type: "article",
@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: "When did the RV join the Faith Walk?",
-    a: "Minister Zay publicly announced the RV on May 8, 2026 in a Reel posted to his Instagram (@ministerzay) titled \"Hmblzayy gives New RV tour that will be following him.\" The RV is staged in Indianapolis, IN as the walk continues toward Camby and the western leg of the route to California.",
+    a: "Minister Zay publicly announced the RV on May 8, 2026 in a Reel posted to his Instagram (@hmblzay) titled \"Hmblzayy gives New RV tour that will be following him.\" The RV is staged in Indianapolis, IN as the walk continues toward Camby and the western leg of the route to California.",
   },
   {
     q: "Why did Minister Zay get an RV for the walk?",
@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     q: "Where can I see the RV tour Minister Zay posted?",
-    a: "The RV tour Reel is on Minister Zay's Instagram at instagram.com/p/DYFFGDBSsOI. He posts walk updates on Instagram (@ministerzay), TikTok and Twitch (@hmblzayy). Daily progress and the live route are tracked at faithwalklive.com.",
+    a: "The RV tour Reel is on Minister Zay's Instagram at instagram.com/p/DYFFGDBSsOI. He posts walk updates on Instagram (@hmblzay), TikTok and Twitch (@hmblzayy). Daily progress and the live route are tracked at faithwalklive.com.",
   },
 ];
 
@@ -70,7 +70,7 @@ const newsArticleJsonLd = {
   citation: [
     {
       "@type": "CreativeWork",
-      name: "Hmblzayy gives New RV tour — Instagram Reel by @ministerzay",
+      name: "Hmblzayy gives New RV tour — Instagram Reel by @hmblzay",
       url: REEL_URL,
     },
   ],
@@ -218,7 +218,7 @@ export default function RvRollingSupportPage() {
               rel="noopener noreferrer"
               className="text-brand-gold hover:underline text-sm"
             >
-              Instagram Reel — @ministerzay (May 8, 2026): &ldquo;Hmblzayy gives
+              Instagram Reel — @hmblzay (May 8, 2026): &ldquo;Hmblzayy gives
               New RV tour that will be following him&rdquo; →
             </a>
           </li>

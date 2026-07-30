@@ -18,11 +18,18 @@ export type RecoveryEntry = {
 
 export const updates: UpdateEntry[] = [
   {
+    slug: "walk-complete",
+    date: "2026-07-27",
+    headline: "Minister Zay Completes the 3,000-Mile Walk to California",
+    summary:
+      "On Day 124, Minister Zay crossed the California state line and finished the 3,000-mile Faith Walk from Philadelphia — 124 days after setting out, and three months after a vehicle strike in Indiana that put him in the hospital. He livestreamed nearly every mile on Twitch. The walk raised money to build HMBL University, a trade school for Philadelphia teens. Covered by Complex, NBC10 Philadelphia, CBS News Philadelphia, The Source, Hollywood Unlocked, and others.",
+  },
+  {
     slug: "rv-rolling-support",
     date: "2026-05-08",
     headline: "Faith Walk Adds RV for Rolling Support",
     summary:
-      "Minister Zay announced an RV that will roll alongside the 3,000-mile Faith Walk as a mobile support and rest vehicle. The RV is staged in Indianapolis, IN as Zay continues toward Camby and the next stretch of the route to California. Announced in a Reel on his Instagram (@ministerzay) on May 8, 2026.",
+      "Minister Zay announced an RV that will roll alongside the 3,000-mile Faith Walk as a mobile support and rest vehicle. The RV is staged in Indianapolis, IN as Zay continues toward Camby and the next stretch of the route to California. Announced in a Reel on his Instagram (@hmblzay) on May 8, 2026.",
   },
   {
     slug: "april-28-incident",

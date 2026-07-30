@@ -273,12 +273,12 @@ export default function PressPage() {
             </a>
             , Instagram{" "}
             <a
-              href="https://www.instagram.com/ministerzay/"
+              href="https://www.instagram.com/hmblzay/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-brand-gold hover:underline"
             >
-              ministerzay
+              hmblzay
             </a>
             , TikTok{" "}
             <a

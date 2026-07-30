@@ -213,17 +213,21 @@ const jsonLd = {
       "@type": "Person",
       "@id": "https://faithwalklive.com/#ministerzay",
       name: "Minister Zay",
-      alternateName: ["Isaiah M. Thomas", "Humble Zay", "hmblzayy"],
+      alternateName: ["Isaiah M. Thomas", "Humble Zay", "hmblzayy", "HMBL Zay"],
       description:
-        "Philly-born minister walking 3,000 miles from Philadelphia, Pennsylvania to California to spread the gospel and raise awareness for HMBL University. Founder of Stay Humble Stay Hungry (HMBL) Clothing. Streams the walk daily on Twitch.",
+        "Philly-born minister who walked 3,000 miles from Philadelphia, Pennsylvania to California to spread the gospel and raise money for HMBL University, finishing on July 27, 2026 after 124 days. Founder of Stay Humble Stay Hungry (HMBL) Clothing. Streamed the walk daily on Twitch.",
       homeLocation: {
         "@type": "City",
         name: "Philadelphia",
         containedInPlace: { "@type": "State", name: "Pennsylvania" },
       },
+      // sameAs is an entity-resolution signal — a dead URL here is worse than
+      // no URL. His Instagram is @hmblzay with ONE y; instagram.com/ministerzay
+      // and instagram.com/hmblzayy both return "page isn't available".
+      // @ministerzay is his TikTok *backup* account, not his Instagram.
       sameAs: [
         "https://www.twitch.tv/hmblzayy",
-        "https://www.instagram.com/ministerzay/",
+        "https://www.instagram.com/hmblzay/",
         "https://www.tiktok.com/@hmblzayy",
       ],
     },

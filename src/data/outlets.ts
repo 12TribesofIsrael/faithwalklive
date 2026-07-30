@@ -53,3 +53,48 @@ export const outlets: Outlet[] = [
     href: "https://www.tiktok.com/@kokie_luv43/video/7635070760310082830",
   },
 ];
+
+// Press coverage of the FINISH — Minister Zay crossed into California on
+// Jul 27, 2026 (Day 124). Read by /updates/walk-complete and /press.
+//
+// Every entry here was opened and confirmed to report the walk as COMPLETED.
+// Two near-misses were deliberately excluded: the Philadelphia Tribune piece
+// (Jul 7, "expects to arrive in California on July 30") and both R&B Philly
+// pieces ("closes in on California") are pre-finish coverage. Citing an
+// in-progress article as proof of the finish is the kind of thing an answer
+// engine will happily repeat back wrong — check the body, not the headline,
+// before adding a row.
+export const completionOutlets: Outlet[] = [
+  {
+    name: "Complex",
+    href: "https://www.complex.com/pop-culture/a/alex-ocho/hmblzayy-walk-philadelphia-california-twitch",
+  },
+  {
+    name: "NBC10 Philadelphia",
+    href: "https://www.nbcphiladelphia.com/news/local/philadelphia-activist-isaiah-thomas-hmbl-zayy-completes-walk-across-america-raise-money/4439454/",
+  },
+  {
+    name: "CBS News Philadelphia",
+    href: "https://www.cbsnews.com/philadelphia/news/hmblzayy-completes-walk-philadelphia-california/",
+  },
+  {
+    name: "The Source",
+    href: "https://thesource.com/2026/07/27/streamer-hmblzayy-completes-3000-mile-walk-from-philly-to-ca-after-124-days-for-charity/",
+  },
+  {
+    name: "Hollywood Unlocked",
+    href: "https://hollywoodunlocked.com/streamer-hmbl-zay-completes-3000-mile-walk-from-philadelphia-to-california-in-124-days-raises-nearly-200000-to-build-school-walked-through-sundown-towns-got-hit-by-2-cars/",
+  },
+  {
+    name: "Northeast Times (Philadelphia)",
+    href: "https://northeasttimes.com/2026/07/28/philly-twitch-streamer-finishes-3-000-mile-charity-walk-to-california/",
+  },
+  {
+    name: "Unheard Voices Magazine",
+    href: "https://unheardvoicesmag.com/2026/07/27/twitch-streamer-hmbl-zayy-completes-3000-mile-walk-to-support-philadelphia-youth/",
+  },
+  {
+    name: "Vaulted Mag",
+    href: "https://www.vaultedmag.com/hmbl-zay-finishes-his-3000-mile-walk-from-philadelphia-to-california-after-124-days-on-the-road/",
+  },
+];
